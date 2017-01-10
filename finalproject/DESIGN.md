@@ -5,7 +5,7 @@ Based on the proposal (README.md), this is the design document which is in a mor
 ## Classes
 
 ### User Class
-An important class that I will be using, is for the users. Every user has a login (emailaddress) and a password. 
+An important class that I will be using, is for the users. Every user has a login (email address) and a password (stored in Firebase).
 
 
 ## (Advanced) Sketches
