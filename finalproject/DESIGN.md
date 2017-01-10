@@ -29,6 +29,8 @@ An important class that I will be using, is for the users. Every user has a logi
 ## List of Database Tables/Fields
 The database that I will be using for storing information about the users and the tips is 'Firebase'. The Firebase Realtime Database is a cloud-hosted database. Data is stored as JSON and synchronized in realtime to every connected client.
 
+## Potentials 
+
 
 
 cocoapods; CocoaPods is a dependency manager for Swift and Objective-C Cocoa projects.

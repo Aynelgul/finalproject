@@ -1,26 +1,120 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Login View Controller-->
+        <scene sceneID="yL4-Pl-Av9">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="O6g-HE-bgg" customClass="LoginViewController" customModule="finalproject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="sg8-ek-eqn"/>
+                        <viewControllerLayoutGuide type="bottom" id="7JL-fa-Xb4"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="LoginViewController" id="tRx-XP-VrX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="LoginMountainsImage" image="mountains_landscape_hd_4k-3840x2160" translatesAutoresizingMaskIntoConstraints="NO" id="7dn-5l-z8u">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="LoginAdventureHeader" text="Adventure Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXq-gB-mEo">
+                                <rect key="frame" x="0.0" y="103" width="375" height="180"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="37"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.84754621480000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="LoginTextfieldMail" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MDc-Q2-VLL">
+                                <rect key="frame" x="70" y="346" width="235" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1wS-RG-Br0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="LoginTextfieldPassword" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HqE-h0-YYS">
+                                <rect key="frame" x="70" y="384" width="235" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="DqE-Ud-Yyy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="LoginButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wh9-aQ-rAv">
+                                <rect key="frame" x="70" y="434" width="235" height="38"/>
+                                <color key="backgroundColor" red="0.1168516579" green="0.3304831969" blue="0.41951824440000002" alpha="0.78870488559999996" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="2CP-Ff-hNT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="15"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.2385193863" green="0.2586448193" blue="0.1683492378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="LoginSignUpLabel" text="Sign up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWC-V4-cDp">
+                                <rect key="frame" x="121" y="609" width="81" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="81" id="IKC-1c-QaB"/>
+                                    <constraint firstAttribute="height" constant="29" id="WpR-rx-Lfx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="0.96502590669999999" green="0.96502590669999999" blue="0.96502590669999999" alpha="0.83500220069999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGI-H4-JSJ">
+                                <rect key="frame" x="148" y="529" width="79" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="79" id="bC2-X5-Gez"/>
+                                    <constraint firstAttribute="height" constant="72" id="tfD-yB-fob"/>
+                                </constraints>
+                                <state key="normal" image="white plus sign"/>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="7dn-5l-z8u" firstAttribute="leading" secondItem="tRx-XP-VrX" secondAttribute="leading" id="2QS-TD-3yS"/>
+                            <constraint firstItem="MDc-Q2-VLL" firstAttribute="top" secondItem="vXq-gB-mEo" secondAttribute="bottom" constant="63" id="4Ra-Xq-gI0"/>
+                            <constraint firstItem="7dn-5l-z8u" firstAttribute="bottom" secondItem="7JL-fa-Xb4" secondAttribute="top" id="5Xe-YN-1n2"/>
+                            <constraint firstItem="7JL-fa-Xb4" firstAttribute="top" secondItem="GWC-V4-cDp" secondAttribute="bottom" constant="29" id="8W0-yi-LI4"/>
+                            <constraint firstItem="HqE-h0-YYS" firstAttribute="leading" secondItem="wh9-aQ-rAv" secondAttribute="leading" id="9Ph-p0-HFs"/>
+                            <constraint firstItem="MDc-Q2-VLL" firstAttribute="leading" secondItem="HqE-h0-YYS" secondAttribute="leading" id="AuL-f8-PrT"/>
+                            <constraint firstItem="7dn-5l-z8u" firstAttribute="trailing" secondItem="vXq-gB-mEo" secondAttribute="trailing" id="CJ5-RD-J1U"/>
+                            <constraint firstItem="7dn-5l-z8u" firstAttribute="top" secondItem="tRx-XP-VrX" secondAttribute="top" id="Klu-cJ-mrB"/>
+                            <constraint firstItem="bGI-H4-JSJ" firstAttribute="top" secondItem="wh9-aQ-rAv" secondAttribute="bottom" constant="57" id="MR3-6f-Ezc"/>
+                            <constraint firstItem="GWC-V4-cDp" firstAttribute="leading" secondItem="tRx-XP-VrX" secondAttribute="leading" constant="121" id="Mga-NC-Bcy"/>
+                            <constraint firstAttribute="trailing" secondItem="7dn-5l-z8u" secondAttribute="trailing" id="SZL-sn-QvQ"/>
+                            <constraint firstItem="HqE-h0-YYS" firstAttribute="trailing" secondItem="wh9-aQ-rAv" secondAttribute="trailing" id="TJp-Jt-aSs"/>
+                            <constraint firstItem="wh9-aQ-rAv" firstAttribute="top" secondItem="HqE-h0-YYS" secondAttribute="bottom" constant="20" id="VJI-Ts-HHk"/>
+                            <constraint firstItem="HqE-h0-YYS" firstAttribute="top" secondItem="MDc-Q2-VLL" secondAttribute="bottom" constant="8" symbolic="YES" id="Xr4-Ot-9CM"/>
+                            <constraint firstItem="wh9-aQ-rAv" firstAttribute="centerX" secondItem="bGI-H4-JSJ" secondAttribute="centerX" id="enf-E3-A6z"/>
+                            <constraint firstItem="MDc-Q2-VLL" firstAttribute="trailing" secondItem="HqE-h0-YYS" secondAttribute="trailing" id="fAQ-Gm-5QC"/>
+                            <constraint firstItem="MDc-Q2-VLL" firstAttribute="leading" secondItem="tRx-XP-VrX" secondAttribute="leadingMargin" constant="54" id="gdD-T8-8YS"/>
+                            <constraint firstItem="GWC-V4-cDp" firstAttribute="top" secondItem="bGI-H4-JSJ" secondAttribute="bottom" constant="8" symbolic="YES" id="gzL-5G-8IH"/>
+                            <constraint firstItem="vXq-gB-mEo" firstAttribute="centerX" secondItem="MDc-Q2-VLL" secondAttribute="centerX" id="mkJ-r9-tIT"/>
+                            <constraint firstItem="7dn-5l-z8u" firstAttribute="leading" secondItem="vXq-gB-mEo" secondAttribute="leading" id="rvR-C8-b5S"/>
+                            <constraint firstItem="vXq-gB-mEo" firstAttribute="top" secondItem="sg8-ek-eqn" secondAttribute="bottom" constant="83" id="yqR-lO-RJu"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JCZ-1j-pW4" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1008.75" y="147.88732394366198"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mountains_landscape_hd_4k-3840x2160" width="3840" height="2160"/>
+        <image name="white plus sign" width="16" height="16"/>
+    </resources>
 </document>
