@@ -27,15 +27,9 @@ An important class that I will be using, is for the users. Every user has a logi
 
 
 ## List of Database Tables/Fields
-The database that I will be using for storing information about the users and the tips is 'Firebase'. The Firebase Realtime Database is a cloud-hosted database. Data is stored as JSON and synchronized in realtime to every connected client.
+- The database that I will be using for storing information about the users and the tips is 'Firebase'. The Firebase Realtime Database is a cloud-hosted database. Data is stored as JSON and synchronized in realtime to every connected client.
+- In addition to Firebase, I will have to use CocoaPods too (FirebaseDatabase, FirebaseAuth).
 
-## Potentials 
-
-
-
-cocoapods; CocoaPods is a dependency manager for Swift and Objective-C Cocoa projects.
-
-segmented control
-
-Sidebar menu
-
+## Potential problems/limitations
+- The app will have about 8 views, which can be quite a lot. It is important to don't lose overview. Also for the user, it is important they can quickly navigate. I will add a 'menu' segue on top of each view. Also, I want to use segmented control when possible, to keep it a bit more together. 
+- The app has a lot of little functions, so it could get complicated quite easily. I will try to avoid this by implementing one functionality at the time and see how far I come.
