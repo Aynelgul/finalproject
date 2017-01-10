@@ -9,6 +9,9 @@ An important class that I will be using, is for the users. Every user has a logi
 
 
 ## (Advanced) Sketches
+![View 1, 2, 3 and 4](Doc/Design1.jpg)
+
+![View 5, 6, 7 and 8](Doc/Design2.jpg)
 
 
 ## List of APIs
@@ -29,4 +32,8 @@ The database that I will be using for storing information about the users and th
 
 
 cocoapods; CocoaPods is a dependency manager for Swift and Objective-C Cocoa projects.
+
+segmented control
+
+Sidebar menu
 
