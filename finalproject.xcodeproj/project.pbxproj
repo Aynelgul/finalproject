@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		851CA9151E250E6C00DCB9A8 /* Sketches.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 851CA9131E250E6C00DCB9A8 /* Sketches.jpg */; };
 		851CA9161E250E6C00DCB9A8 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 851CA9141E250E6C00DCB9A8 /* README.md */; };
+		851CA9191E2510B800DCB9A8 /* DESIGN.md in Sources */ = {isa = PBXBuildFile; fileRef = 851CA9181E2510B800DCB9A8 /* DESIGN.md */; };
 		852C09B61E250BA3000F563F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852C09B51E250BA3000F563F /* AppDelegate.swift */; };
 		852C09B81E250BA3000F563F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852C09B71E250BA3000F563F /* ViewController.swift */; };
 		852C09BB1E250BA5000F563F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 852C09B91E250BA5000F563F /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		851CA9131E250E6C00DCB9A8 /* Sketches.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Sketches.jpg; sourceTree = "<group>"; };
 		851CA9141E250E6C00DCB9A8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		851CA9181E2510B800DCB9A8 /* DESIGN.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = DESIGN.md; sourceTree = "<group>"; };
 		852C09B21E250BA2000F563F /* finalproject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = finalproject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		852C09B51E250BA3000F563F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		852C09B71E250BA3000F563F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			children = (
 				851CA9121E250E6C00DCB9A8 /* Images */,
 				851CA9141E250E6C00DCB9A8 /* README.md */,
+				851CA9181E2510B800DCB9A8 /* DESIGN.md */,
 			);
 			name = Doc;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			files = (
 				851CA9161E250E6C00DCB9A8 /* README.md in Sources */,
 				852C09B81E250BA3000F563F /* ViewController.swift in Sources */,
+				851CA9191E2510B800DCB9A8 /* DESIGN.md in Sources */,
 				852C09B61E250BA3000F563F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
