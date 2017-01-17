@@ -10,7 +10,7 @@ An important class that I will be using, is for the users. Every user has a logi
 ### Travel Item Class
 A class that will contain the name of the country, name of the city, date (and travel buddy/buddies?).
 
-### (potential) Tip Class
+### (Potential) Tip Class
 A class that consist of what kind of tip is is, what the name is (and city/country). It will also contain a discription.
 
 
