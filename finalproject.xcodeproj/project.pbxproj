@@ -32,6 +32,9 @@
 		85FE3C4D1E2E2FE800586A2D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE3C4C1E2E2FE800586A2D /* MapViewController.swift */; };
 		85FE3C4F1E2E577D00586A2D /* PROCESS.md in Sources */ = {isa = PBXBuildFile; fileRef = 85FE3C4E1E2E577D00586A2D /* PROCESS.md */; };
 		85FE3C511E2EB36900586A2D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85FE3C501E2EB36900586A2D /* MapKit.framework */; };
+		85FE3C531E2FA2EC00586A2D /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE3C521E2FA2EC00586A2D /* FormViewController.swift */; };
+		85FE3C551E2FAAE600586A2D /* AddTravelFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE3C541E2FAAE500586A2D /* AddTravelFormViewController.swift */; };
+		85FE3C571E2FAC6B00586A2D /* AddTipFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE3C561E2FAC6B00586A2D /* AddTipFormViewController.swift */; };
 		D806FA8516CFCAEBB3996141 /* Pods_finalproject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8E648AEE421CB033345069 /* Pods_finalproject.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +89,9 @@
 		85FE3C4C1E2E2FE800586A2D /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		85FE3C4E1E2E577D00586A2D /* PROCESS.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = PROCESS.md; sourceTree = "<group>"; };
 		85FE3C501E2EB36900586A2D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		85FE3C521E2FA2EC00586A2D /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		85FE3C541E2FAAE500586A2D /* AddTravelFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTravelFormViewController.swift; sourceTree = "<group>"; };
+		85FE3C561E2FAC6B00586A2D /* AddTipFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTipFormViewController.swift; sourceTree = "<group>"; };
 		8A8E648AEE421CB033345069 /* Pods_finalproject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_finalproject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		910ABA62827A2FE1415E43CE /* Pods_finalprojectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_finalprojectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		929FA43F934B4C49CE5B2098 /* Pods-finalprojectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-finalprojectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-finalprojectTests/Pods-finalprojectTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -233,6 +239,9 @@
 				85AC703F1E2CCCAB008C3E0D /* MenuViewController.swift */,
 				85AC70441E2CE2ED008C3E0D /* AllTravelsViewController.swift */,
 				85FE3C4C1E2E2FE800586A2D /* MapViewController.swift */,
+				85FE3C521E2FA2EC00586A2D /* FormViewController.swift */,
+				85FE3C541E2FAAE500586A2D /* AddTravelFormViewController.swift */,
+				85FE3C561E2FAC6B00586A2D /* AddTipFormViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -557,10 +566,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				85AC70451E2CE2ED008C3E0D /* AllTravelsViewController.swift in Sources */,
+				85FE3C531E2FA2EC00586A2D /* FormViewController.swift in Sources */,
 				85AC703E1E2CCC23008C3E0D /* LoginViewController.swift in Sources */,
+				85FE3C571E2FAC6B00586A2D /* AddTipFormViewController.swift in Sources */,
 				851CA9161E250E6C00DCB9A8 /* README.md in Sources */,
 				85AC70381E28E1CF008C3E0D /* SpecificTravelViewController.swift in Sources */,
 				85FE3C4D1E2E2FE800586A2D /* MapViewController.swift in Sources */,
+				85FE3C551E2FAAE600586A2D /* AddTravelFormViewController.swift in Sources */,
 				85AC70401E2CCCAB008C3E0D /* MenuViewController.swift in Sources */,
 				85FE3C4F1E2E577D00586A2D /* PROCESS.md in Sources */,
 				852C09B81E250BA3000F563F /* ViewController.swift in Sources */,

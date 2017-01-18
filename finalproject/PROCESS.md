@@ -32,6 +32,7 @@
 ## Woensdag, 18 jan
 - Search bar geimplementeerd (in de navigation bar), werkt!! Nog geen autocomplete (dat wil ik nog wel voor de beta versie). 
 - Zoom instellen op kaart wilde niet lukken. 
+- Aanpassen MapViewController op Main.Storyboard: andere vormgeving, paste beter. Formulieren anders vormgeven: met segmented control voor tips/travels.
 
 ## Donderdag, 19 jan
 

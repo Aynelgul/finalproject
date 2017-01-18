@@ -49,17 +49,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
             
-            mapView.showsUserLocation = true
+            // mapView.showsUserLocation = true
         }
-        
-        // Set the zoom level on map.        
-        let span = MKCoordinateSpanMake(0.01, 0.01)
     }
     
     // MARK: Functions/Methods.
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let locValue: CLLocationCoordinate2D = manager.location!.coordinate
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location: CLLocationCoordinate2D = manager.location!.coordinate
+
+        print("locations = \(location.latitude) \(location.longitude)")
+        
+    }
+    
+    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+        print("error with location manager: " + error.description)
+        
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
