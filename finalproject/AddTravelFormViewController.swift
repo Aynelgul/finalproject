@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import Firebase
 
 class AddTravelFormViewController: UIViewController {
+    
+    // LET OP: COUNTRY EN CITY MOETEN OOK MEE NAAR FIREBASE
+    
+    // MARK: Variables.
+    let TipsRef = FIRDatabase.database().reference(withPath: "user-items")
     
     // MARK: Outlets.
     @IBOutlet weak var datePicker: UIDatePicker!

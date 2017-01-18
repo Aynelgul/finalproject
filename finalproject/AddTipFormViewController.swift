@@ -7,24 +7,45 @@
 //
 
 import UIKit
+import Firebase
 
-class AddTipFormViewController: UIViewController {
+class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+
+    // MARK: Variables.
+    let TipsRef = FIRDatabase.database().reference(withPath: "tip-items")
+    var pickerOptions = ["Restaurant", "Hotel", "Park", "Museum", "Shop", "Festival", "Club", "Cafe", "Other"]
+//    var chosenOption: String = ""
     
     // MARK: Outlets
     @IBOutlet weak var descriptionTextField: UITextView!
     @IBOutlet weak var pickerView: UIPickerView!
     
     // MARK: Actions
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // Set borders TextField.
         let myColor : UIColor = UIColor.darkGray
         descriptionTextField.layer.borderColor = myColor.cgColor
-        
         descriptionTextField.layer.borderWidth = 1.0
+        
+        pickerView.dataSource = self
+        pickerView.delegate = self
     }
-
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerOptions[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerOptions.count
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
