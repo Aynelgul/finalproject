@@ -142,14 +142,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5rc-ZK-9kc">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="252"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunset-plane" translatesAutoresizingMaskIntoConstraints="NO" id="f2L-jR-AxW">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beautiful_road_3-wallpaper-2048x1152" translatesAutoresizingMaskIntoConstraints="NO" id="f2L-jR-AxW">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="252"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DSd-tY-dFc">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="252"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.44162632042253519" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20956205985915494" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
-                                                    <segue destination="pZ4-Gz-jHK" kind="show" id="pyT-Eg-Do7"/>
+                                                    <segue destination="pZ4-Gz-jHK" kind="show" identifier="goToTravels" id="pyT-Eg-Do7"/>
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="earth white symbol" translatesAutoresizingMaskIntoConstraints="NO" id="vbq-BN-sQl">
@@ -187,14 +187,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tta-ek-Vvk">
                                         <rect key="frame" x="0.0" y="252" width="320" height="252"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map_people_train_travel_trip-2483aa401909bc0ed4194e0e9aebe860_h_large" translatesAutoresizingMaskIntoConstraints="NO" id="ZM2-Bt-bH7">
-                                                <rect key="frame" x="0.0" y="2" width="320" height="250"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="map_people_train_travel_trip-2483aa401909bc0ed4194e0e9aebe860_h_large" translatesAutoresizingMaskIntoConstraints="NO" id="ZM2-Bt-bH7">
+                                                <rect key="frame" x="0.0" y="1" width="320" height="251"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcG-ge-KzV">
-                                                <rect key="frame" x="0.0" y="2" width="320" height="250"/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcG-ge-KzV">
+                                                <rect key="frame" x="0.0" y="1" width="320" height="251"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.44484485035211269" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
-                                                    <segue destination="xYA-zD-k7W" kind="show" id="l6w-AC-8wO"/>
+                                                    <segue destination="xYA-zD-k7W" kind="show" identifier="goToMap" id="l6w-AC-8wO"/>
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new icon map" translatesAutoresizingMaskIntoConstraints="NO" id="ihu-8r-1vl">
@@ -242,13 +242,19 @@
                             <constraint firstItem="rCE-VK-yBO" firstAttribute="bottom" secondItem="1WJ-UC-FXE" secondAttribute="top" id="rm8-me-daa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Adventure Time" id="gRV-P6-3NP"/>
+                    <navigationItem key="navigationItem" title="Adventure Time" id="gRV-P6-3NP">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="9Yx-gA-0Qo">
+                            <connections>
+                                <action selector="logoutButtonDidTouch:" destination="sN5-nu-6P0" id="oXh-gX-miR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VWV-SL-NUD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3110.625" y="138.38028169014083"/>
         </scene>
-        <!--Map View Controller-->
+        <!--Places-->
         <scene sceneID="ooy-VG-Sp4">
             <objects>
                 <viewController id="xYA-zD-k7W" customClass="MapViewController" customModule="finalproject" customModuleProvider="target" sceneMemberID="viewController">
@@ -260,46 +266,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rOk-a4-zMb">
-                                <rect key="frame" x="0.0" y="64" width="320" height="440"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rOk-a4-zMb">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <subviews>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lpw-oH-k9C">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="440"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lpw-oH-k9C">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                         <connections>
                                             <outlet property="delegate" destination="xYA-zD-k7W" id="8S2-O1-CZW"/>
                                         </connections>
                                     </mapView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6nk-LL-epa">
-                                <rect key="frame" x="0.0" y="505" width="320" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASG-E7-nax">
-                                        <rect key="frame" x="58" y="8" width="86" height="38"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Add Travel"/>
-                                        <connections>
-                                            <segue destination="bvO-nU-xBi" kind="show" id="Hz5-Px-qLa"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZ6-rw-hUl">
-                                        <rect key="frame" x="181" y="10" width="82" height="36"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Add Tip"/>
-                                        <connections>
-                                            <segue destination="sPz-gP-pgu" kind="show" id="R5E-X5-XlD"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="lpw-oH-k9C" firstAttribute="top" secondItem="rOk-a4-zMb" secondAttribute="top" id="11F-q7-5Re"/>
+                                    <constraint firstAttribute="bottom" secondItem="lpw-oH-k9C" secondAttribute="bottom" id="5By-xl-Bxr"/>
+                                    <constraint firstItem="lpw-oH-k9C" firstAttribute="leading" secondItem="rOk-a4-zMb" secondAttribute="leading" id="6S5-Bj-VRS"/>
+                                    <constraint firstAttribute="trailing" secondItem="lpw-oH-k9C" secondAttribute="trailing" id="g4X-ju-6At"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rOk-a4-zMb" firstAttribute="top" secondItem="2lo-2w-7s3" secondAttribute="bottom" id="8kY-9Y-4tv"/>
+                            <constraint firstItem="rOk-a4-zMb" firstAttribute="bottom" secondItem="VJd-YT-zTg" secondAttribute="top" id="FnL-hV-adW"/>
+                            <constraint firstItem="rOk-a4-zMb" firstAttribute="leading" secondItem="BYV-PV-Go9" secondAttribute="leading" id="HHo-FU-W4f"/>
+                            <constraint firstAttribute="trailing" secondItem="rOk-a4-zMb" secondAttribute="trailing" id="OYJ-lY-52e"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Places" id="YN8-jA-sKa">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="Kgi-Ts-bpE">
+                            <connections>
+                                <action selector="showSearchBar:" destination="xYA-zD-k7W" id="2R2-0s-y83"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="lpw-oH-k9C" id="nCD-bg-0wU"/>
                     </connections>
@@ -520,11 +520,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="beautiful_road_3-wallpaper-2048x1152" width="2048" height="1152"/>
         <image name="earth white symbol" width="512" height="512"/>
         <image name="map_people_train_travel_trip-2483aa401909bc0ed4194e0e9aebe860_h_large" width="500" height="334"/>
         <image name="mountains_landscape_hd_4k-3840x2160" width="3840" height="2160"/>
         <image name="new icon map" width="256" height="256"/>
-        <image name="sunset-plane" width="2556" height="1202"/>
         <image name="white plus sign" width="256" height="256"/>
     </resources>
 </document>

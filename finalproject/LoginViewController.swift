@@ -135,6 +135,7 @@ class LoginViewController: UIViewController {
     
     func signedIn(_ user: FIRUser?) {
         emailTextField.text = ""
+        passwordTextField.text = ""
     }
     
     // Function when tap is recognized.
