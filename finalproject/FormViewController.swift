@@ -56,6 +56,10 @@ class FormViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        firstView.isHidden = false
+        secondView.isHidden = true
+        pickLabel.text = "Please select a date"
 
 //        self.cityLabel.text = self.receivedCity
 //        self.countryLabel.text = self.receivedCountry
@@ -70,14 +74,18 @@ class FormViewController: UIViewController {
     }
     
 
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "goToAddTip" {
+            
+            print("REACHES SEGUE")
+            
+            let destination = segue.destination as? AddTipFormViewController
+            
+            destination?.chosenCountry = self.receivedCountry
+            destination?.chosenCity = self.receivedCity
+            
+        }
     }
-    */
 
 }

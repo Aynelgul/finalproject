@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import FirebaseAuth
 
 class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
@@ -16,23 +17,34 @@ class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPick
     let ref = FIRDatabase.database().reference(withPath: "tip-items")
     
     var pickerOptions = ["Restaurant", "Hotel", "Park", "Museum", "Shop", "Festival", "Club", "Cafe", "Other"]
-//    var chosenOption: String = ""
+    var chosenOption = String()
+    var chosenCountry = String()
+    var chosenCity = String()
     
-    // MARK: Outlets
+    // MARK: Outlets.
     @IBOutlet weak var descriptionTextField: UITextView!
     @IBOutlet weak var pickerView: UIPickerView!
+
+    // MARK: Actions.
+    @IBAction func OKButtonDidTouch(_ sender: UIButton) {
+//        if descriptionTextField.text != "" {
+            let newTip = Tip(uid: (FIRAuth.auth()?.currentUser?.uid)!, country: chosenCountry, city: chosenCity, type: chosenOption, description: "test")
+            let tipsRef = self.ref.child(newTip.type)
+        tipsRef.setValue(newTip.toAnyObject())
+
+            self.performSegue(withIdentifier: "goBackToMap", sender: nil)
+//        }
+    }
+
+    // MARK: Functions.
     
-    // MARK: Actions
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let newTip = Tip(uid: "test", country: "test", city: "test", type: "test", description: "test")
-        let tipsRef = self.ref.child(newTip.type)
-        tipsRef.setValue(newTip.toAnyObject())
-        
-        print("REACHED TIP VIEW")
-        print(tipsRef)
-        
+        // Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddTipFormViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = true
+        view.addGestureRecognizer(tap)
         
         // Set borders TextField.
         let myColor : UIColor = UIColor.lightGray
@@ -51,6 +63,12 @@ class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPick
         return pickerOptions[row]
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        self.chosenOption = pickerOptions[row]
+        
+    }
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return pickerOptions.count
     }
@@ -60,20 +78,13 @@ class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPick
         return NSAttributedString(string: str, attributes: [NSForegroundColorAttributeName:UIColor.white])
     }
     
+    // Function when tap is recognized.
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

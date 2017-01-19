@@ -155,11 +155,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
             
             let destination = segue.destination as? FormViewController
             
-            print(self.clickedAnnotationCountry)
-            print(self.clickedAnnotationCity)
-            
             destination?.receivedCountry = self.clickedAnnotationCountry
             destination?.receivedCity = self.clickedAnnotationCity
+            
+            let secondDestination = segue.destination as? AddTipFormViewController
+            
+            secondDestination?.chosenCountry = self.clickedAnnotationCountry
+            secondDestination?.chosenCity = self.clickedAnnotationCity
+            
         }
     }
 
