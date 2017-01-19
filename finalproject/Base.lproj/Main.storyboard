@@ -149,7 +149,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="252"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20956205985915494" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
-                                                    <segue destination="pZ4-Gz-jHK" kind="show" identifier="goToTravels" id="pyT-Eg-Do7"/>
+                                                    <segue destination="pZ4-Gz-jHK" kind="show" identifier="gotoTravels" id="pyT-Eg-Do7"/>
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="earth white symbol" translatesAutoresizingMaskIntoConstraints="NO" id="vbq-BN-sQl">
@@ -310,7 +310,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="lpw-oH-k9C" id="nCD-bg-0wU"/>
-                        <segue destination="B6H-lf-zTf" kind="show" id="GIC-hF-2r9"/>
+                        <segue destination="B6H-lf-zTf" kind="show" identifier="goToForm" id="GIC-hF-2r9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q1R-e3-JZd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -686,6 +686,10 @@
         <scene sceneID="1bZ-Ir-Agg">
             <objects>
                 <viewController id="HTx-kr-s3A" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IbM-hX-WSn"/>
+                        <viewControllerLayoutGuide type="bottom" id="84p-29-RUl"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Qbk-4Z-fKe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -700,6 +704,10 @@
         <scene sceneID="WQi-Ll-0f0">
             <objects>
                 <viewController id="aMk-pQ-EwX" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DRq-zN-foE"/>
+                        <viewControllerLayoutGuide type="bottom" id="2yX-97-AVe"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gPl-fQ-0Wp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -713,7 +721,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rkl-xq-fGA" id="fAp-M1-725">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -737,6 +745,6 @@
         <image name="white plus sign" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="obo-Ne-uMz"/>
+        <segue reference="GIC-hF-2r9"/>
     </inferredMetricsTieBreakers>
 </document>

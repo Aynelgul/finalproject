@@ -7,15 +7,19 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
 class FormViewController: UIViewController {
+    
+    // MARK: Variables.
+    var receivedCountry = String()
+    var receivedCity = String()
     
     // MARK: Outlets
     @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var pickLabel: UILabel!
-    
-    
     
     @IBOutlet weak var firstView: UIView!
     @IBOutlet weak var secondView: UIView!
@@ -53,7 +57,11 @@ class FormViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+//        self.cityLabel.text = self.receivedCity
+//        self.countryLabel.text = self.receivedCountry
+        
+        cityLabel?.text = self.receivedCity
+        countryLabel?.text = self.self.receivedCountry
     }
 
     override func didReceiveMemoryWarning() {

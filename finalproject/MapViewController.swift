@@ -10,13 +10,14 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate, MKMapViewDelegate {
     
     // MARK: Outlets.
     @IBOutlet weak var mapView: MKMapView!
     
     // MARK: Variables.
     let locationManager = CLLocationManager()
+    
     
     var searchController: UISearchController!
     var annotation: MKAnnotation!
@@ -26,6 +27,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
     var error: NSError!
     var pointAnnotation: MKPointAnnotation!
     var pinAnnotationView: MKPinAnnotationView!
+    
+    var clickedAnnotationCountry = String()
+    var clickedAnnotationCity = String()
+    
+    var clickedLatitude = Double()
+    var clickedLongitude = Double()
     
     // MARK: Actions
     @IBAction func showSearchBar(_ sender: UIBarButtonItem) {
@@ -55,9 +62,29 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
     
     // MARK: Functions/Methods.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
         let location: CLLocationCoordinate2D = manager.location!.coordinate
-
         print("locations = \(location.latitude) \(location.longitude)")
+        
+        
+//        let geocoder = CLGeocoder()
+//        geocoder.reverseGeocodeLocation(pointAnnotation.coordinate, completionHandler: { (placemarks, error) -> Void inc
+//            if (error != nil) {
+//                print("Reverse geocoder failed with an error" + error!.localizedDescription)
+//            }
+//            else if placemarks!.count > 0 {
+//                let pm = placemarks![0] as CLPlacemark
+//                self.locationManager.stopUpdatingLocation()
+//                let city = pm.addressDictionary!["City"] as? String
+//                print(city)
+//            }
+//            else {
+//                print("Problems with the data received from geocoder.")
+//            }
+//        })
+        
+        
+        
         
     }
     
@@ -98,21 +125,78 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
         }
     }
     
+    // Check if annotation/pin is clicked.
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        
+        self.locationManager.stopUpdatingLocation()
+        
+        print("PRINT \(pointAnnotation.coordinate)")
+        self.clickedLatitude = pointAnnotation.coordinate.latitude
+        self.clickedLongitude = pointAnnotation.coordinate.longitude
+        
+        // start reversed geocoding, add to variables (bovenaan)
+        
+        var newLocation = CLLocation(latitude: pointAnnotation.coordinate.latitude, longitude: pointAnnotation.coordinate.longitude) //changed!!!
+        print("LOCATION TEST!")
+        print(newLocation)
+        
+        
+        CLGeocoder().reverseGeocodeLocation(newLocation, completionHandler: {(placemarks, error) -> Void in
+            print("REVERSED GEO LOCATION TEST:")
+            print(newLocation)
+            
+            if error != nil {
+                print("Reverse geocoder failed with error" + (error?.localizedDescription)!)
+                return
+            }
+
+            if (placemarks?.count)! > 0 {
+                let pm = placemarks![0] as! CLPlacemark
+                print(pm.locality!)
+                self.clickedAnnotationCity = pm.locality!
+                self.clickedAnnotationCountry = pm.country!
+                print(pm.country!)
+                
+                print("CHECKKK")
+                print(self.clickedAnnotationCountry)
+                print(self.clickedAnnotationCity)
+                
+                self.performSegue(withIdentifier: "goToForm", sender: nil)
+
+            }
+            else {
+                print("Problem with the data received from geocoder")
+            }
+        })
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToForm" {
+            
+            print("REACHES SEGUE")
+            
+            let destination = segue.destination as? FormViewController
+            
+            print(self.clickedAnnotationCountry)
+            print(self.clickedAnnotationCity)
+            
+            destination?.receivedCountry = self.clickedAnnotationCountry
+            destination?.receivedCity = self.clickedAnnotationCity
+        }
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    //    let regionRadius: CLLocationDistance = 1000
+    //    func centerMapOnLocation(location: CLLocation) {
+    //        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
+    //                                                                  regionRadius * 2.0, regionRadius * 2.0)
+    //        mapView.setRegion(coordinateRegion, animated: true)
+    //    }
 
 }
