@@ -14,7 +14,6 @@ import FirebaseDatabase
 class LoginViewController: UIViewController {
     
     // MARK: Variables
-    let ref = FIRDatabase.database().reference(withPath: "Users")
     
     // MARK: Outlets. 
     @IBOutlet weak var emailTextField: UITextField!
@@ -36,6 +35,8 @@ class LoginViewController: UIViewController {
                 return
             }
             self.signedIn(user!)
+            print("REF TEST")
+
             
         }
     }
@@ -75,15 +76,11 @@ class LoginViewController: UIViewController {
                                                 
                                                 return
                                             }
-                                            
-//                                            let newUser = User(uid: (user?.uid)!, email: emailField.text!)
-//                                            let userRef = self.ref.child((user?.uid)!)
-//                                            userRef.setValue(newUser.toAnyObject())
+                                            let ref = FIRDatabase.database().reference(withPath: "Users")
+                                            let newUser = User(uid: (user?.uid)!, email: emailField.text!)
+                                            let userRef = ref.child((user?.uid)!)
+                                            userRef.setValue(newUser.toAnyObject())
                                         }
-                                        
-                                        
-                                        
-                                        
         }
         
         let cancelAction = UIAlertAction(title: "Cancel",
@@ -106,15 +103,14 @@ class LoginViewController: UIViewController {
     }
     
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
-        
         view.addGestureRecognizer(tap)
+        
         
         if let user = FIRAuth.auth()?.currentUser {
             self.signedIn(user)
@@ -155,16 +151,4 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

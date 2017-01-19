@@ -14,7 +14,7 @@ class AddTravelFormViewController: UIViewController {
     // LET OP: COUNTRY EN CITY MOETEN OOK MEE NAAR FIREBASE
     
     // MARK: Variables.
-    let TipsRef = FIRDatabase.database().reference(withPath: "user-items")
+//    let TipsRef = FIRDatabase.database().reference(withPath: "user-items")
     
     // MARK: Outlets.
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -28,7 +28,8 @@ class AddTravelFormViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // Change text color of datePicker.
         datePicker.setValue(UIColor.white, forKeyPath: "textColor")
         datePicker.datePickerMode = .countDownTimer
         datePicker.datePickerMode = .dateAndTime //or whatever your original mode was
@@ -38,16 +39,4 @@ class AddTravelFormViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

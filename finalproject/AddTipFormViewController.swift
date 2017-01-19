@@ -8,11 +8,13 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
 
 class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     // MARK: Variables.
-    let TipsRef = FIRDatabase.database().reference(withPath: "tip-items")
+    let ref = FIRDatabase.database().reference(withPath: "tip-items")
+    
     var pickerOptions = ["Restaurant", "Hotel", "Park", "Museum", "Shop", "Festival", "Club", "Cafe", "Other"]
 //    var chosenOption: String = ""
     
@@ -23,6 +25,13 @@ class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPick
     // MARK: Actions
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let newTip = Tip(uid: "test", country: "test", city: "test", type: "test", description: "test")
+        let tipsRef = self.ref.child(newTip.type)
+        tipsRef.setValue(newTip.toAnyObject())
+        
+        print("REACHED TIP VIEW")
+        print(tipsRef)
         
         
         // Set borders TextField.

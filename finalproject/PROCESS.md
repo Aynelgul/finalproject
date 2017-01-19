@@ -41,8 +41,9 @@
 - Styleguide afgemaakt met groep.
 - Reversed geocoding, gebruikgemaakt van deze link: http://stackoverflow.com/questions/27495328/reverse-geocode-location-in-swift
 - Veel tijd besteed aan reversed geocoding: app crashte in het begin (unwrapping optional value). Dit kwam uiteindelijk doordat hij de functie al aanriep bij het laden van de kaart, terwijl er dan nog niet gezocht is op een plek: dus de latitude/longitude waren nog leeg. Hierna geprobeerd deze opgehaalde info door te geven naar volgende view: kreeg steeds 'lege' labels. Opgelost: segue zat niet op de goede plek (deed de segue te vroeg).
-- Text color kunnen aanpassen! DatePicker: http://stackoverflow.com/questions/28417217/set-text-color-and-font-for-uidatepicker-in-ios8-swift
-- 
+- Text color datePicker kunnen aanpassen!  http://stackoverflow.com/questions/28417217/set-text-color-and-font-for-uidatepicker-in-ios8-swift
+- Text color pickerView kunnen aanpassen! http://stackoverflow.com/questions/40928383/how-to-change-the-font-color-inside-a-picker-view-swift
+- Vastgelopen met users aanmaken in Firebase Database: bij aanmaken reference crashte hij steeds. Melding: Terminating app due to uncaught exception 'FIRAppNotConfigured', reason: 'Failed to get default FIRDatabase instance. Must call FIRApp.configure() before using FIRDatabase.'
 
 ## Vrijdag, 20 jan 2017
 

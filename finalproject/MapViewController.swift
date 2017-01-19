@@ -65,32 +65,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
         
         let location: CLLocationCoordinate2D = manager.location!.coordinate
         print("locations = \(location.latitude) \(location.longitude)")
-        
-        
-//        let geocoder = CLGeocoder()
-//        geocoder.reverseGeocodeLocation(pointAnnotation.coordinate, completionHandler: { (placemarks, error) -> Void inc
-//            if (error != nil) {
-//                print("Reverse geocoder failed with an error" + error!.localizedDescription)
-//            }
-//            else if placemarks!.count > 0 {
-//                let pm = placemarks![0] as CLPlacemark
-//                self.locationManager.stopUpdatingLocation()
-//                let city = pm.addressDictionary!["City"] as? String
-//                print(city)
-//            }
-//            else {
-//                print("Problems with the data received from geocoder.")
-//            }
-//        })
-        
-        
-        
-        
     }
     
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
         print("error with location manager: " + error.description)
-        
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar){

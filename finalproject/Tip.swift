@@ -11,4 +11,44 @@ import Firebase
 
 struct Tip {
     
+    let uid: String
+    let country: String
+    let city: String
+    let type: String
+    let description: String
+    
+    let ref: FIRDatabaseReference?
+    
+    init(uid: String, country: String, city: String, type: String, description: String) {
+
+        self.uid = uid
+        self.country = country
+        self.city = city
+        self.type = type
+        self.description = description
+
+        self.ref = nil
+    }
+    
+    init(snapshot: FIRDataSnapshot) {
+        let snapshotValue = snapshot.value! as! [String: AnyObject]
+        uid = snapshotValue["uid"] as! String
+        country = snapshotValue["country"] as! String
+        city = snapshotValue["city"] as! String
+        type = snapshotValue["type"] as! String
+        description = snapshotValue["description"] as! String
+
+        ref = snapshot.ref
+    }
+    
+    func toAnyObject() -> Any {
+        return [
+            "uid": uid,
+            "country": country,
+            "city": city,
+            "type": type,
+            "description": description
+        ]
+    }
+    
 }

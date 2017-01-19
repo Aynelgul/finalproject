@@ -26,8 +26,8 @@
 		8561EE691E26AAB70040DE70 /* Prototype1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8561EE661E26AAB70040DE70 /* Prototype1.png */; };
 		8561EE6A1E26AAB70040DE70 /* Prototype2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8561EE671E26AAB70040DE70 /* Prototype2.png */; };
 		8561EE6B1E26AAB70040DE70 /* Prototype3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8561EE681E26AAB70040DE70 /* Prototype3.png */; };
+		8575A6581E312B3200D36C5D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8575A6571E312B3200D36C5D /* GoogleService-Info.plist */; };
 		85AC70381E28E1CF008C3E0D /* SpecificTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC70371E28E1CF008C3E0D /* SpecificTravelViewController.swift */; };
-		85AC703A1E2CC98F008C3E0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85AC70391E2CC98F008C3E0D /* GoogleService-Info.plist */; };
 		85AC703E1E2CCC23008C3E0D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC703D1E2CCC23008C3E0D /* LoginViewController.swift */; };
 		85AC70401E2CCCAB008C3E0D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC703F1E2CCCAB008C3E0D /* MenuViewController.swift */; };
 		85AC70451E2CE2ED008C3E0D /* AllTravelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC70441E2CE2ED008C3E0D /* AllTravelsViewController.swift */; };
@@ -84,8 +84,8 @@
 		8561EE661E26AAB70040DE70 /* Prototype1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Prototype1.png; sourceTree = "<group>"; };
 		8561EE671E26AAB70040DE70 /* Prototype2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Prototype2.png; sourceTree = "<group>"; };
 		8561EE681E26AAB70040DE70 /* Prototype3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Prototype3.png; sourceTree = "<group>"; };
+		8575A6571E312B3200D36C5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		85AC70371E28E1CF008C3E0D /* SpecificTravelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpecificTravelViewController.swift; path = ../SpecificTravelViewController.swift; sourceTree = "<group>"; };
-		85AC70391E2CC98F008C3E0D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		85AC703D1E2CCC23008C3E0D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		85AC703F1E2CCCAB008C3E0D /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		85AC70411E2CCFC5008C3E0D /* finalproject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = finalproject.entitlements; sourceTree = "<group>"; };
@@ -165,7 +165,7 @@
 				851CA9141E250E6C00DCB9A8 /* README.md */,
 				851CA9181E2510B800DCB9A8 /* DESIGN.md */,
 				85FE3C4E1E2E577D00586A2D /* PROCESS.md */,
-				85AC70391E2CC98F008C3E0D /* GoogleService-Info.plist */,
+				8575A6571E312B3200D36C5D /* GoogleService-Info.plist */,
 				852C09C11E250BA7000F563F /* Info.plist */,
 			);
 			name = Doc;
@@ -399,7 +399,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85AC703A1E2CC98F008C3E0D /* GoogleService-Info.plist in Resources */,
 				852C09C01E250BA6000F563F /* LaunchScreen.storyboard in Resources */,
 				8561EE6A1E26AAB70040DE70 /* Prototype2.png in Resources */,
 				851CA9151E250E6C00DCB9A8 /* Sketches.jpg in Resources */,
@@ -409,6 +408,7 @@
 				8561EE6B1E26AAB70040DE70 /* Prototype3.png in Resources */,
 				852C09BB1E250BA5000F563F /* Main.storyboard in Resources */,
 				8561EE691E26AAB70040DE70 /* Prototype1.png in Resources */,
+				8575A6581E312B3200D36C5D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
