@@ -128,19 +128,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
     // Check if annotation/pin is clicked.
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         
+        // deze ergens anders neerzetten!! na search oid
         self.locationManager.stopUpdatingLocation()
         
         print("PRINT \(pointAnnotation.coordinate)")
         self.clickedLatitude = pointAnnotation.coordinate.latitude
         self.clickedLongitude = pointAnnotation.coordinate.longitude
         
-        // start reversed geocoding, add to variables (bovenaan)
-        
         var newLocation = CLLocation(latitude: pointAnnotation.coordinate.latitude, longitude: pointAnnotation.coordinate.longitude) //changed!!!
         print("LOCATION TEST!")
         print(newLocation)
         
-        
+        // Convert coordinates to country/city.
         CLGeocoder().reverseGeocodeLocation(newLocation, completionHandler: {(placemarks, error) -> Void in
             print("REVERSED GEO LOCATION TEST:")
             print(newLocation)

@@ -40,7 +40,9 @@
 ## Donderdag, 19 jan 2017
 - Styleguide afgemaakt met groep.
 - Reversed geocoding, gebruikgemaakt van deze link: http://stackoverflow.com/questions/27495328/reverse-geocode-location-in-swift
-- Veel tijd besteed aan reversed geocoding: app crashte in het begin (unwrapping optional value). Dit kwam uiteindelijk doordat hij de functie al aanriep bij het laden van de kaart, terwijl er dan nog niet gezocht is op een plek: dus de latitude/longitude waren nog leeg. Hierna geprobeerd deze opgehaalde info door te geven naar volgende view: kreeg steeds 'lege' labels.
+- Veel tijd besteed aan reversed geocoding: app crashte in het begin (unwrapping optional value). Dit kwam uiteindelijk doordat hij de functie al aanriep bij het laden van de kaart, terwijl er dan nog niet gezocht is op een plek: dus de latitude/longitude waren nog leeg. Hierna geprobeerd deze opgehaalde info door te geven naar volgende view: kreeg steeds 'lege' labels. Opgelost: segue zat niet op de goede plek (deed de segue te vroeg).
+- Text color kunnen aanpassen! DatePicker: http://stackoverflow.com/questions/28417217/set-text-color-and-font-for-uidatepicker-in-ios8-swift
+- 
 
 ## Vrijdag, 20 jan 2017
 

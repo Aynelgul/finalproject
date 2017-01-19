@@ -24,8 +24,9 @@ class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPick
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         // Set borders TextField.
-        let myColor : UIColor = UIColor.darkGray
+        let myColor : UIColor = UIColor.lightGray
         descriptionTextField.layer.borderColor = myColor.cgColor
         descriptionTextField.layer.borderWidth = 1.0
         
@@ -45,6 +46,10 @@ class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPick
         return pickerOptions.count
     }
     
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let str = pickerOptions[row]
+        return NSAttributedString(string: str, attributes: [NSForegroundColorAttributeName:UIColor.white])
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

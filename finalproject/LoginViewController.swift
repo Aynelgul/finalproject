@@ -9,8 +9,12 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseDatabase
 
 class LoginViewController: UIViewController {
+    
+    // MARK: Variables
+    let ref = FIRDatabase.database().reference(withPath: "Users")
     
     // MARK: Outlets. 
     @IBOutlet weak var emailTextField: UITextField!
@@ -71,6 +75,10 @@ class LoginViewController: UIViewController {
                                                 
                                                 return
                                             }
+                                            
+//                                            let newUser = User(uid: (user?.uid)!, email: emailField.text!)
+//                                            let userRef = self.ref.child((user?.uid)!)
+//                                            userRef.setValue(newUser.toAnyObject())
                                         }
                                         
                                         

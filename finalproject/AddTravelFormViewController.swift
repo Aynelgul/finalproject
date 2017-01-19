@@ -29,7 +29,9 @@ class AddTravelFormViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        datePicker.setValue(UIColor.white, forKeyPath: "textColor")
+        datePicker.datePickerMode = .countDownTimer
+        datePicker.datePickerMode = .dateAndTime //or whatever your original mode was
     }
 
     override func didReceiveMemoryWarning() {
