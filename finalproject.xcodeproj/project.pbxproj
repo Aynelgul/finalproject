@@ -27,6 +27,7 @@
 		8561EE6A1E26AAB70040DE70 /* Prototype2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8561EE671E26AAB70040DE70 /* Prototype2.png */; };
 		8561EE6B1E26AAB70040DE70 /* Prototype3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8561EE681E26AAB70040DE70 /* Prototype3.png */; };
 		8575A6581E312B3200D36C5D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8575A6571E312B3200D36C5D /* GoogleService-Info.plist */; };
+		8575A65A1E317BE200D36C5D /* Travel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8575A6591E317BE000D36C5D /* Travel.swift */; };
 		85AC70381E28E1CF008C3E0D /* SpecificTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC70371E28E1CF008C3E0D /* SpecificTravelViewController.swift */; };
 		85AC703E1E2CCC23008C3E0D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC703D1E2CCC23008C3E0D /* LoginViewController.swift */; };
 		85AC70401E2CCCAB008C3E0D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC703F1E2CCCAB008C3E0D /* MenuViewController.swift */; };
@@ -85,6 +86,7 @@
 		8561EE671E26AAB70040DE70 /* Prototype2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Prototype2.png; sourceTree = "<group>"; };
 		8561EE681E26AAB70040DE70 /* Prototype3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Prototype3.png; sourceTree = "<group>"; };
 		8575A6571E312B3200D36C5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8575A6591E317BE000D36C5D /* Travel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Travel.swift; sourceTree = "<group>"; };
 		85AC70371E28E1CF008C3E0D /* SpecificTravelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpecificTravelViewController.swift; path = ../SpecificTravelViewController.swift; sourceTree = "<group>"; };
 		85AC703D1E2CCC23008C3E0D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		85AC703F1E2CCCAB008C3E0D /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 			children = (
 				8535E92F1E301D760037D871 /* User.swift */,
 				8535E9311E301F750037D871 /* Tip.swift */,
+				8575A6591E317BE000D36C5D /* Travel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 				85AC703E1E2CCC23008C3E0D /* LoginViewController.swift in Sources */,
 				85FE3C571E2FAC6B00586A2D /* AddTipFormViewController.swift in Sources */,
 				851CA9161E250E6C00DCB9A8 /* README.md in Sources */,
+				8575A65A1E317BE200D36C5D /* Travel.swift in Sources */,
 				85AC70381E28E1CF008C3E0D /* SpecificTravelViewController.swift in Sources */,
 				8535E9301E301D760037D871 /* User.swift in Sources */,
 				85FE3C4D1E2E2FE800586A2D /* MapViewController.swift in Sources */,
