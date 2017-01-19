@@ -86,6 +86,13 @@ class FormViewController: UIViewController {
             destination?.chosenCity = self.receivedCity
             
         }
+        
+        if segue.identifier == "goToAddTravel" {
+            let destination = segue.destination as? AddTravelFormViewController
+            
+            destination?.chosenCountryTravel = self.receivedCountry
+            destination?.chosenCityTravel = self.receivedCity
+        }
     }
 
 }

@@ -14,13 +14,24 @@ class AddTravelFormViewController: UIViewController {
     // LET OP: COUNTRY EN CITY MOETEN OOK MEE NAAR FIREBASE
     
     // MARK: Variables.
-//    let TipsRef = FIRDatabase.database().reference(withPath: "user-items")
+    let ref = FIRDatabase.database().reference(withPath: "travel-items")
+    
+    var chosenCountryTravel = String()
+    var chosenCityTravel = String()
     
     // MARK: Outlets.
     @IBOutlet weak var datePicker: UIDatePicker!
     
     // MARK: Actions
     @IBAction func OKButtonDidTouch(_ sender: UIButton) {
+        
+        let newTravel = Travel(country: self.chosenCountryTravel, city: self.chosenCityTravel, uids: [(FIRAuth.auth()?.currentUser?.uid)!, "buddy uid"])
+        
+        let travelRef = self.ref.child(newTravel.country)
+        travelRef.setValue(newTravel.toAnyObject())
+
+        self.performSegue(withIdentifier: "goToTravelList", sender: nil)
+        
     }
     
     @IBAction func cancelButtonDidTouch(_ sender: UIButton) {

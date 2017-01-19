@@ -624,6 +624,7 @@
                                 <state key="normal" title="OK"/>
                                 <connections>
                                     <action selector="OKButtonDidTouch:" destination="3K9-7g-ZeW" eventType="touchUpInside" id="bin-wV-qqJ"/>
+                                    <segue destination="pZ4-Gz-jHK" kind="show" identifier="goToTravelList" id="Jb9-R5-2LV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -816,6 +817,7 @@
         <image name="white plus sign" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Jb9-R5-2LV"/>
         <segue reference="GIC-hF-2r9"/>
         <segue reference="WQI-tt-crh"/>
     </inferredMetricsTieBreakers>
