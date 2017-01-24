@@ -30,6 +30,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
     
     var clickedAnnotationCountry = String()
     var clickedAnnotationCity = String()
+    var clickedAnnotationCountryCode = String()
     
     var clickedLatitude = Double()
     var clickedLongitude = Double()
@@ -103,7 +104,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
         }
     }
     
-    // Check if annotation/pin is clicked.
+    // When annotation/pin is clicked.
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         
         // deze ergens anders neerzetten!! na search oid
@@ -132,6 +133,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
                 print(pm.locality!)
                 self.clickedAnnotationCity = pm.locality!
                 self.clickedAnnotationCountry = pm.country!
+                print("Wat is de Country Code???:")
+                print(pm.isoCountryCode)
                 print(pm.country!)
                 
                 print("CHECKKK")
@@ -154,14 +157,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
             print("REACHES SEGUE")
             
             let destination = segue.destination as? FormViewController
-            
             destination?.receivedCountry = self.clickedAnnotationCountry
             destination?.receivedCity = self.clickedAnnotationCity
             
             let secondDestination = segue.destination as? AddTipFormViewController
-            
             secondDestination?.chosenCountry = self.clickedAnnotationCountry
             secondDestination?.chosenCity = self.clickedAnnotationCity
+            
+            let thirdDestination = segue.destination as? ShowInfoViewController
+            thirdDestination?.countryCodeRecheiver = self.clickedAnnotationCountryCode
             
         }
     }

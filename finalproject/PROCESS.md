@@ -56,5 +56,5 @@
 - Begonnen met opgehaalde Firebase data filteren op UIDs; gelukt bij travels (loopen door de UIDs).
 
 ## Dinsdag, 24 jan 2017
-- 
+- Tegen groot probleem opgelopen: MapKit zoekt automatisch landen/steden in de taal van je locatie. Echter, mijn API's werken alleen met Engelse landnamen.. Gekeken naar waarden die gelijk blijven per land in elke taal: country code! Deze opgehaald met mapkit reversed geocoding en geprobeerd toe te wijzen aan de API.
 - 

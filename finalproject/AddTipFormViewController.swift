@@ -27,13 +27,13 @@ class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPick
 
     // MARK: Actions.
     @IBAction func OKButtonDidTouch(_ sender: UIButton) {
-//        if descriptionTextField.text != "" {
-            let newTip = Tip(uid: (FIRAuth.auth()?.currentUser?.uid)!, country: chosenCountry, city: chosenCity, type: chosenOption, description: "test")
+        if descriptionTextField.text != "" {
+            let newTip = Tip(uid: (FIRAuth.auth()?.currentUser?.uid)!, country: chosenCountry, city: chosenCity, type: chosenOption, description: descriptionTextField.text)
             let tipsRef = self.ref.child(newTip.type)
         tipsRef.setValue(newTip.toAnyObject())
 
             self.performSegue(withIdentifier: "goBackToMap", sender: nil)
-//        }
+        }
     }
 
     // MARK: Functions.
@@ -44,6 +44,7 @@ class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPick
         // Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddTipFormViewController.dismissKeyboard))
         tap.cancelsTouchesInView = true
+        
         view.addGestureRecognizer(tap)
         
         // Set borders TextField.

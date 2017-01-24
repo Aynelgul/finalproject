@@ -22,13 +22,14 @@ class ShowInfoViewController: UIViewController {
     // MARK: Variables.
     var countryReceiver = String()
     var cityRecheiver = String()
+    var countryCodeRecheiver = String()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         countryLabel.text = countryReceiver
         cityLabel.text = cityRecheiver
-        HTTPSrequest(title: countryReceiver)
+        HTTPSrequest(title: countryCodeRecheiver)
     }
     
     func HTTPSrequest(title: String) {
@@ -97,16 +98,4 @@ class ShowInfoViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -26,7 +26,7 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        travelsTableView.dataSource = self
+
         
         travelRef.observe(.value, with: { snapshot in
             var newItems: [Travel] = []
@@ -72,7 +72,9 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
         let cityName = travelItems[indexPath.row].city
         self.countrySegueName = countryName
         self.citySegueName = cityName
-
+        
+        print("BEFORE PERFOM SEGUE")
+        
         performSegue(withIdentifier: "goToSpecifics", sender: nil)
     }
     
@@ -96,7 +98,6 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
             
             destination?.countryReceiver = self.countrySegueName
             destination?.cityRecheiver = self.citySegueName
-            
         }
     }
     
