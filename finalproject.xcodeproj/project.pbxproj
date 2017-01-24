@@ -34,6 +34,8 @@
 		85AC703E1E2CCC23008C3E0D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC703D1E2CCC23008C3E0D /* LoginViewController.swift */; };
 		85AC70401E2CCCAB008C3E0D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC703F1E2CCCAB008C3E0D /* MenuViewController.swift */; };
 		85AC70451E2CE2ED008C3E0D /* AllTravelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC70441E2CE2ED008C3E0D /* AllTravelsViewController.swift */; };
+		85AC7E821E376CDF007BB78F /* ShowInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC7E811E376CDF007BB78F /* ShowInfoViewController.swift */; };
+		85AC7E841E376D0B007BB78F /* ShowTipsAndBuddiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC7E831E376D0B007BB78F /* ShowTipsAndBuddiesViewController.swift */; };
 		85FE3C4D1E2E2FE800586A2D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE3C4C1E2E2FE800586A2D /* MapViewController.swift */; };
 		85FE3C4F1E2E577D00586A2D /* PROCESS.md in Sources */ = {isa = PBXBuildFile; fileRef = 85FE3C4E1E2E577D00586A2D /* PROCESS.md */; };
 		85FE3C511E2EB36900586A2D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85FE3C501E2EB36900586A2D /* MapKit.framework */; };
@@ -96,6 +98,8 @@
 		85AC703F1E2CCCAB008C3E0D /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		85AC70411E2CCFC5008C3E0D /* finalproject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = finalproject.entitlements; sourceTree = "<group>"; };
 		85AC70441E2CE2ED008C3E0D /* AllTravelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTravelsViewController.swift; sourceTree = "<group>"; };
+		85AC7E811E376CDF007BB78F /* ShowInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowInfoViewController.swift; sourceTree = "<group>"; };
+		85AC7E831E376D0B007BB78F /* ShowTipsAndBuddiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTipsAndBuddiesViewController.swift; sourceTree = "<group>"; };
 		85FE3C4C1E2E2FE800586A2D /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		85FE3C4E1E2E577D00586A2D /* PROCESS.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = PROCESS.md; sourceTree = "<group>"; };
 		85FE3C501E2EB36900586A2D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -254,6 +258,8 @@
 				85FE3C561E2FAC6B00586A2D /* AddTipFormViewController.swift */,
 				8575A65B1E31860900D36C5D /* UserTravelsCell.swift */,
 				8575A65F1E318CAA00D36C5D /* TipsBuddiesCell.swift */,
+				85AC7E811E376CDF007BB78F /* ShowInfoViewController.swift */,
+				85AC7E831E376D0B007BB78F /* ShowTipsAndBuddiesViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -580,11 +586,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85AC7E841E376D0B007BB78F /* ShowTipsAndBuddiesViewController.swift in Sources */,
 				85AC70451E2CE2ED008C3E0D /* AllTravelsViewController.swift in Sources */,
 				85FE3C531E2FA2EC00586A2D /* FormViewController.swift in Sources */,
 				8575A65C1E31860900D36C5D /* UserTravelsCell.swift in Sources */,
 				85AC703E1E2CCC23008C3E0D /* LoginViewController.swift in Sources */,
 				8575A6601E318CAA00D36C5D /* TipsBuddiesCell.swift in Sources */,
+				85AC7E821E376CDF007BB78F /* ShowInfoViewController.swift in Sources */,
 				85FE3C571E2FAC6B00586A2D /* AddTipFormViewController.swift in Sources */,
 				851CA9161E250E6C00DCB9A8 /* README.md in Sources */,
 				8575A65A1E317BE200D36C5D /* Travel.swift in Sources */,

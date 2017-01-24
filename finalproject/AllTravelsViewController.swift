@@ -30,8 +30,6 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
             
             for item in snapshot.children {
                 let travelItem = Travel(snapshot: item as! FIRDataSnapshot)
-
-                print(travelItem.country)
                 
                 for user in travelItem.uids {
                     if user == (FIRAuth.auth()?.currentUser?.uid)! {
@@ -41,9 +39,6 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
             }
             
             self.travelItems = newItems
-            print("NEW ITEMS:")
-            print(newItems)
-            
             self.travelsTableView.reloadData()
         })
     }

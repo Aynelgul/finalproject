@@ -17,6 +17,7 @@
 - Apple ID doet het niet (iets met de bundle identifier, weet nog niet precies wat er aan de hand is). Kan wel gewoon doorwerken.
 
 ## Vrijdag, 13 jan 2017
+- MapKit beetje uitgezocht en in main.storyboard gezet.
 
 ## Maandag, 16 jan 2017
 - Apple ID nog steeds niet gelukt: geeft error. Hierdoor kan ik hem nog steeds niet runnen  op telefoon. Hierdoor keychain ook nog niet kunnen activeren (enable), voor Firebase. Doet het verder wel (vaag).
@@ -25,6 +26,7 @@
 - Voor het eerst simulator op laptop kunnen runnen: app crashte meteen. Bug is opgelost: GoogleService-Info.plist was opgeslagen onder een naam die hij niet herkende (GoogleServive-Info-2.plist).
 - Inloggen is gelukt: wordt ook aangemaakt in Firebase.
 - Sign up ook gelukt: via Alert, voegt ook toe aan Firebase en logt gebruiker meteen in.
+- Inlog/signup errors ondervangen met Alerts.
 - MapKit vraagt nu (eerste keer) om toestemming voor ophalen User Location: opent de kaart dan op de huidige locatie, nog geen zoom toegevoegd
 - Nagedacht over hoe ik data wil representeren in Firebase; welke roots/child references: waarschijnlijk aparte 'lijsten' met eentje voor users met hun travels en eentje met de tips (gelinkt aan landen/steden).
 - Apple ID error is opgelost: bundle identifier was niet uniek (genoeg). Keychain nu ook kunnen activeren. App eindelijk op telefoon kunnen runnen: werkt naar verwachting.
@@ -47,8 +49,12 @@
 - Models verder opgezet; info schrijven naar Firebase lukt nu.
 
 ## Vrijdag, 20 jan 2017
+- Begonnen met opzetten tableview voor de Travels. De twee basisfuncties werken (data wordt erin gezet), didSelectRow werkt niet.. Komt niet bij de functie. Niet kunnen oplossen vandaag.
 
-## Maandag, 
+## Maandag, 23 jan 2017
+- Nog steeds vastgelopen op bug in tableview; didSelectRow wilt niet werken; wordt niet gecalled. Er gaat iets mis met de delegate connectie denk ik.. Al geprobeerd opnieuw te doen. Daarna even gelaten: kostte heel veel tijd.
+- Begonnen met opgehaalde Firebase data filteren op UIDs; gelukt bij travels (loopen door de UIDs).
 
-
-(nog invoegen op de dagen in process book: links tussen views leggen, mapkit uitzoeken en in view zetten, ondervangen errors met inloggen en sign up).
+## Dinsdag, 24 jan 2017
+- 
+- 
