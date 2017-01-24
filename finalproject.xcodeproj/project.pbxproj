@@ -28,6 +28,8 @@
 		8561EE6B1E26AAB70040DE70 /* Prototype3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8561EE681E26AAB70040DE70 /* Prototype3.png */; };
 		8575A6581E312B3200D36C5D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8575A6571E312B3200D36C5D /* GoogleService-Info.plist */; };
 		8575A65A1E317BE200D36C5D /* Travel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8575A6591E317BE000D36C5D /* Travel.swift */; };
+		8575A65C1E31860900D36C5D /* UserTravelsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8575A65B1E31860900D36C5D /* UserTravelsCell.swift */; };
+		8575A6601E318CAA00D36C5D /* TipsBuddiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8575A65F1E318CAA00D36C5D /* TipsBuddiesCell.swift */; };
 		85AC70381E28E1CF008C3E0D /* SpecificTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC70371E28E1CF008C3E0D /* SpecificTravelViewController.swift */; };
 		85AC703E1E2CCC23008C3E0D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC703D1E2CCC23008C3E0D /* LoginViewController.swift */; };
 		85AC70401E2CCCAB008C3E0D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC703F1E2CCCAB008C3E0D /* MenuViewController.swift */; };
@@ -87,6 +89,8 @@
 		8561EE681E26AAB70040DE70 /* Prototype3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Prototype3.png; sourceTree = "<group>"; };
 		8575A6571E312B3200D36C5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8575A6591E317BE000D36C5D /* Travel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Travel.swift; sourceTree = "<group>"; };
+		8575A65B1E31860900D36C5D /* UserTravelsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTravelsCell.swift; sourceTree = "<group>"; };
+		8575A65F1E318CAA00D36C5D /* TipsBuddiesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsBuddiesCell.swift; sourceTree = "<group>"; };
 		85AC70371E28E1CF008C3E0D /* SpecificTravelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpecificTravelViewController.swift; path = ../SpecificTravelViewController.swift; sourceTree = "<group>"; };
 		85AC703D1E2CCC23008C3E0D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		85AC703F1E2CCCAB008C3E0D /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -248,6 +252,8 @@
 				85FE3C521E2FA2EC00586A2D /* FormViewController.swift */,
 				85FE3C541E2FAAE500586A2D /* AddTravelFormViewController.swift */,
 				85FE3C561E2FAC6B00586A2D /* AddTipFormViewController.swift */,
+				8575A65B1E31860900D36C5D /* UserTravelsCell.swift */,
+				8575A65F1E318CAA00D36C5D /* TipsBuddiesCell.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -576,7 +582,9 @@
 			files = (
 				85AC70451E2CE2ED008C3E0D /* AllTravelsViewController.swift in Sources */,
 				85FE3C531E2FA2EC00586A2D /* FormViewController.swift in Sources */,
+				8575A65C1E31860900D36C5D /* UserTravelsCell.swift in Sources */,
 				85AC703E1E2CCC23008C3E0D /* LoginViewController.swift in Sources */,
+				8575A6601E318CAA00D36C5D /* TipsBuddiesCell.swift in Sources */,
 				85FE3C571E2FAC6B00586A2D /* AddTipFormViewController.swift in Sources */,
 				851CA9161E250E6C00DCB9A8 /* README.md in Sources */,
 				8575A65A1E317BE200D36C5D /* Travel.swift in Sources */,
