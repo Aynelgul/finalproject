@@ -9,9 +9,6 @@
 import UIKit
 
 class ShowTipsAndBuddiesViewController: UIViewController {
-    
-    // MARK: Outlets.
-    @IBOutlet weak var buddyEmailLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()

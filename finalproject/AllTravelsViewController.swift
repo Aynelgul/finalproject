@@ -17,6 +17,9 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
     
     var travelItems: [Travel] = []
     
+    var countrySegueName = String()
+    var citySegueName = String()
+    
     // MARK: Outlets.
     @IBOutlet weak var travelsTableView: UITableView!
     
@@ -63,10 +66,12 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let name = items[indexPath.row].name
-//        self.countrySegueName = name
+        print("SHOULD PERFORM SEGUE; DIDSELECTROW FUNC")
         
-        print("SHOULD PERFORM SEGUE")
+        let countryName = travelItems[indexPath.row].country
+        let cityName = travelItems[indexPath.row].city
+        self.countrySegueName = countryName
+        self.citySegueName = cityName
 
         performSegue(withIdentifier: "goToSpecifics", sender: nil)
     }
@@ -81,6 +86,19 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
 //            travelItem.ref?.removeValue()
 //            
     
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToSpecifics" {
+            
+            print("REACHES SEGUE, PREPARE")
+            
+            let destination = segue.destination as? ShowInfoViewController
+            
+            destination?.countryReceiver = self.countrySegueName
+            destination?.cityRecheiver = self.citySegueName
+            
+        }
+    }
     
     
     override func didReceiveMemoryWarning() {

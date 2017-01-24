@@ -967,7 +967,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="484"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tipCell" rowHeight="100" id="rkl-xq-fGA">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tipCell" rowHeight="100" id="rkl-xq-fGA" customClass="TipsBuddiesCell" customModule="finalproject" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rkl-xq-fGA" id="fAp-M1-725">
@@ -1000,6 +1000,10 @@
                                                 <constraint firstItem="QFi-7O-Jn4" firstAttribute="trailing" secondItem="fAp-M1-725" secondAttribute="trailingMargin" id="qxV-PB-s6b"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="yyZ-Iy-EXS" id="u2y-G4-kdX"/>
+                                            <outlet property="titleLabel" destination="QFi-7O-Jn4" id="B0R-Yk-UuG"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -1016,9 +1020,6 @@
                             <constraint firstAttribute="trailing" secondItem="Q8l-mk-9JU" secondAttribute="trailing" id="erk-8X-eua"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="buddyEmailLabel" destination="yyZ-Iy-EXS" id="q6z-Ug-O7f"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8gr-bj-UB3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
