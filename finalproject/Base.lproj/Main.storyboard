@@ -998,8 +998,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="gPl-fQ-0Wp" id="8fe-gD-84R"/>
-                                    <outlet property="delegate" destination="gPl-fQ-0Wp" id="cJG-R2-uVi"/>
+                                    <outlet property="dataSource" destination="aMk-pQ-EwX" id="iOb-k9-15C"/>
+                                    <outlet property="delegate" destination="aMk-pQ-EwX" id="bfv-7K-xhg"/>
                                 </connections>
                             </tableView>
                         </subviews>
