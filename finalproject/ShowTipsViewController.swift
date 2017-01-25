@@ -20,6 +20,7 @@ class ShowTipsViewController: UIViewController, UITableViewDelegate, UITableView
     
     // MARK: Outlets
     @IBOutlet weak var tipsTableView: UITableView!
+    
 
 
     override func viewDidLoad() {
@@ -49,11 +50,6 @@ class ShowTipsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tipCell", for: indexPath) as! UserTipsCell
-
-//        let item = tipItems[indexPath.row].type
-//        let item2 = tipItems[indexPath.row].description
-//        cell.tipTitleLabel.text = item
-//        cell.tipDescriptionLabel.text = item2
         
         let item = tipItems[indexPath.row]
         cell.tipTitleLabel.text = item.type
