@@ -15,6 +15,7 @@ class FormViewController: UIViewController {
     // MARK: Variables.
     var receivedCountry = String()
     var receivedCity = String()
+    var reveivedCountryCode = String()
     
     // MARK: Outlets
     @IBOutlet weak var countryLabel: UILabel!
@@ -43,7 +44,7 @@ class FormViewController: UIViewController {
         case 0:
             firstView.isHidden = false
             secondView.isHidden = true
-            pickLabel.text = "Please select a date"
+            pickLabel.text = "Select the date"
         case 1:
             firstView.isHidden = true
             secondView.isHidden = false
@@ -57,6 +58,12 @@ class FormViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddTipFormViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = true
+        
+        view.addGestureRecognizer(tap)
+        
         firstView.isHidden = false
         secondView.isHidden = true
         pickLabel.text = "Please select a date"
@@ -66,6 +73,11 @@ class FormViewController: UIViewController {
         
         cityLabel?.text = self.receivedCity
         countryLabel?.text = self.self.receivedCountry
+    }
+    
+    // Function when tap is recognized.
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,9 +89,6 @@ class FormViewController: UIViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToAddTip" {
-            
-            print("REACHES SEGUE")
-            
             let destination = segue.destination as? AddTipFormViewController
             
             destination?.chosenCountry = self.receivedCountry
@@ -92,6 +101,7 @@ class FormViewController: UIViewController {
             
             destination?.chosenCountryTravel = self.receivedCountry
             destination?.chosenCityTravel = self.receivedCity
+            destination?.chosenCountryCodeTravel = self.reveivedCountryCode
         }
     }
 

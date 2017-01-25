@@ -10,11 +10,18 @@ import UIKit
 
 class SpecificTravelViewController: UIViewController {
     
+    // MARK: Variables.
+    var countryReceiver = String()
+    var cityRecheiver = String()
+    var countryCodeRecheiver = String()
+    var uidsReceiver: [String] = []
+    
     // MARK: Outlets.
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     @IBOutlet weak var firstView: UIView!
     @IBOutlet weak var secondView: UIView!
+    @IBOutlet weak var thirdView: UIView!
     
     
     // Mark: Actions
@@ -25,14 +32,15 @@ class SpecificTravelViewController: UIViewController {
         case 0:
             firstView.isHidden = false
             secondView.isHidden = true
-//            pickLabel.text = "Please select a date"
+            thirdView.isHidden = true
         case 1:
             firstView.isHidden = true
-            secondView.isHidden = false
-//            pickLabel.text = "What kind of tip is it?"
+            secondView.isHidden = true
+            thirdView.isHidden = false
         case 2:
             firstView.isHidden = true
             secondView.isHidden = false
+            thirdView.isHidden = true
         default:
             break;
         }
@@ -41,8 +49,10 @@ class SpecificTravelViewController: UIViewController {
     // Mark: Functions.
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        firstView.isHidden = false
+        secondView.isHidden = true
+        thirdView.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,14 +61,27 @@ class SpecificTravelViewController: UIViewController {
     }
     
 
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "gotoInfoContainer" {
+            
+            let destination = segue.destination as? ShowInfoViewController
+            
+            destination?.countryReceiver = self.countryReceiver
+            destination?.cityRecheiver = self.cityRecheiver
+            destination?.countryCodeRecheiver = self.countryCodeRecheiver
+        }
+        
+        if segue.identifier == "gotoTipsContainer" {
+            let secondDestination = segue.destination as? ShowTipsViewController
+            secondDestination?.currentCity = self.cityRecheiver
+            
+            print(self.cityRecheiver)
+        }
+        
+        if segue.identifier == "gotoBuddiesContainer" {
+            let thirdDestination = segue.destination as? ShowBuddiesViewController
+            thirdDestination?.allTravelers = self.uidsReceiver
+        }
     }
-    */
-
 }

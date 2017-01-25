@@ -115,13 +115,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
         self.clickedLongitude = pointAnnotation.coordinate.longitude
         
         var newLocation = CLLocation(latitude: pointAnnotation.coordinate.latitude, longitude: pointAnnotation.coordinate.longitude) //changed!!!
-        print("LOCATION TEST!")
-        print(newLocation)
         
         // Convert coordinates to country/city.
         CLGeocoder().reverseGeocodeLocation(newLocation, completionHandler: {(placemarks, error) -> Void in
-            print("REVERSED GEO LOCATION TEST:")
-            print(newLocation)
             
             if error != nil {
                 print("Reverse geocoder failed with error" + (error?.localizedDescription)!)
@@ -133,13 +129,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
                 print(pm.locality!)
                 self.clickedAnnotationCity = pm.locality!
                 self.clickedAnnotationCountry = pm.country!
-                print("Wat is de Country Code???:")
-                print(pm.isoCountryCode)
-                print(pm.country!)
-                
-                print("CHECKKK")
-                print(self.clickedAnnotationCountry)
-                print(self.clickedAnnotationCity)
+                self.clickedAnnotationCountryCode = pm.isoCountryCode!
                 
                 self.performSegue(withIdentifier: "goToForm", sender: nil)
 
@@ -154,18 +144,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToForm" {
             
-            print("REACHES SEGUE")
-            
             let destination = segue.destination as? FormViewController
             destination?.receivedCountry = self.clickedAnnotationCountry
             destination?.receivedCity = self.clickedAnnotationCity
+            destination?.reveivedCountryCode = self.clickedAnnotationCountryCode
             
             let secondDestination = segue.destination as? AddTipFormViewController
             secondDestination?.chosenCountry = self.clickedAnnotationCountry
             secondDestination?.chosenCity = self.clickedAnnotationCity
-            
-            let thirdDestination = segue.destination as? ShowInfoViewController
-            thirdDestination?.countryCodeRecheiver = self.clickedAnnotationCountryCode
             
         }
     }

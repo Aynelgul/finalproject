@@ -1,19 +1,17 @@
 //
-//  TipsBuddiesCell.swift
+//  UserBuddiesCell.swift
 //  finalproject
 //
-//  Created by Aynel Gül on 20-01-17.
+//  Created by Aynel Gül on 25-01-17.
 //  Copyright © 2017 Aynel Gül. All rights reserved.
 //
 
 import UIKit
 
-class TipsBuddiesCell: UITableViewCell {
+class UserBuddiesCell: UITableViewCell {
     
-    // MARK: Outlets.
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    
+    @IBOutlet weak var buddyEmailLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

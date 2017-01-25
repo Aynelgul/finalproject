@@ -34,6 +34,14 @@ class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPick
 
             self.performSegue(withIdentifier: "goBackToMap", sender: nil)
         }
+        else {
+            let alert = UIAlertController(title: "Oops!", message: "Please fill in a description.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
+            return
+
+        }
     }
 
     // MARK: Functions.

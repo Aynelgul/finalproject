@@ -11,13 +11,12 @@ import Firebase
 
 class AddTravelFormViewController: UIViewController {
     
-    // LET OP: COUNTRY EN CITY MOETEN OOK MEE NAAR FIREBASE
-    
     // MARK: Variables.
     let ref = FIRDatabase.database().reference(withPath: "travel-items")
     
     var chosenCountryTravel = String()
     var chosenCityTravel = String()
+    var chosenCountryCodeTravel = String()
     
     // MARK: Outlets.
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -25,7 +24,8 @@ class AddTravelFormViewController: UIViewController {
     // MARK: Actions
     @IBAction func OKButtonDidTouch(_ sender: UIButton) {
         
-        let newTravel = Travel(country: self.chosenCountryTravel, city: self.chosenCityTravel, uids: [(FIRAuth.auth()?.currentUser?.uid)!, "buddy uid"])
+        let newTravel = Travel(country: self.chosenCountryTravel, city: self.chosenCityTravel, countryCode: chosenCountryCodeTravel, uids: [(FIRAuth.auth()?.currentUser?.uid)!, "buddy uid"])
+
         
         let travelRef = self.ref.child(newTravel.country)
         travelRef.setValue(newTravel.toAnyObject())
@@ -39,6 +39,7 @@ class AddTravelFormViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         // Change text color of datePicker.
         datePicker.setValue(UIColor.white, forKeyPath: "textColor")

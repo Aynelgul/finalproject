@@ -27,6 +27,9 @@ class ShowInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("COUNTRY CODE RECEIVER:")
+        print(countryCodeRecheiver)
+        
         countryLabel.text = countryReceiver
         cityLabel.text = cityRecheiver
         HTTPSrequest(title: countryCodeRecheiver)

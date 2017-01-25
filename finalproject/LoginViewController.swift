@@ -62,7 +62,7 @@ class LoginViewController: UIViewController {
                                                     self.present(alert, animated: true, completion: nil)
                                                 }
                                                 
-                                                // CHeck if password is long enough.
+                                                // Check if password is long enough.
                                                 if error.localizedDescription == "The password must be 6 characters long or more." {
                                                     let alert = UIAlertController(title: "Oops!", message: "The password must be 6 characters long or more.", preferredStyle: UIAlertControllerStyle.alert)
                                                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))

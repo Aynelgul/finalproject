@@ -19,6 +19,8 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
     
     var countrySegueName = String()
     var citySegueName = String()
+    var countryCodeSegueName = String()
+    var uidsForSeque: [String] = []
     
     // MARK: Outlets.
     @IBOutlet weak var travelsTableView: UITableView!
@@ -66,14 +68,15 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("SHOULD PERFORM SEGUE; DIDSELECTROW FUNC")
-        
         let countryName = travelItems[indexPath.row].country
         let cityName = travelItems[indexPath.row].city
+        let countryCode = travelItems[indexPath.row].countryCode
+        let uids = travelItems[indexPath.row].uids
+        
         self.countrySegueName = countryName
         self.citySegueName = cityName
-        
-        print("BEFORE PERFOM SEGUE")
+        self.countryCodeSegueName = countryCode
+        self.uidsForSeque = uids
         
         performSegue(withIdentifier: "goToSpecifics", sender: nil)
     }
@@ -92,12 +95,18 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToSpecifics" {
             
-            print("REACHES SEGUE, PREPARE")
-            
-            let destination = segue.destination as? ShowInfoViewController
+            let destination = segue.destination as? SpecificTravelViewController
             
             destination?.countryReceiver = self.countrySegueName
             destination?.cityRecheiver = self.citySegueName
+            destination?.countryCodeRecheiver = self.countryCodeSegueName
+            destination?.uidsReceiver = self.uidsForSeque
+
+//            let secondDestination = segue.destination as? ShowTipsViewController
+//            
+//            secondDestination?.currentCity = self.citySegueName
+//            print("secondDestination segue city:")
+//            print(self.citySegueName)
         }
     }
     
