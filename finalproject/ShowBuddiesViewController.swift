@@ -12,9 +12,6 @@ import Firebase
 class ShowBuddiesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: Variables.
-//    var test = ["buddy test1", "buddy test2", "buddy test3"]
-    
-//    let travelRef = FIRDatabase.database().reference(withPath: "travel-items")
     var travelItems: [Travel] = []
     var allTravelers: [String] = []
     var travelBuddies: [String] = []
@@ -22,6 +19,10 @@ class ShowBuddiesViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: Outlets.
     @IBOutlet weak var buddiesTableView: UITableView!
 
+    // MARK: Actions.
+    @IBAction func inviteButtonDidTouch(_ sender: UIButton) {
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,24 +32,7 @@ class ShowBuddiesViewController: UIViewController, UITableViewDelegate, UITableV
                 travelBuddies.append(traveler)
             }
         }
-        
-        
-//        travelRef.observe(.value, with: { snapshot in
-//            var newItems: [Travel] = []
-//            
-//            for item in snapshot.children {
-//                let travelItem = Travel(snapshot: item as! FIRDataSnapshot)
-//                
-//                for user in travelItem.uids {
-//                    if user == (FIRAuth.auth()?.currentUser?.uid)! {
-//                        newItems.append(travelItem)
-//                    }
-//                }
-//            }
-//
-//            self.travelItems = newItems
             self.buddiesTableView.reloadData()
-//        })
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

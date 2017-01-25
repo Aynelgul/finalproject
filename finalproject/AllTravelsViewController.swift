@@ -94,14 +94,12 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToSpecifics" {
-            
             let destination = segue.destination as? SpecificTravelViewController
-            
+        
             destination?.countryReceiver = self.countrySegueName
             destination?.cityRecheiver = self.citySegueName
             destination?.countryCodeRecheiver = self.countryCodeSegueName
             destination?.uidsReceiver = self.uidsForSeque
-
         }
     }
     
