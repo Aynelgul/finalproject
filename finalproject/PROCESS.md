@@ -61,4 +61,7 @@
 
 ## Woensdag, 25 jan 2017
 - Aan de containerviews van specifieke reizen gewerkt: segue wilde maar niet lukken. Lag misschien aan containerviews. Dus geef nu eerst door aan 'hoofdview' en daarna de 'containerviews' en dat werkt wel!
+- Alle containerviews displayen nu juiste info vanuit Firebase.
 - Vlag API wilde eerst niet werken, maar bleek te liggen aan beveiligingsmaatregelen. Opgelost: http://stackoverflow.com/questions/32631184/the-resource-could-not-be-loaded-because-the-app-transport-security-policy-requi
+- Aan design gewerkt: kleuren, iconen, buttons, etc. (leesbaarheid, consistentie)
+- TEST...
