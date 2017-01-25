@@ -7,9 +7,8 @@ by Aynel Gül
 - Signing up and signing in (having your own account).
 - Adding future travels (country, city, date).
 - Looking up travel tips from other users (or adding your own tips to the list)
-- Making a packing list for every country. You can choose 'warm' or 'cold' weather, so the app can give you a template for your packing list.
-- Adding the date of the travel to your agenda.
-- Looking up information of the country that you are traveling to.
+- Inviting your travel buddy/buddies (by email?) for a travel (adding the same travel details to another account, if travel buddy has an Adventure Time account too.
+- Looking up information of the country that you are traveling to (flag, capital, population, currency, region).
 
 
 ## Problem that will be solved for the user
