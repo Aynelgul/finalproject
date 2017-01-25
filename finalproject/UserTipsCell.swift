@@ -14,6 +14,8 @@ class UserTipsCell: UITableViewCell {
     
     @IBOutlet weak var tipTitleLabel: UILabel!
     @IBOutlet weak var tipDescriptionLabel: UILabel!
+    @IBOutlet weak var tipNameLabel: UILabel!
+    
     
 
     override func awakeFromNib() {

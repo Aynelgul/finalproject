@@ -56,5 +56,9 @@
 - Begonnen met opgehaalde Firebase data filteren op UIDs; gelukt bij travels (loopen door de UIDs).
 
 ## Dinsdag, 24 jan 2017
-- Tegen groot probleem opgelopen: MapKit zoekt automatisch landen/steden in de taal van je locatie. Echter, mijn API's werken alleen met Engelse landnamen.. Gekeken naar waarden die gelijk blijven per land in elke taal: country code! Deze opgehaald met mapkit reversed geocoding en geprobeerd toe te wijzen aan de API.
-- 
+- Tegen groot probleem opgelopen: MapKit zoekt automatisch landen/steden in de taal van je locatie. Echter, mijn API's werken alleen met Engelse landnamen.. Gekeken naar waarden die gelijk blijven per land in elke taal: country code! Deze opgehaald met mapkit reversed geocoding en geprobeerd toe te wijzen aan de API. Gelukt! Beide APi's werken, info wordt alleen nog niet goed doorgegeven via segues.
+- DidSelectRow probleem opgelost! Bleek aan een andere tableview te liggen! Die was nog maar half geimplementeerd (dus inderdaad delegate/database probleem), waardoor hij crashte na het seguen vanuit de andere tableview. YES.
+
+## Woensdag, 25 jan 2017
+- Aan de containerviews van specifieke reizen gewerkt: segue wilde maar niet lukken. Lag misschien aan containerviews. Dus geef nu eerst door aan 'hoofdview' en daarna de 'containerviews' en dat werkt wel!
+- Vlag API wilde eerst niet werken, maar bleek te liggen aan beveiligingsmaatregelen. Opgelost: http://stackoverflow.com/questions/32631184/the-resource-could-not-be-loaded-because-the-app-transport-security-policy-requi

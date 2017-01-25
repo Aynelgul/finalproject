@@ -67,9 +67,6 @@ class FormViewController: UIViewController {
         firstView.isHidden = false
         secondView.isHidden = true
         pickLabel.text = "Please select a date"
-
-//        self.cityLabel.text = self.receivedCity
-//        self.countryLabel.text = self.receivedCountry
         
         cityLabel?.text = self.receivedCity
         countryLabel?.text = self.self.receivedCountry

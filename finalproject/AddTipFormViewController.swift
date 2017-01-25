@@ -22,13 +22,18 @@ class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPick
     var chosenCity = String()
     
     // MARK: Outlets.
-    @IBOutlet weak var descriptionTextField: UITextView!
     @IBOutlet weak var pickerView: UIPickerView!
+    
+    @IBOutlet weak var nameTextfield: UITextField!
+    
+    @IBOutlet weak var descriptionTextField: UITextField!
+    
+    
 
     // MARK: Actions.
     @IBAction func OKButtonDidTouch(_ sender: UIButton) {
         if descriptionTextField.text != "" {
-            let newTip = Tip(uid: (FIRAuth.auth()?.currentUser?.uid)!, country: chosenCountry, city: chosenCity, type: chosenOption, description: descriptionTextField.text)
+            let newTip = Tip(uid: (FIRAuth.auth()?.currentUser?.uid)!, country: chosenCountry, city: chosenCity, type: chosenOption, name: nameTextfield.text!, description: descriptionTextField.text!)
             let tipsRef = self.ref.child(newTip.type)
         tipsRef.setValue(newTip.toAnyObject())
 
@@ -54,11 +59,6 @@ class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPick
         tap.cancelsTouchesInView = true
         
         view.addGestureRecognizer(tap)
-        
-        // Set borders TextField.
-        let myColor : UIColor = UIColor.lightGray
-        descriptionTextField.layer.borderColor = myColor.cgColor
-        descriptionTextField.layer.borderWidth = 1.0
         
         pickerView.dataSource = self
         pickerView.delegate = self

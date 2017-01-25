@@ -102,11 +102,6 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
             destination?.countryCodeRecheiver = self.countryCodeSegueName
             destination?.uidsReceiver = self.uidsForSeque
 
-//            let secondDestination = segue.destination as? ShowTipsViewController
-//            
-//            secondDestination?.currentCity = self.citySegueName
-//            print("secondDestination segue city:")
-//            print(self.citySegueName)
         }
     }
     

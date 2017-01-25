@@ -15,16 +15,18 @@ struct Tip {
     let country: String
     let city: String
     let type: String
+    let name: String
     let description: String
     
     let ref: FIRDatabaseReference?
     
-    init(uid: String, country: String, city: String, type: String, description: String) {
+    init(uid: String, country: String, city: String, type: String, name: String, description: String) {
 
         self.uid = uid
         self.country = country
         self.city = city
         self.type = type
+        self.name = name
         self.description = description
 
         self.ref = nil
@@ -36,6 +38,7 @@ struct Tip {
         country = snapshotValue["country"] as! String
         city = snapshotValue["city"] as! String
         type = snapshotValue["type"] as! String
+        name = snapshotValue["name"] as! String
         description = snapshotValue["description"] as! String
 
         ref = snapshot.ref
@@ -47,6 +50,7 @@ struct Tip {
             "country": country,
             "city": city,
             "type": type,
+            "name": name,
             "description": description
         ]
     }

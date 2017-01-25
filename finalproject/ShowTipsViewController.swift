@@ -24,9 +24,6 @@ class ShowTipsViewController: UIViewController, UITableViewDelegate, UITableView
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("currentcity NA SEGUE:")
-        print(currentCity)
 
         tipRef.observe(.value, with: { snapshot in
             var newTips: [Tip] = []
@@ -53,8 +50,15 @@ class ShowTipsViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tipCell", for: indexPath) as! UserTipsCell
 
-        let item = tipItems[indexPath.row].type
-        cell.tipTitleLabel.text = item
+//        let item = tipItems[indexPath.row].type
+//        let item2 = tipItems[indexPath.row].description
+//        cell.tipTitleLabel.text = item
+//        cell.tipDescriptionLabel.text = item2
+        
+        let item = tipItems[indexPath.row]
+        cell.tipTitleLabel.text = item.type
+        cell.tipDescriptionLabel.text = item.description
+        cell.tipNameLabel.text = item.name
         
         return cell
     }
