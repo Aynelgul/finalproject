@@ -29,30 +29,32 @@ class ShowBuddiesViewController: UIViewController, UITableViewDelegate, UITableV
     @IBAction func inviteButtonDidTouch(_ sender: UIButton) {
         
         showAlertControllerWith { (succeed, user) in
-            
             if succeed {
-                
                 if let user = user {
                     
-                    print("gelukt!! UID buddy: \(user.uid)")
-                    // TODO!
+                    print("Gelukt!! UID buddy: \(user.uid)")
                     
-                    
+                    // Add UID buddy to travel-item.
                     self.travelRef.observe(.value, with: { snapshot in
                         for item in snapshot.children {
-                            var travelItem = Travel(snapshot: item as! FIRDataSnapshot)
+                            let travelItem = Travel(snapshot: item as! FIRDataSnapshot)
                             
                             if travelItem.travelId == self.travelId {
-//                                travelItem.uids.append(user.uid)
+                                // user.uid toevoegen.. HOE!?
                             }
                         }
                     })
                 }
                 
-            } else {
-                
+            }
+            else {
                 print("Er is iets fout gegaan!")
-                // geef alert
+                
+                self.presentAlert(title: "Oops!", message: "Your buddy does not use Adventure Time yet.")
+                
+//                let alert = UIAlertController(title: "Oops!", message: "Your buddy does not use Adventure Time yet.", preferredStyle: UIAlertControllerStyle.alert)
+//                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+//                self.present(alert, animated: true, completion: nil)
             }
             
         }
@@ -72,23 +74,15 @@ class ShowBuddiesViewController: UIViewController, UITableViewDelegate, UITableV
                     let userItem = User(snapshot: user as! FIRDataSnapshot)
                     
                     if textField.text! == userItem.email {
-                        
-                        // TODO: Gevonden!
-                        // Stuur naar userItem naar iets
+                        // Buddy is found in user database.
                         print("Gevonden: \(userItem.email)")
                         completion(true, userItem)
                         return
                     }
                 }
-                
+                // Buddy is not a known Aventure Time user.
                 completion(false, nil)
             })
-            
-            
-            // users ophalen en checken op email
-            // als user bestaat; toevoegen
-            // anders foutmelding
-            
         })
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: {
@@ -130,6 +124,12 @@ class ShowBuddiesViewController: UIViewController, UITableViewDelegate, UITableV
         cell.buddyEmailLabel.text = item
 
         return cell
+    }
+    
+    func presentAlert(title: String, message: String) -> Void {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 
 
