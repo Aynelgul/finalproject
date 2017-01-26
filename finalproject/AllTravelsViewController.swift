@@ -21,14 +21,13 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
     var citySegueName = String()
     var countryCodeSegueName = String()
     var uidsForSeque: [String] = []
+    var travelIdForSegue = String()
     
     // MARK: Outlets.
     @IBOutlet weak var travelsTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
         
         travelRef.observe(.value, with: { snapshot in
             var newItems: [Travel] = []
@@ -72,11 +71,13 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
         let cityName = travelItems[indexPath.row].city
         let countryCode = travelItems[indexPath.row].countryCode
         let uids = travelItems[indexPath.row].uids
+        let travelId = travelItems[indexPath.row].travelId
         
         self.countrySegueName = countryName
         self.citySegueName = cityName
         self.countryCodeSegueName = countryCode
         self.uidsForSeque = uids
+        self.travelIdForSegue = travelId
         
         performSegue(withIdentifier: "goToSpecifics", sender: nil)
     }
@@ -100,6 +101,7 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
             destination?.cityRecheiver = self.citySegueName
             destination?.countryCodeRecheiver = self.countryCodeSegueName
             destination?.uidsReceiver = self.uidsForSeque
+            destination?.travelIdReceiver = self.travelIdForSegue
         }
     }
     

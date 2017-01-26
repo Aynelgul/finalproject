@@ -24,12 +24,18 @@ class AddTravelFormViewController: UIViewController {
     // MARK: Actions
     @IBAction func OKButtonDidTouch(_ sender: UIButton) {
         
-        let newTravel = Travel(country: self.chosenCountryTravel, city: self.chosenCityTravel, countryCode: chosenCountryCodeTravel, uids: [(FIRAuth.auth()?.currentUser?.uid)!, "buddy uid"])
-
+        let curDate = NSDate()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.S"
+        let dateString = dateFormatter.string(from: curDate as Date)
+        
+        print(dateString)
+        
+        let newTravel = Travel(country: self.chosenCountryTravel, city: self.chosenCityTravel, countryCode: chosenCountryCodeTravel, uids: [(FIRAuth.auth()?.currentUser?.uid)!], travelId: dateString)
         
         let travelRef = self.ref.child(newTravel.country)
         travelRef.setValue(newTravel.toAnyObject())
-
+        
         self.performSegue(withIdentifier: "goToTravelList", sender: nil)
         
     }

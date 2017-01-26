@@ -15,6 +15,7 @@ class SpecificTravelViewController: UIViewController {
     var cityRecheiver = String()
     var countryCodeRecheiver = String()
     var uidsReceiver: [String] = []
+    var travelIdReceiver = String()
     
     // MARK: Outlets.
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -82,6 +83,7 @@ class SpecificTravelViewController: UIViewController {
         if segue.identifier == "gotoBuddiesContainer" {
             let thirdDestination = segue.destination as? ShowBuddiesViewController
             thirdDestination?.allTravelers = self.uidsReceiver
+            thirdDestination?.travelId = self.travelIdReceiver
         }
     }
 }

@@ -64,4 +64,8 @@
 - Alle containerviews displayen nu juiste info vanuit Firebase.
 - Vlag API wilde eerst niet werken, maar bleek te liggen aan beveiligingsmaatregelen. Opgelost: http://stackoverflow.com/questions/32631184/the-resource-could-not-be-loaded-because-the-app-transport-security-policy-requi
 - Aan design gewerkt: kleuren, iconen, buttons, etc. (leesbaarheid, consistentie)
-- TEST...
+
+
+## Donderdag, 26 jan 2017
+- Tegen best wel wat problemen aangelopen vandaag.. 1. ik moest ervoor zorgen dat elk travel-item in Firebase een unieke code heeft, zodat ik specifiek naar deze kan verwijzen bij het toevoegen van een buddy. Echter, childByAutoId zorgte ervoor dat het allemaal wat 'dieper' werd en dat de code die ik had geschreven voor ophalen/wegschrijven van andere travel-data niet meer goed ging, dus ik heb ervoor gekozen om in plaats van childByAutoId de timestamp als 'unieke id' te gebruiken (op de seconde).
+- Had ook problemen met checken van of de opgegeven buddy (via email) wel al een account heeft: opgelost met completion handler. 

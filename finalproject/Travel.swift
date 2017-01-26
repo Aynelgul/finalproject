@@ -16,18 +16,20 @@ struct Travel {
     let country: String
     let city: String
     let countryCode: String
-    let uids: [String]
+    var uids: [String]
+    let travelId: String
     
     let ref: FIRDatabaseReference?
     
-    init(date: String = "", country: String, city: String, countryCode: String, uids: [String]) {
+    init(date: String = "", country: String, city: String, countryCode: String, uids: [String], travelId: String) {
         
         self.date = date
         self.country = country
         self.city = city
         self.countryCode = countryCode
         self.uids = uids
-        
+        self.travelId = travelId
+    
         self.ref = nil
     }
     
@@ -39,6 +41,7 @@ struct Travel {
         city = snapshotValue["city"] as! String
         countryCode = snapshotValue["country code"] as! String
         uids = snapshotValue["uids"] as! [String]
+        travelId = snapshotValue["travelId"] as! String
         
         ref = snapshot.ref
     }
@@ -49,7 +52,8 @@ struct Travel {
             "country": country,
             "city": city,
             "country code": countryCode,
-            "uids": uids
+            "uids": uids,
+            "travelId" : travelId
         ]
     }
     
