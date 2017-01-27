@@ -68,4 +68,7 @@
 
 ## Donderdag, 26 jan 2017
 - Tegen best wel wat problemen aangelopen vandaag.. 1. ik moest ervoor zorgen dat elk travel-item in Firebase een unieke code heeft, zodat ik specifiek naar deze kan verwijzen bij het toevoegen van een buddy. Echter, childByAutoId zorgte ervoor dat het allemaal wat 'dieper' werd en dat de code die ik had geschreven voor ophalen/wegschrijven van andere travel-data niet meer goed ging, dus ik heb ervoor gekozen om in plaats van childByAutoId de timestamp als 'unieke id' te gebruiken (op de seconde).
-- Had ook problemen met checken van of de opgegeven buddy (via email) wel al een account heeft: opgelost met completion handler. 
+- 2. Had ook problemen met checken van of de opgegeven buddy (via email) wel al een account heeft: opgelost met completion handler. 
+- Geprobeerd wat functies uit de ViewDidLoad's te halen en alleen aan te roepen om de code wat op te schonen. Nagedacht over 'global' functions, morgen maken: zoals Alerts.
+
+## Vrijdag, 27 jan 2017
