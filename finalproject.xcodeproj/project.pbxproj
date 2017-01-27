@@ -28,13 +28,13 @@
 		8575A6581E312B3200D36C5D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8575A6571E312B3200D36C5D /* GoogleService-Info.plist */; };
 		8575A65A1E317BE200D36C5D /* Travel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8575A6591E317BE000D36C5D /* Travel.swift */; };
 		8575A65C1E31860900D36C5D /* UserTravelsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8575A65B1E31860900D36C5D /* UserTravelsCell.swift */; };
-		85AC70381E28E1CF008C3E0D /* SpecificTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC70371E28E1CF008C3E0D /* SpecificTravelViewController.swift */; };
 		85AC703E1E2CCC23008C3E0D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC703D1E2CCC23008C3E0D /* LoginViewController.swift */; };
 		85AC70401E2CCCAB008C3E0D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC703F1E2CCCAB008C3E0D /* MenuViewController.swift */; };
 		85AC70451E2CE2ED008C3E0D /* AllTravelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC70441E2CE2ED008C3E0D /* AllTravelsViewController.swift */; };
 		85AC7E821E376CDF007BB78F /* ShowInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC7E811E376CDF007BB78F /* ShowInfoViewController.swift */; };
 		85AFC6F41E3B99910025405B /* AUDIT.md in Sources */ = {isa = PBXBuildFile; fileRef = 85AFC6F31E3B99910025405B /* AUDIT.md */; };
 		85AFC6F61E3B99F60025405B /* BetterCodeHub.png in Resources */ = {isa = PBXBuildFile; fileRef = 85AFC6F51E3B99F60025405B /* BetterCodeHub.png */; };
+		85AFC6F81E3B9AE30025405B /* SpecificTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AFC6F71E3B9AE30025405B /* SpecificTravelViewController.swift */; };
 		85CAE5F71E38BE9B00DE39FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85CAE5F61E38BE9B00DE39FD /* Assets.xcassets */; };
 		85CAE5F91E38CCC200DE39FD /* ShowTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CAE5F81E38CCC100DE39FD /* ShowTipsViewController.swift */; };
 		85CAE5FB1E38CCEC00DE39FD /* ShowBuddiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CAE5FA1E38CCEC00DE39FD /* ShowBuddiesViewController.swift */; };
@@ -95,7 +95,6 @@
 		8575A6571E312B3200D36C5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8575A6591E317BE000D36C5D /* Travel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Travel.swift; sourceTree = "<group>"; };
 		8575A65B1E31860900D36C5D /* UserTravelsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTravelsCell.swift; sourceTree = "<group>"; };
-		85AC70371E28E1CF008C3E0D /* SpecificTravelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpecificTravelViewController.swift; path = ../SpecificTravelViewController.swift; sourceTree = "<group>"; };
 		85AC703D1E2CCC23008C3E0D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		85AC703F1E2CCCAB008C3E0D /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		85AC70411E2CCFC5008C3E0D /* finalproject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = finalproject.entitlements; sourceTree = "<group>"; };
@@ -103,6 +102,7 @@
 		85AC7E811E376CDF007BB78F /* ShowInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowInfoViewController.swift; sourceTree = "<group>"; };
 		85AFC6F31E3B99910025405B /* AUDIT.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = AUDIT.md; sourceTree = "<group>"; };
 		85AFC6F51E3B99F60025405B /* BetterCodeHub.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BetterCodeHub.png; sourceTree = "<group>"; };
+		85AFC6F71E3B9AE30025405B /* SpecificTravelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecificTravelViewController.swift; sourceTree = "<group>"; };
 		85CAE5F61E38BE9B00DE39FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85CAE5F81E38CCC100DE39FD /* ShowTipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTipsViewController.swift; sourceTree = "<group>"; };
 		85CAE5FA1E38CCEC00DE39FD /* ShowBuddiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowBuddiesViewController.swift; sourceTree = "<group>"; };
@@ -265,7 +265,7 @@
 				85FE3C541E2FAAE500586A2D /* AddTravelFormViewController.swift */,
 				85FE3C561E2FAC6B00586A2D /* AddTipFormViewController.swift */,
 				85AC70441E2CE2ED008C3E0D /* AllTravelsViewController.swift */,
-				85AC70371E28E1CF008C3E0D /* SpecificTravelViewController.swift */,
+				85AFC6F71E3B9AE30025405B /* SpecificTravelViewController.swift */,
 				85AC7E811E376CDF007BB78F /* ShowInfoViewController.swift */,
 				85CAE5F81E38CCC100DE39FD /* ShowTipsViewController.swift */,
 				85CAE5FA1E38CCEC00DE39FD /* ShowBuddiesViewController.swift */,
@@ -607,9 +607,9 @@
 				85AC7E821E376CDF007BB78F /* ShowInfoViewController.swift in Sources */,
 				85FE3C571E2FAC6B00586A2D /* AddTipFormViewController.swift in Sources */,
 				85CAE5F91E38CCC200DE39FD /* ShowTipsViewController.swift in Sources */,
+				85AFC6F81E3B9AE30025405B /* SpecificTravelViewController.swift in Sources */,
 				851CA9161E250E6C00DCB9A8 /* README.md in Sources */,
 				8575A65A1E317BE200D36C5D /* Travel.swift in Sources */,
-				85AC70381E28E1CF008C3E0D /* SpecificTravelViewController.swift in Sources */,
 				8535E9301E301D760037D871 /* User.swift in Sources */,
 				85FE3C4D1E2E2FE800586A2D /* MapViewController.swift in Sources */,
 				85FE3C551E2FAAE600586A2D /* AddTravelFormViewController.swift in Sources */,
