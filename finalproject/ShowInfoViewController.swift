@@ -24,6 +24,7 @@ class ShowInfoViewController: UIViewController {
     var cityRecheiver = String()
     var countryCodeRecheiver = String()
 
+    // MARK: viewDidLoad.
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +36,7 @@ class ShowInfoViewController: UIViewController {
         HTTPSrequest(title: countryCodeRecheiver)
     }
     
+    // MARK: Functions.
     func HTTPSrequest(title: String) {
         let title = title.replacingOccurrences(of: " ", with: "+")
         let url = URL(string: "https://restcountries.eu/rest/v1/name/"+title+"?fullText=true")
@@ -99,6 +101,5 @@ class ShowInfoViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }

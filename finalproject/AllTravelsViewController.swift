@@ -47,6 +47,7 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
         })
     }
     
+    // MARK: viewDidLoad.
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         travelsTableView.reloadData()
@@ -65,7 +66,7 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
         return cell
     }
     
-    
+    // MARK: Functions
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let countryName = travelItems[indexPath.row].country
         let cityName = travelItems[indexPath.row].city

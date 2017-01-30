@@ -28,7 +28,19 @@ class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     @IBOutlet weak var descriptionTextField: UITextField!
     
-    
+    // MARK: viewDidLoad.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddTipFormViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = true
+        
+        view.addGestureRecognizer(tap)
+        
+        pickerView.dataSource = self
+        pickerView.delegate = self
+    }
 
     // MARK: Actions.
     @IBAction func OKButtonDidTouch(_ sender: UIButton) {
@@ -50,20 +62,6 @@ class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
 
     // MARK: Functions.
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Looks for single or multiple taps.
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddTipFormViewController.dismissKeyboard))
-        tap.cancelsTouchesInView = true
-        
-        view.addGestureRecognizer(tap)
-        
-        pickerView.dataSource = self
-        pickerView.delegate = self
-    }
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -94,6 +92,5 @@ class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }

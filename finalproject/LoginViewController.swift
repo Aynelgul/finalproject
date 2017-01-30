@@ -19,6 +19,27 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+        
+        
+        if let user = FIRAuth.auth()?.currentUser {
+            self.signedIn(user)
+        }
+        
+        // Listener for state change of user.
+        FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
+            if user != nil {
+                self.performSegue(withIdentifier: "gotoMenu", sender: nil)
+            }
+        }
+    }
+
     
     // MARK: Actions.
     @IBAction func loginButtonDidTouch(_ sender: UIButton) {
@@ -57,29 +78,28 @@ class LoginViewController: UIViewController {
                                                 
                                                 // Check if e-mail is not used already
                                                 if error.localizedDescription == "The email address is already in use by another account." {
-                                                    let alert = UIAlertController(title: "Oops!", message: "The email address is already in use by another account.", preferredStyle: UIAlertControllerStyle.alert)
-                                                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                                                    self.present(alert, animated: true, completion: nil)
+                                                    
+                                                    self.presentAlert(title: "Oops!", message: "The email address is already in use by another account.")
                                                 }
                                                 
                                                 // Check if password is long enough.
                                                 if error.localizedDescription == "The password must be 6 characters long or more." {
-                                                    let alert = UIAlertController(title: "Oops!", message: "The password must be 6 characters long or more.", preferredStyle: UIAlertControllerStyle.alert)
-                                                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                                                    self.present(alert, animated: true, completion: nil)
+                                                    
+                                                    
+                                                    self.presentAlert(title: "Oops!", message: "The password must be 6 characters long or more.")
                                                 }
                                                 
                                                 // Check if all fields are filled in.
-                                                let alert = UIAlertController(title: "Oops!", message: "Sign up failed. Please fill in all fields or check your e-mailadress.", preferredStyle: UIAlertControllerStyle.alert)
-                                                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                                                self.present(alert, animated: true, completion: nil)
+                                                self.presentAlert(title: "Oops!", message: "Sign up failed. Please fill in all fields or check your e-mailadress.")
                                                 
                                                 return
                                             }
+                                            
                                             let ref = FIRDatabase.database().reference(withPath: "Users")
                                             let newUser = User(uid: (user?.uid)!, email: emailField.text!)
                                             let userRef = ref.child((user?.uid)!)
                                             userRef.setValue(newUser.toAnyObject())
+                                            
                                         }
         }
         
@@ -102,28 +122,6 @@ class LoginViewController: UIViewController {
         
     }
     
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Looks for single or multiple taps.
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-        
-        
-        if let user = FIRAuth.auth()?.currentUser {
-            self.signedIn(user)
-        }
-        
-        // Listener for state change of user.
-        FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
-            if user != nil {
-                self.performSegue(withIdentifier: "gotoMenu", sender: nil)
-            }
-        }
-    }
-    
     // MARK: Functions.
     func setDisplayName(_ user: FIRUser) {
         let changeRequest = user.profileChangeRequest()
@@ -142,6 +140,12 @@ class LoginViewController: UIViewController {
         passwordTextField.text = ""
     }
     
+    func presentAlert(title: String, message: String) -> Void {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     // Function when tap is recognized.
     func dismissKeyboard() {
         view.endEditing(true)
@@ -149,6 +153,5 @@ class LoginViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }

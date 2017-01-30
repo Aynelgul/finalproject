@@ -72,3 +72,6 @@
 - Geprobeerd wat functies uit de ViewDidLoad's te halen en alleen aan te roepen om de code wat op te schonen. Nagedacht over 'global' functions, morgen maken: zoals Alerts.
 
 ## Vrijdag, 27 jan 2017
+
+## Maandag, 30 jan 2017
+- Beetje opschonen code: zo veel mogelijk functies uit ViewDidLoad; alleen aanroepen.

@@ -35,14 +35,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
     var clickedLatitude = Double()
     var clickedLongitude = Double()
     
-    // MARK: Actions
-    @IBAction func showSearchBar(_ sender: UIBarButtonItem) {
-        searchController = UISearchController(searchResultsController: nil)
-        searchController.hidesNavigationBarDuringPresentation = false
-        self.searchController.searchBar.delegate = self
-        present(searchController, animated: true, completion: nil)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,10 +48,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
-            
-            // mapView.showsUserLocation = true
         }
     }
+    
+    // MARK: Actions
+    @IBAction func showSearchBar(_ sender: UIBarButtonItem) {
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.hidesNavigationBarDuringPresentation = false
+        self.searchController.searchBar.delegate = self
+        present(searchController, animated: true, completion: nil)
+    }
+
     
     // MARK: Functions/Methods.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -159,7 +158,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     //    let regionRadius: CLLocationDistance = 1000

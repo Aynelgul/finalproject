@@ -24,6 +24,18 @@ class ShowBuddiesViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: Outlets.
     @IBOutlet weak var buddiesTableView: UITableView!
+    
+    // MARK: viewDidLoad.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        for traveler in allTravelers {
+            if traveler != (FIRAuth.auth()?.currentUser?.uid)! {
+                travelBuddies.append(traveler)
+            }
+        }
+        self.buddiesTableView.reloadData()
+    }
 
     // MARK: Actions.
     @IBAction func inviteButtonDidTouch(_ sender: UIButton) {
@@ -51,15 +63,12 @@ class ShowBuddiesViewController: UIViewController, UITableViewDelegate, UITableV
                 print("Er is iets fout gegaan!")
                 
                 self.presentAlert(title: "Oops!", message: "Your buddy does not use Adventure Time yet.")
-                
-//                let alert = UIAlertController(title: "Oops!", message: "Your buddy does not use Adventure Time yet.", preferredStyle: UIAlertControllerStyle.alert)
-//                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-//                self.present(alert, animated: true, completion: nil)
             }
             
         }
     }
     
+    // MARK: Functions.
     private func showAlertControllerWith(completion: @escaping inviteBuddyComplete) {
         
         let alertController = UIAlertController(title: "Add Travel Buddy", message: "", preferredStyle: .alert)
@@ -101,18 +110,6 @@ class ShowBuddiesViewController: UIViewController, UITableViewDelegate, UITableV
         
     }
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        for traveler in allTravelers {
-            if traveler != (FIRAuth.auth()?.currentUser?.uid)! {
-                travelBuddies.append(traveler)
-            }
-        }
-            self.buddiesTableView.reloadData()
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return travelBuddies.count
     }
@@ -132,9 +129,7 @@ class ShowBuddiesViewController: UIViewController, UITableViewDelegate, UITableV
         self.present(alert, animated: true, completion: nil)
     }
 
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }

@@ -11,6 +11,14 @@ import Firebase
 import FirebaseAuth
 
 class MenuViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //        FIRAuth.auth()!.addStateDidChangeListener { auth, user in
+        //            guard let user = user else { return }
+        //            self.user = User(authData: user)
+        //        }
+    }
 
     // MARK: Actions
     @IBAction func logoutButtonDidTouch(_ sender: UIBarButtonItem) {
@@ -21,15 +29,6 @@ class MenuViewController: UIViewController {
         } catch let signOutError as NSError {
             print ("Error signing out: \(signOutError.localizedDescription)")
         }
-    }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-//        FIRAuth.auth()!.addStateDidChangeListener { auth, user in
-//            guard let user = user else { return }
-//            self.user = User(authData: user)
-//        }
     }
 
     override func didReceiveMemoryWarning() {

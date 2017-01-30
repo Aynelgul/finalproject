@@ -21,6 +21,16 @@ class AddTravelFormViewController: UIViewController {
     // MARK: Outlets.
     @IBOutlet weak var datePicker: UIDatePicker!
     
+    // MARK: viewDidLoad
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Change text color of datePicker.
+        datePicker.setValue(UIColor.white, forKeyPath: "textColor")
+        datePicker.datePickerMode = .countDownTimer
+        datePicker.datePickerMode = .dateAndTime //or whatever your original mode was
+    }
+    
     // MARK: Actions
     @IBAction func OKButtonDidTouch(_ sender: UIButton) {
         
@@ -43,18 +53,8 @@ class AddTravelFormViewController: UIViewController {
     @IBAction func cancelButtonDidTouch(_ sender: UIButton) {
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-        // Change text color of datePicker.
-        datePicker.setValue(UIColor.white, forKeyPath: "textColor")
-        datePicker.datePickerMode = .countDownTimer
-        datePicker.datePickerMode = .dateAndTime //or whatever your original mode was
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }

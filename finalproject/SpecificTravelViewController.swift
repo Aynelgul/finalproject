@@ -24,6 +24,14 @@ class SpecificTravelViewController: UIViewController {
     @IBOutlet weak var secondView: UIView!
     @IBOutlet weak var thirdView: UIView!
     
+    // Mark: viewDidLoad.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        firstView.isHidden = false
+        secondView.isHidden = true
+        thirdView.isHidden = true
+    }
     
     // Mark: Actions
     @IBAction func segmentSelectedAction(_ sender: UISegmentedControl) {
@@ -47,15 +55,7 @@ class SpecificTravelViewController: UIViewController {
         }
     }
     
-    // Mark: Functions.
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        firstView.isHidden = false
-        secondView.isHidden = true
-        thirdView.isHidden = true
-    }
-
+    // MARK: Functions.
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

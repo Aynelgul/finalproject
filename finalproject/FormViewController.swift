@@ -27,6 +27,22 @@ class FormViewController: UIViewController {
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddTipFormViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = true
+        
+        view.addGestureRecognizer(tap)
+        
+        firstView.isHidden = false
+        secondView.isHidden = true
+        pickLabel.text = "Please select a date"
+        
+        cityLabel?.text = self.receivedCity
+        countryLabel?.text = self.self.receivedCountry
+    }
 
     // MARK: Actions
     @IBAction func OKButtonDidTouch(_ sender: UIButton) {
@@ -54,23 +70,6 @@ class FormViewController: UIViewController {
         }
     }
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Looks for single or multiple taps.
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddTipFormViewController.dismissKeyboard))
-        tap.cancelsTouchesInView = true
-        
-        view.addGestureRecognizer(tap)
-        
-        firstView.isHidden = false
-        secondView.isHidden = true
-        pickLabel.text = "Please select a date"
-        
-        cityLabel?.text = self.receivedCity
-        countryLabel?.text = self.self.receivedCountry
-    }
     
     // Function when tap is recognized.
     func dismissKeyboard() {
