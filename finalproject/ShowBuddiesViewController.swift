@@ -18,6 +18,7 @@ class ShowBuddiesViewController: UIViewController, UITableViewDelegate, UITableV
     var allTravelers: [String] = []
     var travelBuddies: [String] = []
     var travelId = String()
+    var newTravelUids: [String] = []
     
     var travelRef = FIRDatabase.database().reference(withPath: "travel-items")
     var userRef = FIRDatabase.database().reference(withPath: "Users")
@@ -29,11 +30,8 @@ class ShowBuddiesViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for traveler in allTravelers {
-            if traveler != (FIRAuth.auth()?.currentUser?.uid)! {
-                travelBuddies.append(traveler)
-            }
-        }
+        updateAllTravelers()
+        
         self.buddiesTableView.reloadData()
     }
 
@@ -46,13 +44,18 @@ class ShowBuddiesViewController: UIViewController, UITableViewDelegate, UITableV
                     
                     print("Gelukt!! UID buddy: \(user.uid)")
                     
-                    // Add UID buddy to travel-item.
-                    self.travelRef.observe(.value, with: { snapshot in
+                    self.travelRef.observeSingleEvent(of: .value, with: { snapshot in
                         for item in snapshot.children {
+                            
                             let travelItem = Travel(snapshot: item as! FIRDataSnapshot)
                             
                             if travelItem.travelId == self.travelId {
-                                // user.uid toevoegen.. HOE!?
+                                self.newTravelUids = travelItem.uids
+                                self.newTravelUids.append(user.uid)
+                                self.travelRef.child((item as! FIRDataSnapshot).key).updateChildValues(["uids": self.newTravelUids])
+                                
+                                self.updateAllTravelers()
+                                self.buddiesTableView.reloadData()
                             }
                         }
                     })
@@ -121,6 +124,14 @@ class ShowBuddiesViewController: UIViewController, UITableViewDelegate, UITableV
         cell.buddyEmailLabel.text = item
 
         return cell
+    }
+    
+    func updateAllTravelers() -> Void {
+        for traveler in allTravelers {
+            if traveler != (FIRAuth.auth()?.currentUser?.uid)! {
+                travelBuddies.append(traveler)
+            }
+        }
     }
     
     func presentAlert(title: String, message: String) -> Void {

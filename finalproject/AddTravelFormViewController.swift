@@ -43,7 +43,7 @@ class AddTravelFormViewController: UIViewController {
         
         let newTravel = Travel(country: self.chosenCountryTravel, city: self.chosenCityTravel, countryCode: chosenCountryCodeTravel, uids: [(FIRAuth.auth()?.currentUser?.uid)!], travelId: dateString)
         
-        let travelRef = self.ref.child(newTravel.country)
+        let travelRef = self.ref.childByAutoId()
         travelRef.setValue(newTravel.toAnyObject())
         
         self.performSegue(withIdentifier: "goToTravelList", sender: nil)

@@ -38,21 +38,23 @@ class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPick
         
         view.addGestureRecognizer(tap)
         
-        pickerView.dataSource = self
-        pickerView.delegate = self
+        configuratePickerView()
+        
     }
 
     // MARK: Actions.
     @IBAction func OKButtonDidTouch(_ sender: UIButton) {
         if descriptionTextField.text != "" {
             let newTip = Tip(uid: (FIRAuth.auth()?.currentUser?.uid)!, country: chosenCountry, city: chosenCity, type: chosenOption, name: nameTextfield.text!, description: descriptionTextField.text!)
+            
             let tipsRef = self.ref.child(newTip.type)
-        tipsRef.setValue(newTip.toAnyObject())
+            
+            tipsRef.setValue(newTip.toAnyObject())
 
             self.performSegue(withIdentifier: "goBackToMap", sender: nil)
         }
         else {
-            let alert = UIAlertController(title: "Oops!", message: "Please fill in a description.", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "Oops!", message: "Please fill in all fields.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             
@@ -62,6 +64,15 @@ class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
 
     // MARK: Functions.
+    func configuratePickerView() -> Void {
+        pickerView.dataSource = self
+        pickerView.delegate = self
+        
+        let defaultPickerRow = pickerOptions.count / 2
+        pickerView.selectRow(defaultPickerRow, inComponent: 0, animated: true)
+        chosenOption = pickerOptions[defaultPickerRow]
+    }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

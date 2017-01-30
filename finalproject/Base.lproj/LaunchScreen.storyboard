@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,31 +24,13 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="LoginMountainsImage" image="mountains_landscape_hd_4k-3840x2160" translatesAutoresizingMaskIntoConstraints="NO" id="gPa-DX-bsM">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="LoginAdventureHeader" text="Adventure Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cd2-CX-qhY">
-                                <rect key="frame" x="27" y="152" width="320" height="81"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="qol-hP-E4B"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="37"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="0.84754621480000003" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="nsB-a7-vyJ">
-                                <rect key="frame" x="169" y="315" width="37" height="37"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="gPa-DX-bsM" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="7gQ-VF-PhA"/>
-                            <constraint firstItem="nsB-a7-vyJ" firstAttribute="top" secondItem="Cd2-CX-qhY" secondAttribute="bottom" constant="82" id="7wk-wk-1At"/>
-                            <constraint firstItem="Cd2-CX-qhY" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="11" id="Cgh-uW-2DF"/>
-                            <constraint firstItem="gPa-DX-bsM" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Oho-Xk-x6d"/>
-                            <constraint firstItem="gPa-DX-bsM" firstAttribute="centerY" secondItem="nsB-a7-vyJ" secondAttribute="centerY" id="RWu-Ez-796"/>
-                            <constraint firstItem="Cd2-CX-qhY" firstAttribute="centerX" secondItem="nsB-a7-vyJ" secondAttribute="centerX" id="SY4-Qo-bH1"/>
-                            <constraint firstItem="gPa-DX-bsM" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="YgO-hM-oTb"/>
-                            <constraint firstItem="Cd2-CX-qhY" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="132" id="g2N-BQ-Tb0"/>
-                            <constraint firstItem="Cd2-CX-qhY" firstAttribute="centerX" secondItem="gPa-DX-bsM" secondAttribute="centerX" id="iXD-h1-Uxu"/>
-                            <constraint firstAttribute="trailing" secondItem="gPa-DX-bsM" secondAttribute="trailing" id="kwD-pV-Xzr"/>
+                            <constraint firstItem="gPa-DX-bsM" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="4N0-IA-uks"/>
+                            <constraint firstAttribute="trailing" secondItem="gPa-DX-bsM" secondAttribute="trailing" id="9SF-ri-DTm"/>
+                            <constraint firstItem="gPa-DX-bsM" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="q38-I3-XJW"/>
+                            <constraint firstItem="gPa-DX-bsM" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="suu-6D-UjD"/>
                         </constraints>
                     </view>
                 </viewController>
