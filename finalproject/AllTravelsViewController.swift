@@ -89,8 +89,25 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let travelItem = travelItems[indexPath.row]
-            travelItem.ref?.removeValue()
+            
+            
+            let uiAlert = UIAlertController(title: "Delete Travel", message: "Are you sure you want to delete this travel? It will be removed from all your potential buddies their travels as wel.", preferredStyle: UIAlertControllerStyle.alert)
+            
+            uiAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                //remove from data source
+                let travelItem = self.travelItems[indexPath.row]
+                travelItem.ref?.removeValue()
+                
+            }))
+            
+            uiAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+            self.present(uiAlert, animated: true, completion: nil)
+            
+            
+            
+//            let travelItem = travelItems[indexPath.row]
+//            travelItem.ref?.removeValue()
         }
     }
     

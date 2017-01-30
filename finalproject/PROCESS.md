@@ -78,3 +78,5 @@
 - Beetje opschonen code: zo veel mogelijk functies uit ViewDidLoad; alleen aanroepen.
 - Bezig geweest met toevoegen buddy in Firebase. Ging eerst mis; hij bleef dezelfde buddy toevoegen. Kwam uiteindelijk door een 'observer' die dus elke keer een verandering observede als je een buddy toevoegde en dan elke keer weer de buddy ging toevoegen. Uiteindelijk opgelost door observeSingleEvent.
 - Alle travels unieke ID's gegeven met childById, zodat de reizen niet overschreven worden.
+- Travel-items kunnen nu verwijderd worden: wordt wel ook bij buddy verwijderd (want gaat om de gehele reis). Misschien nog wel melding over geven? Of om bevestiging vragen bij verwijderen?
+- Delete confirmation toegevoegd (in de vorm van een Alert). Template: http://stackoverflow.com/questions/30726813/confirmation-for-deleting-a-post-in-table-view-cell
