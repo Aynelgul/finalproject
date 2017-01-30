@@ -87,11 +87,13 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
         return true
     }
     
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            let travelItem = items[indexPath.row]
-//            travelItem.ref?.removeValue()
-//            
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let travelItem = travelItems[indexPath.row]
+            travelItem.ref?.removeValue()
+        }
+    }
+    
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -72,6 +72,9 @@
 - Geprobeerd wat functies uit de ViewDidLoad's te halen en alleen aan te roepen om de code wat op te schonen. Nagedacht over 'global' functions, morgen maken: zoals Alerts.
 
 ## Vrijdag, 27 jan 2017
+- Op aanraden van Julian geen globale functies gebruikt, maar wel alle 'alerts' per view in een functie gedaan.
 
 ## Maandag, 30 jan 2017
 - Beetje opschonen code: zo veel mogelijk functies uit ViewDidLoad; alleen aanroepen.
+- Bezig geweest met toevoegen buddy in Firebase. Ging eerst mis; hij bleef dezelfde buddy toevoegen. Kwam uiteindelijk door een 'observer' die dus elke keer een verandering observede als je een buddy toevoegde en dan elke keer weer de buddy ging toevoegen. Uiteindelijk opgelost door observeSingleEvent.
+- Alle travels unieke ID's gegeven met childById, zodat de reizen niet overschreven worden.
