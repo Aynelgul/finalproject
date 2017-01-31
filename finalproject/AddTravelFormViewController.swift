@@ -18,6 +18,9 @@ class AddTravelFormViewController: UIViewController {
     var chosenCityTravel = String()
     var chosenCountryCodeTravel = String()
     
+    var interval = Double()
+    var travelDate = NSDate()
+    
     // MARK: Outlets.
     @IBOutlet weak var datePicker: UIDatePicker!
     
@@ -34,6 +37,9 @@ class AddTravelFormViewController: UIViewController {
     // MARK: Actions
     @IBAction func OKButtonDidTouch(_ sender: UIButton) {
         
+        travelDate = datePicker.date as NSDate
+        interval = travelDate.timeIntervalSince1970
+        
         let curDate = NSDate()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.S"
@@ -41,16 +47,13 @@ class AddTravelFormViewController: UIViewController {
         
         print(dateString)
         
-        let newTravel = Travel(country: self.chosenCountryTravel, city: self.chosenCityTravel, countryCode: chosenCountryCodeTravel, uids: [(FIRAuth.auth()?.currentUser?.uid)!], travelId: dateString)
+        let newTravel = Travel(date: interval, country: self.chosenCountryTravel, city: self.chosenCityTravel, countryCode: chosenCountryCodeTravel, uids: [(FIRAuth.auth()?.currentUser?.uid)!], travelId: dateString)
         
         let travelRef = self.ref.childByAutoId()
         travelRef.setValue(newTravel.toAnyObject())
-                
+        
 //        self.performSegue(withIdentifier: "goToTravelList", sender: nil)
         
-    }
-    
-    @IBAction func cancelButtonDidTouch(_ sender: UIButton) {
     }
 
 

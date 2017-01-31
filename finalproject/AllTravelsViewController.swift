@@ -65,7 +65,18 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: "travelCell", for: indexPath) as! UserTravelsCell
         
         let item = travelItems[indexPath.row]
+        
+        // Convert Double to NSDate
+        let date = NSDate(timeIntervalSince1970: item.date)
+        
+        // Convert NSDate to String for label.
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        let dateString = dateFormatter.string(from: date as Date)
+        
         cell.countryLabel.text = item.country
+        cell.cityLabel.text = item.city
+        cell.dateLabel.text = dateString
         
         return cell
     }

@@ -11,6 +11,8 @@ import UIKit
 class UserTravelsCell: UITableViewCell {
     
     @IBOutlet weak var countryLabel: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

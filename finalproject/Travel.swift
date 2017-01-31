@@ -12,7 +12,7 @@ import Firebase
 struct Travel {
     
     // date moet nog aangepast worden!!
-    let date: String
+    let date: Double
     let country: String
     let city: String
     let countryCode: String
@@ -21,7 +21,7 @@ struct Travel {
     
     let ref: FIRDatabaseReference?
     
-    init(date: String = "", country: String, city: String, countryCode: String, uids: [String], travelId: String) {
+    init(date: Double, country: String, city: String, countryCode: String, uids: [String], travelId: String) {
         
         self.date = date
         self.country = country
@@ -36,7 +36,7 @@ struct Travel {
     init(snapshot: FIRDataSnapshot) {
         let snapshotValue = snapshot.value! as! [String: AnyObject]
         
-        date = snapshotValue["date"] as! String
+        date = snapshotValue["date"] as! Double
         country = snapshotValue["country"] as! String
         city = snapshotValue["city"] as! String
         countryCode = snapshotValue["country code"] as! String

@@ -23,9 +23,7 @@ class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     // MARK: Outlets.
     @IBOutlet weak var pickerView: UIPickerView!
-    
     @IBOutlet weak var nameTextfield: UITextField!
-    
     @IBOutlet weak var descriptionTextField: UITextField!
     
     // MARK: viewDidLoad.
@@ -58,15 +56,6 @@ class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPick
             
             self.performSegue(withIdentifier: "goBackToMap", sender: nil)
         }
-
-
-//            let alert = UIAlertController(title: "Oops!", message: "Please fill in all fields.", preferredStyle: UIAlertControllerStyle.alert)
-//            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-//            self.present(alert, animated: true, completion: nil)
-//            
-//            return
-
-
     }
 
     // MARK: Functions.

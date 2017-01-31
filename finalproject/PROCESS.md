@@ -83,6 +83,9 @@
 - Toch childByAutoId toegevoegd bij travels: vond ik netter en anders overschreven de travels elkaar.. 
 
 ## Dinsdag, 31 jan 2017
-- Gisteren AutoId toegevoegd voor travels, maar ik moet dit ook doen voor tips, anders overschrijven die elkaar ook. Gedaan en aangepast in de rest van de code.
+- Gisteren AutoId toegevoegd voor travels, maar ik heb dit ook gedaan voor tips, anders overschrijven die elkaar ook. Verder ook angepast in de rest van de code.
 - Had een segue weggehaald, waardoor hij crashte. Opgelost.
 - Travel buddy werd nog niet meteen toegevoegd, pas bij het opnieuw openen van het scherm.
+- Duidelijkere labels toegevoegd aan de tableViews en datum wordt nu ook weergeven in labels.
+- NSDate aangemaakt voor travel (stond al in struct, maar werd nog niet opgehaald en meegestuurd vanuit pickerView).
+- NSDate omzetten naar Double voor Firebase en ook weer terug omzetten naar NSDate/String. http://stackoverflow.com/questions/33277970/how-to-convert-string-to-date-to-string-in-swift-ios en http://stackoverflow.com/questions/26849237/swift-convert-unix-time-to-date-and-time
