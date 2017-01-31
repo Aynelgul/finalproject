@@ -22,6 +22,8 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
     var countryCodeSegueName = String()
     var uidsForSeque: [String] = []
     var travelIdForSegue = String()
+    var startDateForSegue = NSDate()
+    var endDateForSegue = NSDate()
     
     // MARK: Outlets.
     @IBOutlet weak var travelsTableView: UITableView!
@@ -67,16 +69,18 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
         let item = travelItems[indexPath.row]
         
         // Convert Double to NSDate
-        let date = NSDate(timeIntervalSince1970: item.date)
+        self.startDateForSegue = NSDate(timeIntervalSince1970: item.startDate)
+        self.endDateForSegue = NSDate(timeIntervalSince1970: item.endDate)
         
         // Convert NSDate to String for label.
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
-        let dateString = dateFormatter.string(from: date as Date)
+        
+        let startDateString = dateFormatter.string(from: self.startDateForSegue as Date)
         
         cell.countryLabel.text = item.country
         cell.cityLabel.text = item.city
-        cell.dateLabel.text = dateString
+        cell.dateLabel.text = startDateString
         
         return cell
     }
@@ -133,6 +137,8 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
             destination?.countryCodeRecheiver = self.countryCodeSegueName
             destination?.uidsReceiver = self.uidsForSeque
             destination?.travelIdReceiver = self.travelIdForSegue
+            destination?.startDateReceiver = self.startDateForSegue
+            destination?.endDateReceiver = self.endDateForSegue
         }
     }
     

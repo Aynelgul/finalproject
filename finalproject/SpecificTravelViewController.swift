@@ -16,6 +16,8 @@ class SpecificTravelViewController: UIViewController {
     var countryCodeRecheiver = String()
     var uidsReceiver: [String] = []
     var travelIdReceiver = String()
+    var startDateReceiver = NSDate()
+    var endDateReceiver = NSDate()
     
     // MARK: Outlets.
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -71,13 +73,13 @@ class SpecificTravelViewController: UIViewController {
             destination?.countryReceiver = self.countryReceiver
             destination?.cityRecheiver = self.cityRecheiver
             destination?.countryCodeRecheiver = self.countryCodeRecheiver
+            destination?.startDate = self.startDateReceiver
+            destination?.endDate = self.endDateReceiver
         }
         
         if segue.identifier == "gotoTipsContainer" {
             let secondDestination = segue.destination as? ShowTipsViewController
             secondDestination?.currentCity = self.cityRecheiver
-            
-            print(self.cityRecheiver)
         }
         
         if segue.identifier == "gotoBuddiesContainer" {

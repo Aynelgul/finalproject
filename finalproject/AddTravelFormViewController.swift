@@ -18,36 +18,50 @@ class AddTravelFormViewController: UIViewController {
     var chosenCityTravel = String()
     var chosenCountryCodeTravel = String()
     
-    var interval = Double()
-    var travelDate = NSDate()
+//    var intervalStartDate: Double = ()
+//    var intervalEndDate: Double = ()
+//    var startDate: NSDate = ()
+//    var endDate: NSDate = ()
     
     // MARK: Outlets.
-    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var startDatePicker: UIDatePicker!
+    @IBOutlet weak var endDatePicker: UIDatePicker!
     
     // MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Change text color of datePicker.
-        datePicker.setValue(UIColor.white, forKeyPath: "textColor")
-        datePicker.datePickerMode = .countDownTimer
-        datePicker.datePickerMode = .dateAndTime //or whatever your original mode was
+        // Change text color of datePickers.
+        startDatePicker.setValue(UIColor.white, forKeyPath: "textColor")
+        startDatePicker.datePickerMode = .countDownTimer
+        startDatePicker.datePickerMode = .dateAndTime //or whatever your original mode was
+        
+        endDatePicker.setValue(UIColor.white, forKey: "textColor")
+        endDatePicker.datePickerMode = .countDownTimer
+        endDatePicker.datePickerMode = .dateAndTime
+        
     }
     
     // MARK: Actions
     @IBAction func OKButtonDidTouch(_ sender: UIButton) {
         
-        travelDate = datePicker.date as NSDate
-        interval = travelDate.timeIntervalSince1970
+        let startDate = startDatePicker.date as NSDate
+        let endDate = endDatePicker.date as NSDate
+        let intervalStartDate = startDate.timeIntervalSince1970
+        let intervalEndDate = endDate.timeIntervalSince1970
+        
+        print("CRASH TEST...")
+        print(intervalStartDate)
+        print(intervalEndDate)
         
         let curDate = NSDate()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.S"
         let dateString = dateFormatter.string(from: curDate as Date)
         
-        print(dateString)
+        let newTravel = Travel(startDate: intervalStartDate, endDate: intervalEndDate, country: self.chosenCountryTravel, city: self.chosenCityTravel, countryCode: chosenCountryCodeTravel, uids: [(FIRAuth.auth()?.currentUser?.uid)!], travelId: dateString)
         
-        let newTravel = Travel(date: interval, country: self.chosenCountryTravel, city: self.chosenCityTravel, countryCode: chosenCountryCodeTravel, uids: [(FIRAuth.auth()?.currentUser?.uid)!], travelId: dateString)
+        print(newTravel)
         
         let travelRef = self.ref.childByAutoId()
         travelRef.setValue(newTravel.toAnyObject())
@@ -55,7 +69,8 @@ class AddTravelFormViewController: UIViewController {
 //        self.performSegue(withIdentifier: "goToTravelList", sender: nil)
         
     }
-
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -7,8 +7,17 @@
 //
 
 import UIKit
+import EventKit
 
 class ShowInfoViewController: UIViewController {
+    
+    // MARK: Variables.
+    var countryReceiver = String()
+    var cityRecheiver = String()
+    var countryCodeRecheiver = String()
+    
+    var startDate = NSDate()
+    var endDate = NSDate()
     
     // MARK: Outlets
     @IBOutlet weak var countryLabel: UILabel!
@@ -19,17 +28,15 @@ class ShowInfoViewController: UIViewController {
     @IBOutlet weak var regionLabel: UILabel!
     @IBOutlet weak var flagImageView: UIImageView!
     
-    // MARK: Variables.
-    var countryReceiver = String()
-    var cityRecheiver = String()
-    var countryCodeRecheiver = String()
+    // MARK: Actions.
+    @IBAction func calendarButtonDidTouch(_ sender: UIButton) {
+        addEventToCalendar(title: countryReceiver, description: "City: \(cityRecheiver). Happy traveling!", startDate: startDate, endDate: endDate)
+        
+    }
 
     // MARK: viewDidLoad.
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("COUNTRY CODE RECEIVER:")
-        print(countryCodeRecheiver)
         
         countryLabel.text = countryReceiver
         cityLabel.text = cityRecheiver
@@ -37,6 +44,32 @@ class ShowInfoViewController: UIViewController {
     }
     
     // MARK: Functions.
+    
+    func addEventToCalendar(title: String, description: String?, startDate: NSDate, endDate: NSDate, completion: ((_ success: Bool, _ error: NSError?) -> Void)? = nil) {
+        let eventStore = EKEventStore()
+        
+        eventStore.requestAccess(to: .event, completion: { (granted, error) in
+            if (granted) && (error == nil) {
+                let event = EKEvent(eventStore: eventStore)
+                event.title = title
+                event.startDate = startDate as Date
+                event.endDate = endDate as Date
+                event.notes = description
+                event.calendar = eventStore.defaultCalendarForNewEvents
+                do {
+                    try eventStore.save(event, span: .thisEvent)
+                    self.presentAlert(title: "Done", message: "Your travel has been added to your calendar")
+                } catch let e as NSError {
+                    completion?(false, e)
+                    return
+                }
+                completion?(true, nil)
+            } else {
+                completion?(false, error as NSError?)
+            }
+        })
+    }
+    
     func HTTPSrequest(title: String) {
         let title = title.replacingOccurrences(of: " ", with: "+")
         let url = URL(string: "https://restcountries.eu/rest/v1/name/"+title+"?fullText=true")
@@ -97,6 +130,12 @@ class ShowInfoViewController: UIViewController {
             })
             task.resume()
         }
+    }
+    
+    func presentAlert(title: String, message: String) -> Void {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
