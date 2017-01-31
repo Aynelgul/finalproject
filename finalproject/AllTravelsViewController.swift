@@ -60,12 +60,8 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
         // Convert Double to NSDate
         self.startDateForSegue = NSDate(timeIntervalSince1970: item.startDate)
         self.endDateForSegue = NSDate(timeIntervalSince1970: item.endDate)
-        
-        // Convert NSDate to String for label.
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
-        
-        let startDateString = dateFormatter.string(from: self.startDateForSegue as Date)
+
+        let startDateString = convertNSDateToString(date: self.startDateForSegue as Date)
         
         cell.countryLabel.text = item.country
         cell.cityLabel.text = item.city
@@ -101,6 +97,13 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
             self.present(uiAlert, animated: true, completion: nil)
 
         }
+    }
+    
+    func convertNSDateToString(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        
+        return dateFormatter.string(from: date)
     }
     
     

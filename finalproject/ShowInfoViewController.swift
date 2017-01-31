@@ -29,6 +29,8 @@ class ShowInfoViewController: UIViewController {
     @IBOutlet weak var currencyLabel: UILabel!
     @IBOutlet weak var regionLabel: UILabel!
     @IBOutlet weak var flagImageView: UIImageView!
+    @IBOutlet weak var startDateLabel: UILabel!
+    
     
     // MARK: Actions.
     @IBAction func calendarButtonDidTouch(_ sender: UIButton) {
@@ -42,6 +44,8 @@ class ShowInfoViewController: UIViewController {
         
         countryLabel.text = selectedTravelItem.country
         cityLabel.text = selectedTravelItem.city
+        startDateLabel.text = convertNSDateToString(date: startDate as Date)
+        
         HTTPSrequest(title: selectedTravelItem.countryCode)
     }
     
@@ -132,6 +136,13 @@ class ShowInfoViewController: UIViewController {
             })
             task.resume()
         }
+    }
+    
+    func convertNSDateToString(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        
+        return dateFormatter.string(from: date)
     }
     
     func presentAlert(title: String, message: String) -> Void {

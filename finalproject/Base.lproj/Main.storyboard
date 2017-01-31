@@ -898,12 +898,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B9q-EL-bx7">
-                                                <rect key="frame" x="52" y="78" width="216" height="118.5"/>
+                                                <rect key="frame" x="52" y="78" width="216" height="120"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIk-vE-WEp">
-                                                <rect key="frame" x="52" y="204" width="216" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <rect key="frame" x="52" y="205.5" width="216" height="19.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -1068,6 +1068,7 @@
                         <outlet property="flagImageView" destination="B9q-EL-bx7" id="fcp-ZI-xTr"/>
                         <outlet property="populationLabel" destination="VEW-Rj-s3h" id="34e-FH-XIO"/>
                         <outlet property="regionLabel" destination="ozh-m1-vBv" id="ALO-SR-Jr1"/>
+                        <outlet property="startDateLabel" destination="YIk-vE-WEp" id="rps-Kr-CeS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ayN-mA-fR7" userLabel="First Responder" sceneMemberID="firstResponder"/>
