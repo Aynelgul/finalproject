@@ -11,13 +11,11 @@ import UIKit
 class SpecificTravelViewController: UIViewController {
     
     // MARK: Variables.
-    var countryReceiver = String()
-    var cityRecheiver = String()
-    var countryCodeRecheiver = String()
-    var uidsReceiver: [String] = []
-    var travelIdReceiver = String()
     var startDateReceiver = NSDate()
     var endDateReceiver = NSDate()
+    
+    var selectedTravelItem = Travel(startDate: 0, endDate: 0, country: "", city: "", countryCode: "", uids: [""], travelId: "")
+    
     
     // MARK: Outlets.
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -29,6 +27,9 @@ class SpecificTravelViewController: UIViewController {
     // Mark: viewDidLoad.
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("AANGEKOMEN SPECIFIC DING... WAT HEEFT IE DOORGEGEVEN?")
+        print(selectedTravelItem)
         
         firstView.isHidden = false
         secondView.isHidden = true
@@ -70,22 +71,21 @@ class SpecificTravelViewController: UIViewController {
             
             let destination = segue.destination as? ShowInfoViewController
             
-            destination?.countryReceiver = self.countryReceiver
-            destination?.cityRecheiver = self.cityRecheiver
-            destination?.countryCodeRecheiver = self.countryCodeRecheiver
             destination?.startDate = self.startDateReceiver
             destination?.endDate = self.endDateReceiver
+            destination?.selectedTravelItem = self.selectedTravelItem
+            
         }
         
         if segue.identifier == "gotoTipsContainer" {
             let secondDestination = segue.destination as? ShowTipsViewController
-            secondDestination?.currentCity = self.cityRecheiver
+            secondDestination?.currentCity = self.selectedTravelItem.city
         }
         
         if segue.identifier == "gotoBuddiesContainer" {
             let thirdDestination = segue.destination as? ShowBuddiesViewController
-            thirdDestination?.allTravelers = self.uidsReceiver
-            thirdDestination?.travelId = self.travelIdReceiver
+            thirdDestination?.allTravelers = self.selectedTravelItem.uids
+            thirdDestination?.travelId = self.selectedTravelItem.travelId
         }
     }
 }

@@ -12,9 +12,11 @@ import EventKit
 class ShowInfoViewController: UIViewController {
     
     // MARK: Variables.
-    var countryReceiver = String()
-    var cityRecheiver = String()
-    var countryCodeRecheiver = String()
+//    var countryReceiver = String()
+//    var cityRecheiver = String()
+//    var countryCodeRecheiver = String()
+    
+    var selectedTravelItem = Travel(startDate: 0, endDate: 0, country: "", city: "", countryCode: "", uids: [""], travelId: "")
     
     var startDate = NSDate()
     var endDate = NSDate()
@@ -30,7 +32,7 @@ class ShowInfoViewController: UIViewController {
     
     // MARK: Actions.
     @IBAction func calendarButtonDidTouch(_ sender: UIButton) {
-        addEventToCalendar(title: countryReceiver, description: "City: \(cityRecheiver). Happy traveling!", startDate: startDate, endDate: endDate)
+        addEventToCalendar(title: selectedTravelItem.country, description: "City: \(selectedTravelItem.city). Happy traveling!", startDate: startDate, endDate: endDate)
         
     }
 
@@ -38,9 +40,9 @@ class ShowInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        countryLabel.text = countryReceiver
-        cityLabel.text = cityRecheiver
-        HTTPSrequest(title: countryCodeRecheiver)
+        countryLabel.text = selectedTravelItem.country
+        cityLabel.text = selectedTravelItem.city
+        HTTPSrequest(title: selectedTravelItem.countryCode)
     }
     
     // MARK: Functions.

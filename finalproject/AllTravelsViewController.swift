@@ -14,14 +14,7 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
     
     // MARK: Variables.
     let travelRef = FIRDatabase.database().reference(withPath: "travel-items")
-    
     var travelItems: [Travel] = []
-    
-    var countrySegueName = String()
-    var citySegueName = String()
-    var countryCodeSegueName = String()
-    var uidsForSeque: [String] = []
-    var travelIdForSegue = String()
     var startDateForSegue = NSDate()
     var endDateForSegue = NSDate()
     
@@ -31,12 +24,8 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("Komt in volgende scherm")
-        
         travelRef.observe(.value, with: { snapshot in
             var newItems: [Travel] = []
-            
-            print("gaat niet mis bij firebase opzetten, observe")
             
             for item in snapshot.children {
                 let travelItem = Travel(snapshot: item as! FIRDataSnapshot)
@@ -87,18 +76,6 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
     
     // MARK: Functions
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let countryName = travelItems[indexPath.row].country
-        let cityName = travelItems[indexPath.row].city
-        let countryCode = travelItems[indexPath.row].countryCode
-        let uids = travelItems[indexPath.row].uids
-        let travelId = travelItems[indexPath.row].travelId
-        
-        self.countrySegueName = countryName
-        self.citySegueName = cityName
-        self.countryCodeSegueName = countryCode
-        self.uidsForSeque = uids
-        self.travelIdForSegue = travelId
-        
         performSegue(withIdentifier: "goToSpecifics", sender: nil)
     }
     
@@ -131,17 +108,17 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToSpecifics" {
             let destination = segue.destination as? SpecificTravelViewController
-        
-            destination?.countryReceiver = self.countrySegueName
-            destination?.cityRecheiver = self.citySegueName
-            destination?.countryCodeRecheiver = self.countryCodeSegueName
-            destination?.uidsReceiver = self.uidsForSeque
-            destination?.travelIdReceiver = self.travelIdForSegue
+            
             destination?.startDateReceiver = self.startDateForSegue
             destination?.endDateReceiver = self.endDateForSegue
+            
+            let indexPath = travelsTableView.indexPathForSelectedRow
+            destination?.selectedTravelItem = self.travelItems[(indexPath?.row)!]
+            print(self.travelItems[(indexPath?.row)!])
+
+            
         }
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
