@@ -45,8 +45,8 @@ class AddTravelFormViewController: UIViewController {
         
         let travelRef = self.ref.childByAutoId()
         travelRef.setValue(newTravel.toAnyObject())
-        
-        self.performSegue(withIdentifier: "goToTravelList", sender: nil)
+                
+//        self.performSegue(withIdentifier: "goToTravelList", sender: nil)
         
     }
     

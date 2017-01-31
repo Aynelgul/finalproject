@@ -80,3 +80,9 @@
 - Alle travels unieke ID's gegeven met childById, zodat de reizen niet overschreven worden.
 - Travel-items kunnen nu verwijderd worden: wordt wel ook bij buddy verwijderd (want gaat om de gehele reis). Misschien nog wel melding over geven? Of om bevestiging vragen bij verwijderen?
 - Delete confirmation toegevoegd (in de vorm van een Alert). Template: http://stackoverflow.com/questions/30726813/confirmation-for-deleting-a-post-in-table-view-cell
+- Toch childByAutoId toegevoegd bij travels: vond ik netter en anders overschreven de travels elkaar.. 
+
+## Dinsdag, 31 jan 2017
+- Gisteren AutoId toegevoegd voor travels, maar ik moet dit ook doen voor tips, anders overschrijven die elkaar ook. Gedaan en aangepast in de rest van de code.
+- Had een segue weggehaald, waardoor hij crashte. Opgelost.
+- Travel buddy werd nog niet meteen toegevoegd, pas bij het opnieuw openen van het scherm.

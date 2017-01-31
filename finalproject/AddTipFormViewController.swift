@@ -44,23 +44,29 @@ class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPick
 
     // MARK: Actions.
     @IBAction func OKButtonDidTouch(_ sender: UIButton) {
-        if descriptionTextField.text != "" {
-            let newTip = Tip(uid: (FIRAuth.auth()?.currentUser?.uid)!, country: chosenCountry, city: chosenCity, type: chosenOption, name: nameTextfield.text!, description: descriptionTextField.text!)
-            
-            let tipsRef = self.ref.child(newTip.type)
-            
-            tipsRef.setValue(newTip.toAnyObject())
-
-            self.performSegue(withIdentifier: "goBackToMap", sender: nil)
-        }
-        else {
+        if descriptionTextField.text == "" || nameTextfield.text == "" {
             let alert = UIAlertController(title: "Oops!", message: "Please fill in all fields.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
-            
-            return
-
         }
+        else {
+            let newTip = Tip(uid: (FIRAuth.auth()?.currentUser?.uid)!, country: chosenCountry, city: chosenCity, type: chosenOption, name: nameTextfield.text!, description: descriptionTextField.text!)
+            
+            let tipsRef = self.ref.childByAutoId()
+            
+            tipsRef.setValue(newTip.toAnyObject())
+            
+            self.performSegue(withIdentifier: "goBackToMap", sender: nil)
+        }
+
+
+//            let alert = UIAlertController(title: "Oops!", message: "Please fill in all fields.", preferredStyle: UIAlertControllerStyle.alert)
+//            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+//            self.present(alert, animated: true, completion: nil)
+//            
+//            return
+
+
     }
 
     // MARK: Functions.

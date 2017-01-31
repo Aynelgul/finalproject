@@ -29,8 +29,12 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("Komt in volgende scherm")
+        
         travelRef.observe(.value, with: { snapshot in
             var newItems: [Travel] = []
+            
+            print("gaat niet mis bij firebase opzetten, observe")
             
             for item in snapshot.children {
                 let travelItem = Travel(snapshot: item as! FIRDataSnapshot)
@@ -103,11 +107,7 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
             uiAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             
             self.present(uiAlert, animated: true, completion: nil)
-            
-            
-            
-//            let travelItem = travelItems[indexPath.row]
-//            travelItem.ref?.removeValue()
+
         }
     }
     

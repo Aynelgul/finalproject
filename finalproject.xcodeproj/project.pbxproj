@@ -28,6 +28,8 @@
 		8575A6581E312B3200D36C5D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8575A6571E312B3200D36C5D /* GoogleService-Info.plist */; };
 		8575A65A1E317BE200D36C5D /* Travel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8575A6591E317BE000D36C5D /* Travel.swift */; };
 		8575A65C1E31860900D36C5D /* UserTravelsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8575A65B1E31860900D36C5D /* UserTravelsCell.swift */; };
+		858A28711E3F986C00B3F478 /* OwnTipsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858A28701E3F986C00B3F478 /* OwnTipsCell.swift */; };
+		858A28731E3F990500B3F478 /* AllTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858A28721E3F990500B3F478 /* AllTipsViewController.swift */; };
 		85AC703E1E2CCC23008C3E0D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC703D1E2CCC23008C3E0D /* LoginViewController.swift */; };
 		85AC70401E2CCCAB008C3E0D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC703F1E2CCCAB008C3E0D /* MenuViewController.swift */; };
 		85AC70451E2CE2ED008C3E0D /* AllTravelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AC70441E2CE2ED008C3E0D /* AllTravelsViewController.swift */; };
@@ -95,6 +97,8 @@
 		8575A6571E312B3200D36C5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8575A6591E317BE000D36C5D /* Travel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Travel.swift; sourceTree = "<group>"; };
 		8575A65B1E31860900D36C5D /* UserTravelsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTravelsCell.swift; sourceTree = "<group>"; };
+		858A28701E3F986C00B3F478 /* OwnTipsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnTipsCell.swift; sourceTree = "<group>"; };
+		858A28721E3F990500B3F478 /* AllTipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTipsViewController.swift; sourceTree = "<group>"; };
 		85AC703D1E2CCC23008C3E0D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		85AC703F1E2CCCAB008C3E0D /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		85AC70411E2CCFC5008C3E0D /* finalproject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = finalproject.entitlements; sourceTree = "<group>"; };
@@ -265,10 +269,12 @@
 				85FE3C541E2FAAE500586A2D /* AddTravelFormViewController.swift */,
 				85FE3C561E2FAC6B00586A2D /* AddTipFormViewController.swift */,
 				85AC70441E2CE2ED008C3E0D /* AllTravelsViewController.swift */,
+				858A28721E3F990500B3F478 /* AllTipsViewController.swift */,
 				85AFC6F71E3B9AE30025405B /* SpecificTravelViewController.swift */,
 				85AC7E811E376CDF007BB78F /* ShowInfoViewController.swift */,
 				85CAE5F81E38CCC100DE39FD /* ShowTipsViewController.swift */,
 				85CAE5FA1E38CCEC00DE39FD /* ShowBuddiesViewController.swift */,
+				858A28701E3F986C00B3F478 /* OwnTipsCell.swift */,
 				8575A65B1E31860900D36C5D /* UserTravelsCell.swift */,
 				85CAE6001E38CEBA00DE39FD /* UserTipsCell.swift */,
 				85CAE6021E38CECB00DE39FD /* UserBuddiesCell.swift */,
@@ -615,8 +621,10 @@
 				85FE3C551E2FAAE600586A2D /* AddTravelFormViewController.swift in Sources */,
 				85AFC6F41E3B99910025405B /* AUDIT.md in Sources */,
 				85AC70401E2CCCAB008C3E0D /* MenuViewController.swift in Sources */,
+				858A28711E3F986C00B3F478 /* OwnTipsCell.swift in Sources */,
 				85CAE6031E38CECB00DE39FD /* UserBuddiesCell.swift in Sources */,
 				85FE3C4F1E2E577D00586A2D /* PROCESS.md in Sources */,
+				858A28731E3F990500B3F478 /* AllTipsViewController.swift in Sources */,
 				852C09B81E250BA3000F563F /* ViewController.swift in Sources */,
 				85CAE5FB1E38CCEC00DE39FD /* ShowBuddiesViewController.swift in Sources */,
 				8535E9321E301F750037D871 /* Tip.swift in Sources */,
