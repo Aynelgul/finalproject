@@ -90,4 +90,12 @@
 - NSDate aangemaakt voor travel (stond al in struct, maar werd nog niet opgehaald en meegestuurd vanuit pickerView).
 - NSDate omzetten naar Double voor Firebase en ook weer terug omzetten naar NSDate/String. http://stackoverflow.com/questions/33277970/how-to-convert-string-to-date-to-string-in-swift-ios en http://stackoverflow.com/questions/26849237/swift-convert-unix-time-to-date-and-time
 - Ook einddatum toegevoegd aan travel. Je kan nu je travel toevoegen aan je Calendar. Hij geeft een alert als het gelukt is en geeft ook een description mee met de stad waar je naar toe gaat en "happy travelling!" als 'persoonlijk' berichtje.
-- Segues beetje opgeschoond: hele objecten meegeven in plaats van allemaal losse waarden (overzichtelijker). 
+- Segues beetje opgeschoond: voornamelijk hele objecten meegeven als meerdere waarden nodig zijn in plaats van allemaal losse waarden (overzichtelijker). 
+- Opgeschoond: functie voor converting NSDate naar String.
+- Nog steeds crash met Denemarken; geeft lokatie ook in zee aan (????).
+
+## Woensdag, 1 feb 2017
+
+## Donderdag, 2 feb 2017
+
+## Vrijdag, 3 feb 2017
