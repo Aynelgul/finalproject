@@ -30,6 +30,7 @@ class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPick
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         // Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddTipFormViewController.dismissKeyboard))
         tap.cancelsTouchesInView = true
@@ -57,8 +58,8 @@ class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPick
             self.performSegue(withIdentifier: "goBackToMap", sender: nil)
         }
     }
-
-    // MARK: Functions.
+    
+    
     func configuratePickerView() -> Void {
         pickerView.dataSource = self
         pickerView.delegate = self
