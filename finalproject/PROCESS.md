@@ -95,6 +95,7 @@
 - Nog steeds crash met Denemarken; geeft lokatie ook in zee aan (????).
 
 ## Woensdag, 1 feb 2017
+- Begonnen aan REPORT.md. Vooral even op een rijtje gezet voor mezelf: eerst alle ViewControllers uitleggen, etc. 
 
 ## Donderdag, 2 feb 2017
 
