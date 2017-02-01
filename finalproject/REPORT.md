@@ -1,7 +1,9 @@
 # Final Report
 
-Name: Aynel Gül
+Name: Aynel Gül \n
+
 Student number: 10595945
+
 Date: 02-02-2017
 
 __________________________________________________
