@@ -57,5 +57,7 @@ If I have enough time, I would like to add these extensions:
 - Converting NSDate to Double/String en vise versa: http://stackoverflow.com/questions/33277970/how-to-convert-string-to-date-to-string-in-swift-ios en http://stackoverflow.com/questions/26849237/swift-convert-unix-time-to-date-and-time
 - Moving view with keyboard: http://stackoverflow.com/questions/26070242/move-view-with-keyboard-using-swift
 - Template for adding an event to your Calendar: http://stackoverflow.com/questions/28379603/how-to-add-an-event-in-the-device-calendar-using-swift
+- API: REST Countries. Link used: "https://restcountries.eu/rest/v1/name/"+title+"?fullText=true", where 'title' is the name of the country.
+- API: Geognos. Link used: "http://www.geognos.com/api/en/countries/flag/"+title+".png", where 'title' is the name of the country.
 
 [![BCH compliance](https://bettercodehub.com/edge/badge/Aynelgul/finalproject)](https://bettercodehub.com)

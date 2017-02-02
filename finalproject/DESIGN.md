@@ -14,7 +14,7 @@ A class that will contain the name of the country, name of the city, date (and t
 A class that consist of what kind of tip is is, what the name is (and city/country). It will also contain a discription.
 
 
-## (Advanced) Sketches
+## (Old) Advanced Sketches
 ![](Doc/Prototype1.png)
 
 ![](Doc/Prototype2.png)
