@@ -11,7 +11,6 @@ import Firebase
 
 struct Travel {
     
-    // date moet nog aangepast worden!!
     let startDate: Double
     let endDate: Double
     let country: String

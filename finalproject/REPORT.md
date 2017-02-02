@@ -87,6 +87,7 @@ Three models were used in this application (user, travel and tip).
 **Room for improvement:** the travel object contains 7 parameters, which is quite a lot. To keep the object more simple, I could join the startDate parameter and endDate parameter in one single parameter (using a dictionary). Also, I used a travelId to link a buddy to a specific travel. It might be possible to remove this parameter and use the key of the users(....) Lastly, I could add 'username' to the user object, so I can store and display the username of a user (e.g. with tips), if he or she likes to. 
 
 ### View
+It has a login view, a menu view (travels, tips, adding travel), a view of a list of your travels that you can click on. After clicking on a travel/country, it shows you another view with information about this particular country. In this view you can see information about the country, tips from you and other users about this specific place and the buddies that you're travelling. Here you can add travel buddies as well.
 
 
 ### Controllers:
@@ -131,6 +132,14 @@ For a more detailed discription of the challenges and solutions:
 
 ## Discussion and Conclusion
 All in all, I stumbled upon quite some challenges. In the beginning, the hardest part for me was to set up a design: how I wanted to use my views and how they would connect. Also, in the beginning I have spent quite some time figuring out what objects I wanted to use. Although, that did help me to prevent some struggles later: because I knew exactly what parameters I would be using and why/how. 
+I chose to only view the app in a portrait orientation, because the landscape orientation has no added value for my app; it only makes it less organized.
+In an ideal world, given much more time, there are some things I would have done different.
+(...for instance)
 
-- in een perfecte wereld
-- alleen rechtop view; geen toegevoegde waarde
+
+- private maken variabelen van objecten; oproepen via functies (veiliger)
+
+
+in perfecte wereld;
+- A map where the app marks the places that you have travelled (after the travel date has been reached).
+- Inviting someone by email for a travel and only adding the travel to the travel list of the buddy if he/she accepts the offer.

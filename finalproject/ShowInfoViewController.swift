@@ -69,7 +69,7 @@ class ShowInfoViewController: UIViewController {
         })
     }
     
-    func HTTPSrequest(title: String) {
+    private func HTTPSrequest(title: String) {
         let title = title.replacingOccurrences(of: " ", with: "+")
         let url = URL(string: "https://restcountries.eu/rest/v1/name/"+title+"?fullText=true")
         let task = URLSession.shared.dataTask(with: url!, completionHandler: { data, response, error in
@@ -107,7 +107,7 @@ class ShowInfoViewController: UIViewController {
         }).resume()
     }
     
-    func HTTPSrequestImage(title: String) {
+    private func HTTPSrequestImage(title: String) {
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
         if let url = NSURL(string: "http://www.geognos.com/api/en/countries/flag/"+title+".png"){
@@ -131,14 +131,14 @@ class ShowInfoViewController: UIViewController {
         }
     }
     
-    func convertNSDateToString(date: Date) -> String {
+    private func convertNSDateToString(date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
         
         return dateFormatter.string(from: date)
     }
     
-    func presentAlert(title: String, message: String) -> Void {
+    private func presentAlert(title: String, message: String) -> Void {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)

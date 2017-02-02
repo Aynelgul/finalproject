@@ -99,7 +99,7 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
         }
     }
     
-    func convertNSDateToString(date: Date) -> String {
+    private func convertNSDateToString(date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
         

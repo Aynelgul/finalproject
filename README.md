@@ -26,10 +26,10 @@ Preparing everything for a vacation can be stressful at times. This app aims at 
 This app saves the travels that you add (personally) and also stores the tips that you and others add (publicly). These will be saved at Firebase. The same goes for user data (email, password).
 
 ### View
-The app will have multiple views. It has a login view, a menu view (travels, tips, adding travel), a view of a list of your travels that you can click on. After clicking on a travel/country, it shows you another view with information about this particular country. In this view, you can also view/create your packing list. In the menu you can also choose 'tips' which brings you to a view with travel tips from you and other users.
+It has a login view, a menu view (travels, tips, adding travel), a view of a list of your travels that you can click on. After clicking on a travel/country, it shows you another view with information about this particular country. In this view you can see information about the country, tips from you and other users about this specific place and the buddies that you're travelling. Here you can add travel buddies as well.
 
 ### Controller
-The controler manipulates the model, if a user, for example, adds or deletes a new travel or packing list. The model, then, updates the view.
+The controler manipulates the model, if a user, for example, adds or deletes a new travel or tip. The model, then, updates the view.
 
 
 ## External components (APIs)
@@ -49,7 +49,7 @@ There are similar applications available that enable you to, for example, look u
 If I have enough time, I would like to add these extensions:
 
 - A map where the app marks the places that you have travelled (after the travel date has been reached).
-- Inviting someone (by email?) for a travel (adding the same travel details to another account).
+- Inviting someone by email for a travel and only adding the travel to the travel list of the buddy if he/she accepts the offer.
 
 ## Credits
 - Reversed geocoding: http://stackoverflow.com/questions/27495328/reverse-geocode-location-in-swift

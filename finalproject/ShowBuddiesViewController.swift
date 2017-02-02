@@ -133,7 +133,7 @@ class ShowBuddiesViewController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
     
-    func updateAllTravelers() -> Void {
+    private func updateAllTravelers() -> Void {
         for traveler in allTravelers {
             if traveler != (FIRAuth.auth()?.currentUser?.uid)! {
                 travelBuddies.append(traveler)
@@ -141,7 +141,7 @@ class ShowBuddiesViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
-    func findEmailWithUID(UID: String, completion: @escaping findEmailWithUIDComplete) {
+    private func findEmailWithUID(UID: String, completion: @escaping findEmailWithUIDComplete) {
         userRef.observeSingleEvent(of: .value, with: { snapshot in
             
             if snapshot.hasChildren() {
@@ -159,7 +159,7 @@ class ShowBuddiesViewController: UIViewController, UITableViewDelegate, UITableV
         })
     }
     
-    func presentAlert(title: String, message: String) -> Void {
+    private func presentAlert(title: String, message: String) -> Void {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)

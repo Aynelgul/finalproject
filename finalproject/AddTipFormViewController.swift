@@ -66,7 +66,7 @@ class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPick
         self.present(alert, animated: true, completion: nil)
     }
     
-    func configuratePickerView() -> Void {
+    private func configuratePickerView() -> Void {
         pickerView.dataSource = self
         pickerView.delegate = self
         
