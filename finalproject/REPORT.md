@@ -25,6 +25,8 @@ This app aims at making things easier and organized when preparing for your trip
 
 <img src="https://github.com/Aynelgul/finalproject/blob/master/finalproject/Doc/report-screenshot.PNG" width="300">
 
+[See README.md for more details](https://github.com/Aynelgul/finalproject/blob/master/finalproject/README.md)
+
 ## Technical Design
 
 ### Model
@@ -111,11 +113,16 @@ Three models were used in this application (user, travel and tip).
 
 
 ## Challenges
-- Verschillende landnamen per taal (land code gebruikt).
-- Veel viewControllers: segmented controllers gebruikt
-- Veel segues: hele objecten meegeven ipv losse waarden
-- reversed geocoding failing
+- Different names for countries/cities in different languages: I first used the name of the country to insert into an API to get information about the country and get the flag of the country. However, this API only knows the English names of the countries and cities, which ment that whenever used in Holland (for example), 'Frankrijk' could not be found with the API. When used MapKit, the language used, is the language of the country that you're in. I managed to get the country code via geocoding, next to the country- and city name, and used this for the API, because the country code is the same in every language. The API can handle country codes as well.
 
-(link naar progress.md)
+- Many viewControllers: when I first started with this app, I realized I would need a lot more viewControllers than I initially thought. I tried to look at other apps that used a lot of viewControllers to see how they minimalized this. I noticed many apps used segmented control. This is why I chose to use segmented control with several containerViews, to keep it a little more clear. I actually found working with containerviews quite handy and easy. 
+
+- Lot of segues: because of using MapKit and using the information from the map/reversed geocoding in several views, I used quite some segues. When I tried to segue to a segue 'further away' (e.g. to a view that the current view is not directly connected with) I stumbled upon some troubles: empty variables, etc. I think this may has to do with the containerviews, so I chose to segue to the next view and then to the view that I initially wanted to segue to. This way it works, but it makes the code less readable and clear.
+
+- Reversed geocoding failing: when searching for several cities/countries, the reversed geocoding seemed to fail, because the variables in placemark(s) are optional and sometimes 'nil'. I tried to unwrap them, but because that forced unwrapping, sometimes the app would crash if the information returned 'nil'. For this reason I build in a check for every placemark parameter. This makes the code less 'pretty' and is not the best solution, but it prevents the app from crashing and reports 'country/city not found' to the user.
+
+For a more detailed discription of the challenges and solutions:
+[See PROCESS.md](https://github.com/Aynelgul/finalproject/blob/master/finalproject/PROCESS.md)
 
 ## Discussion and Conclusion
+All in all, I stumbled upon quite some challenges. In the beginning, the hardest part for me was to set up a design: how I wanted to use my views and how they would connect. Also, in the beginning I have spent quite some time figuring out what objects I wanted to use. Although, that did help me to prevent some struggles later: because I knew exactly what parameters I would be using and why/how. 
