@@ -1,10 +1,10 @@
 # Final Report
 <p align="center">
-Name: Aynel Gül
+<Name: Aynel Gül
 
 Student number: 10595945
 
-Date: 02-02-2017
+Date: 02-02-2017>
 
 
 ![Adventure Time](Doc/app-icon.jpg)
@@ -14,6 +14,7 @@ Date: 02-02-2017
 # Index
 1. Description
 2. Technical Design (Model, View, Controllers)
+3. Challenges
 
 
 ## Description
@@ -95,10 +96,6 @@ This app aims at making things easier and organized when preparing for your trip
 - UserTipsCell:
 - UserBuddiesCell:
 
-### Objects/Structs..
-- User
-- Tip
-- Travel
 
 ## Challenges
 - Verschillende landnamen per taal (land code gebruikt).
