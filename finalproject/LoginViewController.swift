@@ -85,12 +85,12 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: - Functions.
-    func signedIn(_ user: FIRUser?) {
+    private func signedIn(_ user: FIRUser?) {
         emailTextField.text = ""
         passwordTextField.text = ""
     }
     
-    func createNewUser(email: String, password: String) -> Void {
+    private func createNewUser(email: String, password: String) -> Void {
         FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
             if let error = error {
                 print(error.localizedDescription)
@@ -116,7 +116,7 @@ class LoginViewController: UIViewController {
 
     }
     
-    func presentAlert(title: String, message: String) -> Void {
+    private func presentAlert(title: String, message: String) -> Void {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)

@@ -6,12 +6,14 @@
 
 **Date:** 02-02-2017
 <br><br>
-<img src="https://github.com/Aynelgul/finalproject/blob/master/finalproject/Doc/app-icon.jpg" width="300">
+<img src="https://github.com/Aynelgul/finalproject/blob/master/finalproject/Doc/app-icon.jpg" width="200">
 <br><br>
 
 # Index
 **1.** Description
+
 **2.** Technical Design (Model, View, Controllers)
+
 **3.** Challenges
 
 
@@ -72,7 +74,7 @@ Three models were used in this application (user, travel and tip).
 > Tip object contains information about the tip. The tips are used to display in the matching travels 
 > of all users.
 >
-> [See Tip. swift](https://github.com/Aynelgul/finalproject/blob/master/finalproject/Tip.swift)
+> [See Tip.swift](https://github.com/Aynelgul/finalproject/blob/master/finalproject/Tip.swift)
 
 <br><br>
 
@@ -95,7 +97,7 @@ Three models were used in this application (user, travel and tip).
 - ShowTipsViewController: displays all the tips that have been added regarding this country and city, in the form of a tableView. 
 - ShowBuddiesViewController: displays all the travel buddies that are joining the user on the travel/trip. It allows the user the invite a buddy by email (if the invited buddy uses the app too), adding the same travel to this user his/her travels too. 
 
-** Room for improvement:** 
+**Room for improvement:** 
 
 - OwnTipsCell:
 - UserTravelsCell:

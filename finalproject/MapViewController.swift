@@ -60,17 +60,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
 
     
     // MARK: - Functions.
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    internal func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let location: CLLocationCoordinate2D = manager.location!.coordinate
         print("locations = \(location.latitude) \(location.longitude)")
     }
     
-    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
+    internal func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
         print("error with location manager: " + error.description)
     }
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
+    internal func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
 
         searchBar.resignFirstResponder()
         dismiss(animated: true, completion: nil)
@@ -103,7 +103,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
     }
     
     // When annotation/pin is clicked.
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+    internal func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         
         self.locationManager.stopUpdatingLocation()
         
@@ -113,8 +113,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
         
         let newLocation = CLLocation(latitude: pointAnnotation.coordinate.latitude, longitude: pointAnnotation.coordinate.longitude)
         
+        print("SECOND PRINT NEW LOCATION: \(newLocation)")
+        
         // Convert coordinates to country/city.
         CLGeocoder().reverseGeocodeLocation(newLocation, completionHandler: {(placemarks, error) -> Void in
+            
+            print("REVERSED GEOCODING REACHED")
             
             if error != nil {
                 print("Reverse geocoder failed with error" + (error?.localizedDescription)!)
@@ -124,12 +128,32 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
 
             if (placemarks?.count)! > 0 {
                 let pm = placemarks![0] 
-                print(pm.locality!)
-                self.clickedAnnotationCity = pm.locality!
-                self.clickedAnnotationCountry = pm.country!
-                self.clickedAnnotationCountryCode = pm.isoCountryCode!
+                print(pm.addressDictionary!)
+                
+                if let locality = pm.locality {
+                    self.clickedAnnotationCity = locality
+                } else {
+                    self.clickedAnnotationCity = "City not found"
+                }
+                
+                if let country = pm.country {
+                    self.clickedAnnotationCountry = country
+                } else {
+                    self.clickedAnnotationCity = "Country not found"
+                }
+                
+                if let isoCountryCode = pm.isoCountryCode {
+                    self.clickedAnnotationCountryCode = isoCountryCode
+                } else {
+                    self.clickedAnnotationCountryCode = "Country code not found"
+                }
+                
+//                self.clickedAnnotationCity = (pm.locality)!
+//                self.clickedAnnotationCountry = (pm.country)!
+//                self.clickedAnnotationCountryCode = (pm.isoCountryCode)!
                 
                 self.performSegue(withIdentifier: "goToForm", sender: nil)
+                
 
             }
             else {
@@ -139,7 +163,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
         })
     }
     
-    func presentAlert(title: String, message: String) -> Void {
+    private func presentAlert(title: String, message: String) -> Void {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
