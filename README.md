@@ -16,7 +16,9 @@ Preparing everything for a vacation can be stressful at times. This app aims at 
 
 
 ## Visual Sketch
-![](Doc/Sketches.jpg)
+
+<img src="https://github.com/Aynelgul/finalproject/blob/master/finalproject/Doc/Sketches.jpg">
+
 
 
 ## Decomposing
