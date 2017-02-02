@@ -6,7 +6,7 @@ Student number: 10595945
 
 Date: 02-02-2017
 
-<img src="https://github.com/Aynelgul/finalproject/blob/master/finalproject/Doc/app-icon.jpg" width="48">
+<img src="https://github.com/Aynelgul/finalproject/blob/master/finalproject/Doc/app-icon.jpg" width="100">
 
 # Index
 1. Description
