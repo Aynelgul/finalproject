@@ -51,3 +51,6 @@ If I have enough time, I would like to add these extensions:
 
 ## Credits
 
+
+
+[![BCH compliance](https://bettercodehub.com/edge/badge/Aynelgul/finalproject)](https://bettercodehub.com)
