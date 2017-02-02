@@ -18,7 +18,7 @@
 
 **4.** Discussion and Conclusion
 
-![](Doc/report-screenshot.PNG)
+<img src="https://github.com/Aynelgul/finalproject/blob/master/finalproject/Doc/report-screenshot.PNG" width="300">
 
 
 ## Description
