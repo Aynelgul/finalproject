@@ -55,11 +55,17 @@ class AddTravelFormViewController: UIViewController {
         let travelRef = self.ref.childByAutoId()
         travelRef.setValue(newTravel.toAnyObject())
         
-//        self.performSegue(withIdentifier: "goToTravelList", sender: nil)
+        presentAlert(title: "Done", message: "Your travel has been added to the list.")
         
     }
     
     // MARK: - Functions.
+    private func presentAlert(title: String, message: String) -> Void {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

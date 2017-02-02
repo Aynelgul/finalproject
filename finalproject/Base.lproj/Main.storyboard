@@ -500,7 +500,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tsi-gu-J2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3933.75" y="-1568.661971830986"/>
+            <point key="canvasLocation" x="3934" y="-1505"/>
         </scene>
         <!--All Travels View Controller-->
         <scene sceneID="cku-1m-IIp">
@@ -726,7 +726,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ds9-bn-40J">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="112.5"/>
                                 <date key="date" timeIntervalSinceReferenceDate="506436634.50691199">
                                     <!--2017-01-18 12:50:34 +0000-->
                                 </date>
@@ -752,7 +752,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Till:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Suw-Jt-IMx">
-                                <rect key="frame" x="139" y="110" width="42" height="21"/>
+                                <rect key="frame" x="139" y="110" width="42" height="21.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="42" id="KFR-rb-Wq4"/>
                                 </constraints>
@@ -761,7 +761,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="5Zj-yO-sts">
-                                <rect key="frame" x="0.0" y="132" width="320" height="102"/>
+                                <rect key="frame" x="0.0" y="132.5" width="320" height="101.5"/>
                                 <date key="date" timeIntervalSinceReferenceDate="506436634.50691199">
                                     <!--2017-01-18 12:50:34 +0000-->
                                 </date>
@@ -880,7 +880,6 @@
                         <outlet property="descriptionTextField" destination="6Zo-nO-bgQ" id="FzY-vC-eos"/>
                         <outlet property="nameTextfield" destination="FyH-oI-Hl9" id="6Ne-Fk-7ct"/>
                         <outlet property="pickerView" destination="0Jy-Wp-X13" id="X8V-fi-aKn"/>
-                        <segue destination="xYA-zD-k7W" kind="show" identifier="goBackToMap" id="WQI-tt-crh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AfL-kE-iqI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1315,7 +1314,4 @@
         <image name="white plus sign" width="256" height="256"/>
         <image name="yellow suitcase" width="3333" height="3333"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="l6w-AC-8wO"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -55,11 +55,17 @@ class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPick
             
             tipsRef.setValue(newTip.toAnyObject())
             
-            self.performSegue(withIdentifier: "goBackToMap", sender: nil)
+            presentAlert(title: "Done", message: "Your tip has been added. Thank you!")
         }
     }
     
     // MARK: - Functions.
+    private func presentAlert(title: String, message: String) -> Void {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func configuratePickerView() -> Void {
         pickerView.dataSource = self
         pickerView.delegate = self

@@ -106,3 +106,4 @@
 ## Vrijdag, 3 feb 2017
 - Geen crash meer als hij bepaalde stad/bepaald land niet kan vinden: wordt nu ondervangen.
 - Code opgeschoond
+- Functies die private gemaakt konden worden op private gezet.
