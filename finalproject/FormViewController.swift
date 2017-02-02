@@ -64,7 +64,7 @@ class FormViewController: UIViewController {
         case 0:
             firstView.isHidden = false
             secondView.isHidden = true
-            pickLabel.text = "Select the date"
+            pickLabel.text = "From:"
         case 1:
             firstView.isHidden = true
             secondView.isHidden = false

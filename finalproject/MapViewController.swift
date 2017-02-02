@@ -128,7 +128,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
 
             if (placemarks?.count)! > 0 {
                 let pm = placemarks![0] 
-                print(pm.addressDictionary!)
                 
                 if let locality = pm.locality {
                     self.clickedAnnotationCity = locality
@@ -147,10 +146,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
                 } else {
                     self.clickedAnnotationCountryCode = "Country code not found"
                 }
-                
-//                self.clickedAnnotationCity = (pm.locality)!
-//                self.clickedAnnotationCountry = (pm.country)!
-//                self.clickedAnnotationCountryCode = (pm.isoCountryCode)!
                 
                 self.performSegue(withIdentifier: "goToForm", sender: nil)
                 
