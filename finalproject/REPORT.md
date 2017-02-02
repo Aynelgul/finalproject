@@ -131,3 +131,6 @@ For a more detailed discription of the challenges and solutions:
 
 ## Discussion and Conclusion
 All in all, I stumbled upon quite some challenges. In the beginning, the hardest part for me was to set up a design: how I wanted to use my views and how they would connect. Also, in the beginning I have spent quite some time figuring out what objects I wanted to use. Although, that did help me to prevent some struggles later: because I knew exactly what parameters I would be using and why/how. 
+
+- in een perfecte wereld
+- alleen rechtop view; geen toegevoegde waarde
