@@ -1,12 +1,13 @@
 # Final Report
 
-Name: Aynel Gül
+**Name:** Aynel Gül
 
-Student number: 10595945
+**Student number:** 10595945
 
-Date: 02-02-2017
+**Date:** 02-02-2017
 
-<img src="https://github.com/Aynelgul/finalproject/blob/master/finalproject/Doc/app-icon.jpg" width="100">
+
+<img src="https://github.com/Aynelgul/finalproject/blob/master/finalproject/Doc/app-icon.jpg" width="130">
 
 # Index
 1. Description
@@ -35,6 +36,7 @@ This app aims at making things easier and organized when preparing for your trip
 >
 > [See User.swift](https://github.com/Aynelgul/finalproject/blob/master/finalproject/User.swift)
 
+<br><br>
 
 | **Travel**    | **Values**         |
 | ------------- |:------------------:|
@@ -53,6 +55,7 @@ This app aims at making things easier and organized when preparing for your trip
 >
 > [See Travel.swift](https://github.com/Aynelgul/finalproject/blob/master/finalproject/Travel.swift)
 
+<br><br>
 
 | **Tip**       | **Values**         |
 | ------------- |:------------------:|
@@ -63,6 +66,7 @@ This app aims at making things easier and organized when preparing for your trip
 | name          | String             |
 | description   | String             |
 
+<br><br>
 
 > **Tip:**
 > Tip object contains information about the tip. The tips are used to display in the matching travels 
