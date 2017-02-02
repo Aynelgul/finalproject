@@ -10,21 +10,20 @@ import UIKit
 
 class OwnTipsCell: UITableViewCell {
     
-    // MARK: Outlets.
-    
+    // MARK: - Outlets.
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
 
+    // MARK: - Functions.
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
     }
-
+    
 }

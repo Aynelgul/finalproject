@@ -102,8 +102,8 @@ class ShowBuddiesViewController: UIViewController, UITableViewDelegate, UITableV
             textField.placeholder = "Enter Email"
         }
         
-        alertController.addAction(saveAction)
         alertController.addAction(cancelAction)
+        alertController.addAction(saveAction)
         
         self.present(alertController, animated: true, completion: nil)
         

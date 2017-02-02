@@ -13,7 +13,7 @@ import FirebaseAuth
 
 class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
-    // MARK: Variables.
+    // MARK: - Variables.
     let ref = FIRDatabase.database().reference(withPath: "tip-items")
     
     var pickerOptions = ["Restaurant", "Hotel", "Park", "Museum", "Shop", "Festival", "Club", "Cafe", "Other"]
@@ -21,12 +21,12 @@ class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPick
     var chosenCountry = String()
     var chosenCity = String()
     
-    // MARK: Outlets.
+    // MARK: - Outlets.
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var nameTextfield: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
     
-    // MARK: viewDidLoad.
+    // MARK: - viewDidLoad.
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,7 +41,7 @@ class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPick
         
     }
 
-    // MARK: Actions.
+    // MARK: - Actions.
     @IBAction func OKButtonDidTouch(_ sender: UIButton) {
         if descriptionTextField.text == "" || nameTextfield.text == "" {
             let alert = UIAlertController(title: "Oops!", message: "Please fill in all fields.", preferredStyle: UIAlertControllerStyle.alert)
@@ -59,7 +59,7 @@ class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPick
         }
     }
     
-    
+    // MARK: - Functions.
     func configuratePickerView() -> Void {
         pickerView.dataSource = self
         pickerView.delegate = self
@@ -92,7 +92,7 @@ class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPick
         return NSAttributedString(string: str, attributes: [NSForegroundColorAttributeName:UIColor.white])
     }
     
-    // Function when tap is recognized.
+    // Function for when tap is recognized.
     func dismissKeyboard() {
         view.endEditing(true)
     }

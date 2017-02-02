@@ -59,39 +59,15 @@ class LoginViewController: UIViewController {
         let alert = UIAlertController(title: "Sign Up",
                                       message: "Sign Up",
                                       preferredStyle: .alert)
-        let saveAction = UIAlertAction(title: "Save",
-                                       style: .default) { action in
+        let saveAction = UIAlertAction(title: "Save", style: .default) { action in
+            let emailField = alert.textFields![0]
+            let passwordField = alert.textFields![1]
                                         
-                                        let emailField = alert.textFields![0]
-                                        let passwordField = alert.textFields![1]
-                                        
-                                        FIRAuth.auth()?.createUser(withEmail: emailField.text!, password: passwordField.text!) { (user, error) in
-                                            if let error = error {
-                                                print(error.localizedDescription)
-                                                
-                                                if error.localizedDescription == "The email address is already in use by another account." {
-                                                    self.presentAlert(title: "Oops!", message: "The email address is already in use by another account.")
-                                                }
-                                                
-                                                if error.localizedDescription == "The password must be 6 characters long or more." {
-                                                    self.presentAlert(title: "Oops!", message: "The password must be 6 characters long or more.")
-                                                }
-                                                
-                                                self.presentAlert(title: "Oops!", message: "Sign up failed. Please fill in all fields or check your e-mailadress.")
-                                                
-                                                return
-                                            }
-                                            
-                                            let ref = FIRDatabase.database().reference(withPath: "Users")
-                                            let newUser = User(uid: (user?.uid)!, email: emailField.text!)
-                                            let userRef = ref.child((user?.uid)!)
-                                            userRef.setValue(newUser.toAnyObject())
-                                        }
+            self.createNewUser(email: emailField.text!, password: passwordField.text!)
         }
         
         let cancelAction = UIAlertAction(title: "Cancel",
                                          style: .default)
-        
         alert.addTextField { textEmail in
             textEmail.placeholder = "Enter your email"
         }
@@ -109,23 +85,35 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: - Functions.
-    
-    
-//    func setDisplayName(_ user: FIRUser) {
-//        let changeRequest = user.profileChangeRequest()
-//        changeRequest.displayName = user.email!.components(separatedBy: "@")[0]
-//        changeRequest.commitChanges(){ (error) in
-//            if let error = error {
-//                print(error.localizedDescription)
-//                return
-//            }
-//            self.signedIn(FIRAuth.auth()?.currentUser)
-//        }
-//    }
-    
     func signedIn(_ user: FIRUser?) {
         emailTextField.text = ""
         passwordTextField.text = ""
+    }
+    
+    func createNewUser(email: String, password: String) -> Void {
+        FIRAuth.auth()?.createUser(withEmail: email, password: password) { (user, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                
+                if error.localizedDescription == "The email address is already in use by another account." {
+                    self.presentAlert(title: "Oops!", message: "The email address is already in use by another account.")
+                }
+                
+                if error.localizedDescription == "The password must be 6 characters long or more." {
+                    self.presentAlert(title: "Oops!", message: "The password must be 6 characters long or more.")
+                }
+                
+                self.presentAlert(title: "Oops!", message: "Sign up failed. Please fill in all fields or check your e-mailadress.")
+                
+                return
+            }
+            
+            let ref = FIRDatabase.database().reference(withPath: "Users")
+            let newUser = User(uid: (user?.uid)!, email: email)
+            let userRef = ref.child((user?.uid)!)
+            userRef.setValue(newUser.toAnyObject())
+        }
+
     }
     
     func presentAlert(title: String, message: String) -> Void {

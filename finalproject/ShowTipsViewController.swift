@@ -12,16 +12,16 @@ import FirebaseDatabase
 
 class ShowTipsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    // MARK: Variables.
+    // MARK: - Variables.
     var currentCity = String()
     
     let tipRef = FIRDatabase.database().reference(withPath: "tip-items")
     var tipItems: [Tip] = []
     
-    // MARK: Outlets
+    // MARK: - Outlets
     @IBOutlet weak var tipsTableView: UITableView!
 
-    // MARK: viewDidLoad.
+    // MARK: - viewDidLoad.
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,7 +41,7 @@ class ShowTipsViewController: UIViewController, UITableViewDelegate, UITableView
         })
     }
     
-    // MARK: Functions
+    // MARK: - Functions
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tipItems.count
     }

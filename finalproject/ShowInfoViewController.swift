@@ -25,13 +25,6 @@ class ShowInfoViewController: UIViewController {
     @IBOutlet weak var regionLabel: UILabel!
     @IBOutlet weak var flagImageView: UIImageView!
     @IBOutlet weak var startDateLabel: UILabel!
-    
-    
-    // MARK: - Actions.
-    @IBAction func calendarButtonDidTouch(_ sender: UIButton) {
-        addEventToCalendar(title: selectedTravelItem.country, description: "City: \(selectedTravelItem.city). Happy travelling!", startDate: startDate, endDate: endDate)
-        
-    }
 
     // MARK: - viewDidLoad.
     override func viewDidLoad() {
@@ -42,6 +35,12 @@ class ShowInfoViewController: UIViewController {
         startDateLabel.text = convertNSDateToString(date: startDate as Date)
         
         HTTPSrequest(title: selectedTravelItem.countryCode)
+    }
+    
+    // MARK: - Actions.
+    @IBAction func calendarButtonDidTouch(_ sender: UIButton) {
+        addEventToCalendar(title: selectedTravelItem.country, description: "City: \(selectedTravelItem.city). Happy travelling!", startDate: startDate, endDate: endDate)
+        
     }
     
     // MARK: - Functions.

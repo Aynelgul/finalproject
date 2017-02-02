@@ -11,13 +11,14 @@ import Firebase
 
 class AllTipsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    // MARK: Outlets.
+    // MARK: - Outlets.
     @IBOutlet weak var myTipsTableView: UITableView!
     
-    // MARK: Variables.
+    // MARK: - Variables.
     var tipRef = FIRDatabase.database().reference(withPath: "tip-items")
     var tipItems: [Tip] = []
 
+    // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,6 +38,7 @@ class AllTipsViewController: UIViewController, UITableViewDataSource, UITableVie
         })
     }
     
+    // MARK: - Functions.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tipItems.count
     }
