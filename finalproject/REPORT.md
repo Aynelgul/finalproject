@@ -5,10 +5,8 @@
 **Student number:** 10595945
 
 **Date:** 02-02-2017
-
-
-<img src="https://github.com/Aynelgul/finalproject/blob/master/finalproject/Doc/app-icon.jpg" width="150">
-
+<br><br>
+<img src="https://github.com/Aynelgul/finalproject/blob/master/finalproject/Doc/app-icon.jpg" width="300">
 <br><br>
 
 # Index
