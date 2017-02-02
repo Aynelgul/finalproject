@@ -6,13 +6,16 @@
 
 **Date:** 02-02-2017
 
+<br><br>
 
 <img src="https://github.com/Aynelgul/finalproject/blob/master/finalproject/Doc/app-icon.jpg" width="130">
 
+<br><br>
+
 # Index
-1. Description
-2. Technical Design (Model, View, Controllers)
-3. Challenges
+**1.** Description
+**2.** Technical Design (Model, View, Controllers)
+**3.** Challenges
 
 
 ## Description
@@ -23,6 +26,7 @@ This app aims at making things easier and organized when preparing for your trip
 ## Technical Design
 
 ### Model
+Three models were used in this application (user, travel and tip).
 
 | **User**      | **Values**         |
 | ------------- |:------------------:|
@@ -66,7 +70,6 @@ This app aims at making things easier and organized when preparing for your trip
 | name          | String             |
 | description   | String             |
 
-<br><br>
 
 > **Tip:**
 > Tip object contains information about the tip. The tips are used to display in the matching travels 
@@ -74,9 +77,12 @@ This app aims at making things easier and organized when preparing for your trip
 >
 > [See Tip. swift](https://github.com/Aynelgul/finalproject/blob/master/finalproject/Tip.swift)
 
+<br><br>
+
+**Room for improvement:** the travel object contains 7 parameters, which is quite a lot. To keep the object more simple, I could join the startDate parameter and endDate parameter in one single parameter (using a dictionary). Also, I used a travelId to link a buddy to a specific travel. It might be possible to remove this parameter and use the key of the users(....) Lastly, I could add 'username' to the user object, so I can store and display the username of a user (e.g. with tips), if he or she likes to. 
 
 ### View
-> room for improvement
+
 
 ### Controllers:
 - LoginViewController: makes sure the user can sign up or sign in with an email address and a password. If user is already logged in, it will immediately redirect the user to the menu (MenuViewController). If the user wants to sign up an alert will pop up, asking the user for an email address and a password. If both are filled in, not already used and the password field holds has a password longer than 5 characters, the user will be registrated and logged in.
@@ -92,6 +98,8 @@ This app aims at making things easier and organized when preparing for your trip
 - ShowTipsViewController: displays all the tips that have been added regarding this country and city, in the form of a tableView. 
 - ShowBuddiesViewController: displays all the travel buddies that are joining the user on the travel/trip. It allows the user the invite a buddy by email (if the invited buddy uses the app too), adding the same travel to this user his/her travels too. 
 
+** Room for improvement:** 
+
 - OwnTipsCell:
 - UserTravelsCell:
 - UserTipsCell:
@@ -102,3 +110,5 @@ This app aims at making things easier and organized when preparing for your trip
 - Verschillende landnamen per taal (land code gebruikt).
 - Veel viewControllers: segmented controllers gebruikt
 - Veel segues: hele objecten meegeven ipv losse waarden
+
+(link naar progress.md)
