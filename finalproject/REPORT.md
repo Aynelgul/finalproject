@@ -8,6 +8,7 @@
 <br><br>
 <img src="https://github.com/Aynelgul/finalproject/blob/master/finalproject/Doc/app-icon.jpg" width="200">
 <br><br>
+<br><br>
 
 # Index
 **1.** Description
@@ -18,13 +19,11 @@
 
 **4.** Discussion and Conclusion
 
-<img src="https://github.com/Aynelgul/finalproject/blob/master/finalproject/Doc/report-screenshot.PNG" width="300">
-
 
 ## Description
 This app aims at making things easier and organized when preparing for your trip by allowing the user to create his or her own account and adding future travel plans. It enables you to exchange travel tips with other users and make a personal list of future travels. It does so by allowing the user to search on a map for a specific location, defining its country and city. The user can then add a tip or a travel for this specified place. It also allows the user to add a new event to the Calendar for every trip that you plan and gives you information about the country that you're heading to. It also enables you to invite one or more travel buddies to your trip, registrating the same travel to their list as well. The user can see and delete his/her own tips. 
 
-(screenshot)
+<img src="https://github.com/Aynelgul/finalproject/blob/master/finalproject/Doc/report-screenshot.PNG" width="300">
 
 ## Technical Design
 

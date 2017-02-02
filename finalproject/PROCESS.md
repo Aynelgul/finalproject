@@ -89,7 +89,7 @@
 - Duidelijkere labels toegevoegd aan de tableViews en datum wordt nu ook weergeven in labels.
 - NSDate aangemaakt voor travel (stond al in struct, maar werd nog niet opgehaald en meegestuurd vanuit pickerView).
 - NSDate omzetten naar Double voor Firebase en ook weer terug omzetten naar NSDate/String. http://stackoverflow.com/questions/33277970/how-to-convert-string-to-date-to-string-in-swift-ios en http://stackoverflow.com/questions/26849237/swift-convert-unix-time-to-date-and-time
-- Ook einddatum toegevoegd aan travel. Je kan nu je travel toevoegen aan je Calendar. Hij geeft een alert als het gelukt is en geeft ook een description mee met de stad waar je naar toe gaat en "happy travelling!" als 'persoonlijk' berichtje.
+- Ook einddatum toegevoegd aan travel. Je kan nu je travel toevoegen aan je Calendar. Hij geeft een alert als het gelukt is en geeft ook een description mee met de stad waar je naar toe gaat en "happy travelling!" als 'persoonlijk' berichtje: http://stackoverflow.com/questions/28379603/how-to-add-an-event-in-the-device-calendar-using-swift
 - Segues beetje opgeschoond: voornamelijk hele objecten meegeven als meerdere waarden nodig zijn in plaats van allemaal losse waarden (overzichtelijker). 
 - Opgeschoond: functie voor converting NSDate naar String.
 - Nog steeds crash met Denemarken; geeft lokatie ook in zee aan (????).
@@ -101,5 +101,8 @@
 ## Donderdag, 2 feb 2017
 - User Alerts toegevoegd waar nog nodig. 
 - Overbodige comments weggehaald.
+- View omhoog laten schuiven bij invullen van name/description als je een nieuwe tip wilt toevoegen. Template: http://stackoverflow.com/questions/26070242/move-view-with-keyboard-using-swift
 
 ## Vrijdag, 3 feb 2017
+- Geen crash meer als hij bepaalde stad/bepaald land niet kan vinden: wordt nu ondervangen.
+- Code opgeschoond

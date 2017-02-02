@@ -50,7 +50,12 @@ If I have enough time, I would like to add these extensions:
 - Inviting someone (by email?) for a travel (adding the same travel details to another account).
 
 ## Credits
-
-
+- Reversed geocoding: http://stackoverflow.com/questions/27495328/reverse-geocode-location-in-swift
+- Setting custom color pickerView: http://stackoverflow.com/questions/28417217/set-text-color-and-font-for-uidatepicker-in-ios8-swift
+- Changing privacy settings for API: http://stackoverflow.com/questions/32631184/the-resource-could-not-be-loaded-because-the-app-transport-security-policy-requi
+- Used as a template for asking for confirmation when deleting something from the tableView: http://stackoverflow.com/questions/30726813/confirmation-for-deleting-a-post-in-table-view-cell
+- Converting NSDate to Double/String en vise versa: http://stackoverflow.com/questions/33277970/how-to-convert-string-to-date-to-string-in-swift-ios en http://stackoverflow.com/questions/26849237/swift-convert-unix-time-to-date-and-time
+- Moving view with keyboard: http://stackoverflow.com/questions/26070242/move-view-with-keyboard-using-swift
+- Template for adding an event to your Calendar: http://stackoverflow.com/questions/28379603/how-to-add-an-event-in-the-device-calendar-using-swift
 
 [![BCH compliance](https://bettercodehub.com/edge/badge/Aynelgul/finalproject)](https://bettercodehub.com)
