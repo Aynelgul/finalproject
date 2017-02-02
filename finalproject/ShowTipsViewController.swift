@@ -35,7 +35,7 @@ class ShowTipsViewController: UIViewController, UITableViewDelegate, UITableView
                     newTips.append(newTip)
                 }
             }
-            
+    
             self.tipItems = newTips
             self.tipsTableView.reloadData()
         })

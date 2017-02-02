@@ -513,7 +513,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="119" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RNW-JO-QMw">
-                                <rect key="frame" x="0.0" y="28" width="320" height="540"/>
+                                <rect key="frame" x="0.0" y="72" width="320" height="496"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="travelCell" rowHeight="119" id="JGn-bS-GYC" customClass="UserTravelsCell" customModule="finalproject" customModuleProvider="target">
@@ -709,11 +709,11 @@
                         <viewControllerLayoutGuide type="bottom" id="qrG-2e-dan"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="CLn-PW-WeO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="345"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ds9-bn-40J">
-                                <rect key="frame" x="0.0" y="28" width="320" height="112"/>
+                                <rect key="frame" x="0.0" y="8" width="320" height="112"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="112" id="SXV-kk-uLM"/>
                                 </constraints>
@@ -728,7 +728,7 @@
                                 </userDefinedRuntimeAttributes>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7N-B2-f92">
-                                <rect key="frame" x="137" y="530" width="46" height="30"/>
+                                <rect key="frame" x="137" y="307" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="46" id="SsM-Gd-M6h"/>
                                     <constraint firstAttribute="height" constant="30" id="dAG-gl-KXZ"/>
@@ -742,7 +742,7 @@
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="5Zj-yO-sts">
-                                <rect key="frame" x="0.0" y="183" width="320" height="112"/>
+                                <rect key="frame" x="0.0" y="163" width="320" height="112"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="112" id="DPf-G9-iVK"/>
                                 </constraints>
@@ -786,25 +786,25 @@
                         <viewControllerLayoutGuide type="bottom" id="eF4-Cn-ApX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="B1u-tr-tbM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="345"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDD-bg-ArK">
-                                <rect key="frame" x="71" y="582" width="68" height="30"/>
+                                <rect key="frame" x="71" y="359" width="68" height="30"/>
                                 <state key="normal" title="Cancel"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3RO-pF-juD">
-                                <rect key="frame" x="203" y="582" width="46" height="30"/>
+                                <rect key="frame" x="203" y="359" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="46" id="p9d-9v-Cbg"/>
                                 </constraints>
                                 <state key="normal" title="OK"/>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Jy-Wp-X13">
-                                <rect key="frame" x="0.0" y="20" width="320" height="386"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="183"/>
                             </pickerView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="FyH-oI-Hl9">
-                                <rect key="frame" x="16" y="411" width="288" height="30"/>
+                                <rect key="frame" x="16" y="188" width="288" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="iy8-fK-Esp"/>
                                 </constraints>
@@ -813,7 +813,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="6Zo-nO-bgQ">
-                                <rect key="frame" x="16" y="470" width="288" height="30"/>
+                                <rect key="frame" x="16" y="247" width="288" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="frY-gS-gq7"/>
                                 </constraints>
@@ -822,7 +822,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oe6-eu-0Ti">
-                                <rect key="frame" x="137" y="530" width="46" height="30"/>
+                                <rect key="frame" x="137" y="307" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="JgU-mR-LUw"/>
                                     <constraint firstAttribute="width" constant="46" id="fry-nP-eAT"/>
@@ -1296,7 +1296,7 @@
         <image name="yellow suitcase" width="3333" height="3333"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WQI-tt-crh"/>
-        <segue reference="i58-Ag-FgH"/>
+        <segue reference="pyT-Eg-Do7"/>
+        <segue reference="l6w-AC-8wO"/>
     </inferredMetricsTieBreakers>
 </document>

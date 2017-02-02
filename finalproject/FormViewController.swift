@@ -12,12 +12,12 @@ import CoreLocation
 
 class FormViewController: UIViewController {
     
-    // MARK: Variables.
+    // MARK: - Variables.
     var receivedCountry = String()
     var receivedCity = String()
     var reveivedCountryCode = String()
     
-    // MARK: Outlets
+    // MARK: - Outlets
     @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var pickLabel: UILabel!
@@ -27,6 +27,7 @@ class FormViewController: UIViewController {
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
+    // MARK: - viewDidLoad.
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,7 +48,7 @@ class FormViewController: UIViewController {
         countryLabel?.text = self.self.receivedCountry
     }
 
-    // MARK: Actions
+    // MARK: - Actions
     @IBAction func OKButtonDidTouch(_ sender: UIButton) {
         
     }
@@ -73,11 +74,9 @@ class FormViewController: UIViewController {
         }
     }
     
-    
+    // MARK: - Functions.
     // Function when tap is recognized.
-    
     func keyboardWillShow(notification: NSNotification) {
-        
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0{
                 self.view.frame.origin.y -= keyboardSize.height
@@ -99,7 +98,6 @@ class FormViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 

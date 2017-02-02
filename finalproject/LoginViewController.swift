@@ -13,12 +13,11 @@ import FirebaseDatabase
 
 class LoginViewController: UIViewController {
     
-    // MARK: Variables
-    
-    // MARK: Outlets. 
+    // MARK: - Outlets.
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    // MARK: - viewDidLoad.
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,25 +39,19 @@ class LoginViewController: UIViewController {
         }
     }
 
-    
-    // MARK: Actions.
+    // MARK: - Actions.
     @IBAction func loginButtonDidTouch(_ sender: UIButton) {
         guard let email = emailTextField.text, let password = passwordTextField.text else { return
         }
         FIRAuth.auth()?.signIn(withEmail: email, password: password) { (user, error) in
             if let error = error {
                 print(error.localizedDescription)
-                
-                let alert = UIAlertController(title: "Oops!", message: "That e-mailadress and/or password is not correct! Try again or sign up.", preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+                self.presentAlert(title: "Oops!", message: "That e-mailadress and/or password is not correct! Try again or sign up.")
                 
                 return
             }
-            self.signedIn(user!)
-            print("REF TEST")
-
             
+            self.signedIn(user!)
         }
     }
     
@@ -68,7 +61,7 @@ class LoginViewController: UIViewController {
                                       preferredStyle: .alert)
         let saveAction = UIAlertAction(title: "Save",
                                        style: .default) { action in
-                                        // Get email and password supplied by user from alert.
+                                        
                                         let emailField = alert.textFields![0]
                                         let passwordField = alert.textFields![1]
                                         
@@ -76,20 +69,14 @@ class LoginViewController: UIViewController {
                                             if let error = error {
                                                 print(error.localizedDescription)
                                                 
-                                                // Check if e-mail is not used already
                                                 if error.localizedDescription == "The email address is already in use by another account." {
-                                                    
                                                     self.presentAlert(title: "Oops!", message: "The email address is already in use by another account.")
                                                 }
                                                 
-                                                // Check if password is long enough.
                                                 if error.localizedDescription == "The password must be 6 characters long or more." {
-                                                    
-                                                    
                                                     self.presentAlert(title: "Oops!", message: "The password must be 6 characters long or more.")
                                                 }
                                                 
-                                                // Check if all fields are filled in.
                                                 self.presentAlert(title: "Oops!", message: "Sign up failed. Please fill in all fields or check your e-mailadress.")
                                                 
                                                 return
@@ -99,7 +86,6 @@ class LoginViewController: UIViewController {
                                             let newUser = User(uid: (user?.uid)!, email: emailField.text!)
                                             let userRef = ref.child((user?.uid)!)
                                             userRef.setValue(newUser.toAnyObject())
-                                            
                                         }
         }
         
@@ -115,25 +101,27 @@ class LoginViewController: UIViewController {
             textPassword.placeholder = "Enter your password"
         }
         
-        alert.addAction(saveAction)
         alert.addAction(cancelAction)
+        alert.addAction(saveAction)
         
         present(alert, animated: true, completion: nil)
         
     }
     
-    // MARK: Functions.
-    func setDisplayName(_ user: FIRUser) {
-        let changeRequest = user.profileChangeRequest()
-        changeRequest.displayName = user.email!.components(separatedBy: "@")[0]
-        changeRequest.commitChanges(){ (error) in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            self.signedIn(FIRAuth.auth()?.currentUser)
-        }
-    }
+    // MARK: - Functions.
+    
+    
+//    func setDisplayName(_ user: FIRUser) {
+//        let changeRequest = user.profileChangeRequest()
+//        changeRequest.displayName = user.email!.components(separatedBy: "@")[0]
+//        changeRequest.commitChanges(){ (error) in
+//            if let error = error {
+//                print(error.localizedDescription)
+//                return
+//            }
+//            self.signedIn(FIRAuth.auth()?.currentUser)
+//        }
+//    }
     
     func signedIn(_ user: FIRUser?) {
         emailTextField.text = ""
@@ -146,7 +134,6 @@ class LoginViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    // Function when tap is recognized.
     func dismissKeyboard() {
         view.endEditing(true)
     }

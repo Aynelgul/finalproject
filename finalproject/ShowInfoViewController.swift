@@ -11,17 +11,12 @@ import EventKit
 
 class ShowInfoViewController: UIViewController {
     
-    // MARK: Variables.
-//    var countryReceiver = String()
-//    var cityRecheiver = String()
-//    var countryCodeRecheiver = String()
-    
-    var selectedTravelItem = Travel(startDate: 0, endDate: 0, country: "", city: "", countryCode: "", uids: [""], travelId: "")
-    
+    // MARK: - Variables.
     var startDate = NSDate()
     var endDate = NSDate()
+    var selectedTravelItem = Travel(startDate: 0, endDate: 0, country: "", city: "", countryCode: "", uids: [""], travelId: "")
     
-    // MARK: Outlets
+    // MARK: - Outlets
     @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var capitalLabel: UILabel!
@@ -32,13 +27,13 @@ class ShowInfoViewController: UIViewController {
     @IBOutlet weak var startDateLabel: UILabel!
     
     
-    // MARK: Actions.
+    // MARK: - Actions.
     @IBAction func calendarButtonDidTouch(_ sender: UIButton) {
-        addEventToCalendar(title: selectedTravelItem.country, description: "City: \(selectedTravelItem.city). Happy traveling!", startDate: startDate, endDate: endDate)
+        addEventToCalendar(title: selectedTravelItem.country, description: "City: \(selectedTravelItem.city). Happy travelling!", startDate: startDate, endDate: endDate)
         
     }
 
-    // MARK: viewDidLoad.
+    // MARK: - viewDidLoad.
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,8 +44,7 @@ class ShowInfoViewController: UIViewController {
         HTTPSrequest(title: selectedTravelItem.countryCode)
     }
     
-    // MARK: Functions.
-    
+    // MARK: - Functions.
     func addEventToCalendar(title: String, description: String?, startDate: NSDate, endDate: NSDate, completion: ((_ success: Bool, _ error: NSError?) -> Void)? = nil) {
         let eventStore = EKEventStore()
         
@@ -64,7 +58,7 @@ class ShowInfoViewController: UIViewController {
                 event.calendar = eventStore.defaultCalendarForNewEvents
                 do {
                     try eventStore.save(event, span: .thisEvent)
-                    self.presentAlert(title: "Done", message: "Your travel has been added to your calendar")
+                    self.presentAlert(title: "Done", message: "Your travel has been added to your calendar.")
                 } catch let e as NSError {
                     completion?(false, e)
                     return
@@ -105,12 +99,11 @@ class ShowInfoViewController: UIViewController {
                     }
                     
                 } else {
-                    let alert = UIAlertController(title: "Oops!", message: "Country not found.", preferredStyle: UIAlertControllerStyle.alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
+                    presentAlert(title: "Oops!", message: "Country not found.")
                 }
             } catch {
                 print(error,"Something went wrong!")
+                presentAlert(title: "Oops!", message: "Something went wrong.")
             }
         }).resume()
     }
@@ -122,6 +115,7 @@ class ShowInfoViewController: UIViewController {
             let task = session.dataTask(with: url as URL, completionHandler: {data, response, error in
                 if let err = error {
                     print("Error: \(err)")
+                    presentAlert(title: "Oops!", message: "Could not load the flag.")
                     return
                 }
                 

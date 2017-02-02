@@ -12,15 +12,16 @@ import FirebaseAuth
 
 class AllTravelsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    // MARK: Variables.
+    // MARK: - Variables.
     let travelRef = FIRDatabase.database().reference(withPath: "travel-items")
     var travelItems: [Travel] = []
     var startDateForSegue = NSDate()
     var endDateForSegue = NSDate()
     
-    // MARK: Outlets.
+    // MARK: - Outlets.
     @IBOutlet weak var travelsTableView: UITableView!
     
+    // MARK: - viewDidLoad.
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,7 +43,7 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
         })
     }
     
-    // MARK: viewDidLoad.
+    // MARK: - Functions.
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         travelsTableView.reloadData()
@@ -70,7 +71,6 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
         return cell
     }
     
-    // MARK: Functions
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "goToSpecifics", sender: nil)
     }
@@ -106,6 +106,9 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
         return dateFormatter.string(from: date)
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -117,14 +120,6 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
             
             let indexPath = travelsTableView.indexPathForSelectedRow
             destination?.selectedTravelItem = self.travelItems[(indexPath?.row)!]
-            print(self.travelItems[(indexPath?.row)!])
-
-            
         }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }

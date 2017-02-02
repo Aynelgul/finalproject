@@ -12,12 +12,11 @@ import CoreLocation
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate, MKMapViewDelegate {
     
-    // MARK: Outlets.
+    // MARK: - Outlets.
     @IBOutlet weak var mapView: MKMapView!
     
-    // MARK: Variables.
+    // MARK: - Variables.
     let locationManager = CLLocationManager()
-    
     
     var searchController: UISearchController!
     var annotation: MKAnnotation!
@@ -51,7 +50,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
         }
     }
     
-    // MARK: Actions
+    // MARK: - Actions
     @IBAction func showSearchBar(_ sender: UIBarButtonItem) {
         searchController = UISearchController(searchResultsController: nil)
         searchController.hidesNavigationBarDuringPresentation = false
@@ -60,7 +59,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
     }
 
     
-    // MARK: Functions/Methods.
+    // MARK: - Functions.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let location: CLLocationCoordinate2D = manager.location!.coordinate
@@ -72,14 +71,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
-        //1
+
         searchBar.resignFirstResponder()
         dismiss(animated: true, completion: nil)
         if self.mapView.annotations.count != 0{
             annotation = self.mapView.annotations[0]
             self.mapView.removeAnnotation(annotation)
         }
-        //2
+
         localSearchRequest = MKLocalSearchRequest()
         localSearchRequest.naturalLanguageQuery = searchBar.text
         localSearch = MKLocalSearch(request: localSearchRequest)
@@ -91,7 +90,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
                 self.present(alertController, animated: true, completion: nil)
                 return
             }
-            //3
+
             self.pointAnnotation = MKPointAnnotation()
             self.pointAnnotation.title = searchBar.text
             self.pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: localSearchResponse!.boundingRegion.center.latitude, longitude:     localSearchResponse!.boundingRegion.center.longitude)
@@ -106,25 +105,25 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
     // When annotation/pin is clicked.
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         
-        // deze ergens anders neerzetten!! na search oid
         self.locationManager.stopUpdatingLocation()
         
         print("PRINT \(pointAnnotation.coordinate)")
         self.clickedLatitude = pointAnnotation.coordinate.latitude
         self.clickedLongitude = pointAnnotation.coordinate.longitude
         
-        var newLocation = CLLocation(latitude: pointAnnotation.coordinate.latitude, longitude: pointAnnotation.coordinate.longitude) //changed!!!
+        let newLocation = CLLocation(latitude: pointAnnotation.coordinate.latitude, longitude: pointAnnotation.coordinate.longitude)
         
         // Convert coordinates to country/city.
         CLGeocoder().reverseGeocodeLocation(newLocation, completionHandler: {(placemarks, error) -> Void in
             
             if error != nil {
                 print("Reverse geocoder failed with error" + (error?.localizedDescription)!)
+                self.presentAlert(title: "Oops!", message: "Something went wrong. Please try again.")
                 return
             }
 
             if (placemarks?.count)! > 0 {
-                let pm = placemarks![0] as! CLPlacemark
+                let pm = placemarks![0] 
                 print(pm.locality!)
                 self.clickedAnnotationCity = pm.locality!
                 self.clickedAnnotationCountry = pm.country!
@@ -135,8 +134,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
             }
             else {
                 print("Problem with the data received from geocoder")
+                self.presentAlert(title: "Oops!", message: "Something went wrong. Please try again.")
             }
         })
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    func presentAlert(title: String, message: String) -> Void {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     // MARK: - Navigation
@@ -154,17 +164,5 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
             
         }
     }
-
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    //    let regionRadius: CLLocationDistance = 1000
-    //    func centerMapOnLocation(location: CLLocation) {
-    //        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
-    //                                                                  regionRadius * 2.0, regionRadius * 2.0)
-    //        mapView.setRegion(coordinateRegion, animated: true)
-    //    }
 
 }

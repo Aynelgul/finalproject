@@ -13,7 +13,7 @@ typealias inviteBuddyComplete = (Bool, User?) -> Void
 
 class ShowBuddiesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    // MARK: Variables.
+    // MARK: - Variables.
     var travelItems: [Travel] = []
     var allTravelers: [String] = []
     var travelBuddies: [String] = []
@@ -23,10 +23,10 @@ class ShowBuddiesViewController: UIViewController, UITableViewDelegate, UITableV
     var travelRef = FIRDatabase.database().reference(withPath: "travel-items")
     var userRef = FIRDatabase.database().reference(withPath: "Users")
     
-    // MARK: Outlets.
+    // MARK: - Outlets.
     @IBOutlet weak var buddiesTableView: UITableView!
     
-    // MARK: viewDidLoad.
+    // MARK: - viewDidLoad.
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,15 +35,12 @@ class ShowBuddiesViewController: UIViewController, UITableViewDelegate, UITableV
         self.buddiesTableView.reloadData()
     }
 
-    // MARK: Actions.
+    // MARK: - Actions.
     @IBAction func inviteButtonDidTouch(_ sender: UIButton) {
         
         showAlertControllerWith { (succeed, user) in
             if succeed {
                 if let user = user {
-                    
-                    print("Gelukt!! UID buddy: \(user.uid)")
-                    
                     self.travelRef.observeSingleEvent(of: .value, with: { snapshot in
                         for item in snapshot.children {
                             
@@ -63,15 +60,12 @@ class ShowBuddiesViewController: UIViewController, UITableViewDelegate, UITableV
                 
             }
             else {
-                print("Er is iets fout gegaan!")
-                
                 self.presentAlert(title: "Oops!", message: "Your buddy does not use Adventure Time yet.")
             }
-            
         }
     }
     
-    // MARK: Functions.
+    // MARK: - Functions.
     private func showAlertControllerWith(completion: @escaping inviteBuddyComplete) {
         
         let alertController = UIAlertController(title: "Add Travel Buddy", message: "", preferredStyle: .alert)

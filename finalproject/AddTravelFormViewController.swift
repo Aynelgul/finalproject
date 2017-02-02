@@ -11,23 +11,17 @@ import Firebase
 
 class AddTravelFormViewController: UIViewController {
     
-    // MARK: Variables.
+    // MARK: - Variables.
     let ref = FIRDatabase.database().reference(withPath: "travel-items")
-    
     var chosenCountryTravel = String()
     var chosenCityTravel = String()
     var chosenCountryCodeTravel = String()
     
-//    var intervalStartDate: Double = ()
-//    var intervalEndDate: Double = ()
-//    var startDate: NSDate = ()
-//    var endDate: NSDate = ()
-    
-    // MARK: Outlets.
+    // MARK: - Outlets.
     @IBOutlet weak var startDatePicker: UIDatePicker!
     @IBOutlet weak var endDatePicker: UIDatePicker!
     
-    // MARK: viewDidLoad
+    // MARK: - viewDidLoad.
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,17 +36,13 @@ class AddTravelFormViewController: UIViewController {
         
     }
     
-    // MARK: Actions
+    // MARK: - Actions.
     @IBAction func OKButtonDidTouch(_ sender: UIButton) {
         
         let startDate = startDatePicker.date as NSDate
         let endDate = endDatePicker.date as NSDate
         let intervalStartDate = startDate.timeIntervalSince1970
         let intervalEndDate = endDate.timeIntervalSince1970
-        
-        print("CRASH TEST...")
-        print(intervalStartDate)
-        print(intervalEndDate)
         
         let curDate = NSDate()
         let dateFormatter = DateFormatter()
@@ -61,8 +51,6 @@ class AddTravelFormViewController: UIViewController {
         
         let newTravel = Travel(startDate: intervalStartDate, endDate: intervalEndDate, country: self.chosenCountryTravel, city: self.chosenCityTravel, countryCode: chosenCountryCodeTravel, uids: [(FIRAuth.auth()?.currentUser?.uid)!], travelId: dateString)
         
-        print(newTravel)
-        
         let travelRef = self.ref.childByAutoId()
         travelRef.setValue(newTravel.toAnyObject())
         
@@ -70,8 +58,7 @@ class AddTravelFormViewController: UIViewController {
         
     }
     
-    
-
+    // MARK: - Functions.
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

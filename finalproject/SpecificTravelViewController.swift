@@ -10,33 +10,31 @@ import UIKit
 
 class SpecificTravelViewController: UIViewController {
     
-    // MARK: Variables.
+    // MARK: - Variables.
     var startDateReceiver = NSDate()
     var endDateReceiver = NSDate()
     
     var selectedTravelItem = Travel(startDate: 0, endDate: 0, country: "", city: "", countryCode: "", uids: [""], travelId: "")
     
     
-    // MARK: Outlets.
+    // MARK: - Outlets.
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     @IBOutlet weak var firstView: UIView!
     @IBOutlet weak var secondView: UIView!
     @IBOutlet weak var thirdView: UIView!
     
-    // Mark: viewDidLoad.
+    // Mark: - viewDidLoad.
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("AANGEKOMEN SPECIFIC DING... WAT HEEFT IE DOORGEGEVEN?")
-        print(selectedTravelItem)
         
         firstView.isHidden = false
         secondView.isHidden = true
         thirdView.isHidden = true
+        
     }
     
-    // Mark: Actions
+    // Mark: - Actions.
     @IBAction func segmentSelectedAction(_ sender: UISegmentedControl) {
         
         switch segmentedControl.selectedSegmentIndex
@@ -58,23 +56,19 @@ class SpecificTravelViewController: UIViewController {
         }
     }
     
-    // MARK: Functions.
+    // MARK: - Functions.
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "gotoInfoContainer" {
-            
             let destination = segue.destination as? ShowInfoViewController
-            
             destination?.startDate = self.startDateReceiver
             destination?.endDate = self.endDateReceiver
             destination?.selectedTravelItem = self.selectedTravelItem
-            
         }
         
         if segue.identifier == "gotoTipsContainer" {

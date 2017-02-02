@@ -49,3 +49,5 @@ If I have enough time, I would like to add these extensions:
 - A map where the app marks the places that you have travelled (after the travel date has been reached).
 - Inviting someone (by email?) for a travel (adding the same travel details to another account).
 
+## Credits
+
