@@ -97,6 +97,8 @@ Three models were used in this application (user, travel and tip).
 - ShowTipsViewController: displays all the tips that have been added regarding this country and city, in the form of a tableView. 
 - ShowBuddiesViewController: displays all the travel buddies that are joining the user on the travel/trip. It allows the user the invite a buddy by email (if the invited buddy uses the app too), adding the same travel to this user his/her travels too. 
 
+![](Doc/user-interface.png)
+
 **Room for improvement:** 
 
 - OwnTipsCell:

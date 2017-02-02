@@ -23,6 +23,7 @@
 		8535E9321E301F750037D871 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8535E9311E301F750037D871 /* Tip.swift */; };
 		8543BF221E427B6600FB682B /* REPORT.md in Sources */ = {isa = PBXBuildFile; fileRef = 8543BF211E427B6600FB682B /* REPORT.md */; };
 		8543BF241E43673000FB682B /* app-icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8543BF231E43672F00FB682B /* app-icon.jpg */; };
+		8543BF261E43990200FB682B /* user-interface.png in Resources */ = {isa = PBXBuildFile; fileRef = 8543BF251E43990200FB682B /* user-interface.png */; };
 		8561EE691E26AAB70040DE70 /* Prototype1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8561EE661E26AAB70040DE70 /* Prototype1.png */; };
 		8561EE6A1E26AAB70040DE70 /* Prototype2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8561EE671E26AAB70040DE70 /* Prototype2.png */; };
 		8561EE6B1E26AAB70040DE70 /* Prototype3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8561EE681E26AAB70040DE70 /* Prototype3.png */; };
@@ -93,6 +94,7 @@
 		8535E9311E301F750037D871 /* Tip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		8543BF211E427B6600FB682B /* REPORT.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = REPORT.md; sourceTree = "<group>"; };
 		8543BF231E43672F00FB682B /* app-icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "app-icon.jpg"; sourceTree = "<group>"; };
+		8543BF251E43990200FB682B /* user-interface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user-interface.png"; sourceTree = "<group>"; };
 		8561EE661E26AAB70040DE70 /* Prototype1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Prototype1.png; sourceTree = "<group>"; };
 		8561EE671E26AAB70040DE70 /* Prototype2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Prototype2.png; sourceTree = "<group>"; };
 		8561EE681E26AAB70040DE70 /* Prototype3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Prototype3.png; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				8561EE681E26AAB70040DE70 /* Prototype3.png */,
 				85AFC6F51E3B99F60025405B /* BetterCodeHub.png */,
 				8543BF231E43672F00FB682B /* app-icon.jpg */,
+				8543BF251E43990200FB682B /* user-interface.png */,
 			);
 			name = Images;
 			path = Doc;
@@ -441,6 +444,7 @@
 				851CA9151E250E6C00DCB9A8 /* Sketches.jpg in Resources */,
 				851CA91C1E25259600DCB9A8 /* Design1.jpg in Resources */,
 				85CAE5F71E38BE9B00DE39FD /* Assets.xcassets in Resources */,
+				8543BF261E43990200FB682B /* user-interface.png in Resources */,
 				851CA91D1E25259600DCB9A8 /* Design2.jpg in Resources */,
 				8561EE6B1E26AAB70040DE70 /* Prototype3.png in Resources */,
 				852C09BB1E250BA5000F563F /* Main.storyboard in Resources */,
