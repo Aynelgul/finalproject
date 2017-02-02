@@ -27,10 +27,10 @@ This app aims at making things easier and organized when preparing for your trip
 
 
 > **User:**
-> The user object contains an uid and an email to getting database information from a user, by using
+> The user object contains an uid and an email to get database information from a user, by using
 > the uid as a key. 
 >
-> [User]()
+> [User](https://github.com/Aynelgul/finalproject/blob/master/finalproject/User.swift)
 
 
 | **Travel**      | **Values**          |
@@ -48,7 +48,7 @@ This app aims at making things easier and organized when preparing for your trip
 > Tip object quite some information about the travel, which is being used in multiple views
 > controllers.
 >
-> [Travel]()
+> [Travel](https://github.com/Aynelgul/finalproject/blob/master/finalproject/Travel.swift)
 
 
 | **Tip**      | **Values**          |
@@ -65,7 +65,7 @@ This app aims at making things easier and organized when preparing for your trip
 > Tip object contains information about the tip. The tips are used to display in the matching travels 
 > of all users.
 >
-> [Tip]()
+> [Tip](https://github.com/Aynelgul/finalproject/blob/master/finalproject/Tip.swift)
 
 
 ### View
