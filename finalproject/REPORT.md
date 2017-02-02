@@ -1,15 +1,12 @@
 # Final Report
-<p align="center">
-<Name: Aynel Gül
+
+Name: Aynel Gül
 
 Student number: 10595945
 
-Date: 02-02-2017>
+Date: 02-02-2017
 
-
-![Adventure Time](Doc/app-icon.jpg)
-
-</p>
+<img src="https://github.com/Aynelgul/finalproject/blob/master/finalproject/Doc/app-icon.jpg" width="48">
 
 # Index
 1. Description
@@ -36,7 +33,7 @@ This app aims at making things easier and organized when preparing for your trip
 > The user object contains an uid and an email to get database information from a user, by using
 > the uid as a key. 
 >
-> [User](https://github.com/Aynelgul/finalproject/blob/master/finalproject/User.swift)
+> [See User.swift](https://github.com/Aynelgul/finalproject/blob/master/finalproject/User.swift)
 
 
 | **Travel**    | **Values**         |
@@ -54,7 +51,7 @@ This app aims at making things easier and organized when preparing for your trip
 > Tip object quite some information about the travel, which is being used in multiple views
 > controllers.
 >
-> [Travel](https://github.com/Aynelgul/finalproject/blob/master/finalproject/Travel.swift)
+> [See Travel.swift](https://github.com/Aynelgul/finalproject/blob/master/finalproject/Travel.swift)
 
 
 | **Tip**       | **Values**         |
@@ -71,7 +68,7 @@ This app aims at making things easier and organized when preparing for your trip
 > Tip object contains information about the tip. The tips are used to display in the matching travels 
 > of all users.
 >
-> [Tip](https://github.com/Aynelgul/finalproject/blob/master/finalproject/Tip.swift)
+> [See Tip. swift](https://github.com/Aynelgul/finalproject/blob/master/finalproject/Tip.swift)
 
 
 ### View
