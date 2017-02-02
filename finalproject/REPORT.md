@@ -6,6 +6,8 @@ Student number: 10595945
 
 Date: 02-02-2017
 
+![](Doc/app-icon.jpg)
+
 # Index
 1. Description
 2. Technical Design (Model, View, Controllers)
@@ -20,7 +22,7 @@ This app aims at making things easier and organized when preparing for your trip
 
 ### Model
 
-| **User**        | **Values**           |
+| **User**      | **Values**         |
 | ------------- |:------------------:|
 | uid           | String             |
 | email         | String             |
@@ -33,7 +35,7 @@ This app aims at making things easier and organized when preparing for your trip
 > [User](https://github.com/Aynelgul/finalproject/blob/master/finalproject/User.swift)
 
 
-| **Travel**      | **Values**          |
+| **Travel**    | **Values**         |
 | ------------- |:------------------:|
 | startDate     | Double             |
 | endDate       | Double             |
@@ -51,7 +53,7 @@ This app aims at making things easier and organized when preparing for your trip
 > [Travel](https://github.com/Aynelgul/finalproject/blob/master/finalproject/Travel.swift)
 
 
-| **Tip**      | **Values**          |
+| **Tip**       | **Values**         |
 | ------------- |:------------------:|
 | uid           | String             |
 | country       | String             |
