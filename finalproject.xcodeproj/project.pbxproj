@@ -10,7 +10,6 @@
 		49B2FBBA1A84BC9B005BE94F /* Pods_finalprojectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1483CBFDE8580CD5BAAE562 /* Pods_finalprojectTests.framework */; };
 		57655E7D877F2CEE5949F8B7 /* Pods_finalprojectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 910ABA62827A2FE1415E43CE /* Pods_finalprojectUITests.framework */; };
 		851CA9151E250E6C00DCB9A8 /* Sketches.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 851CA9131E250E6C00DCB9A8 /* Sketches.jpg */; };
-		851CA9161E250E6C00DCB9A8 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 851CA9141E250E6C00DCB9A8 /* README.md */; };
 		851CA9191E2510B800DCB9A8 /* DESIGN.md in Sources */ = {isa = PBXBuildFile; fileRef = 851CA9181E2510B800DCB9A8 /* DESIGN.md */; };
 		851CA91C1E25259600DCB9A8 /* Design1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 851CA91A1E25259600DCB9A8 /* Design1.jpg */; };
 		851CA91D1E25259600DCB9A8 /* Design2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 851CA91B1E25259600DCB9A8 /* Design2.jpg */; };
@@ -25,6 +24,7 @@
 		8543BF241E43673000FB682B /* app-icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8543BF231E43672F00FB682B /* app-icon.jpg */; };
 		8543BF281E439CC800FB682B /* report-screenshot.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 8543BF271E439CC800FB682B /* report-screenshot.PNG */; };
 		8543BF2A1E43B02900FB682B /* user-interface.png in Resources */ = {isa = PBXBuildFile; fileRef = 8543BF291E43B02900FB682B /* user-interface.png */; };
+		8543BF2C1E43B67D00FB682B /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 8543BF2B1E43B67D00FB682B /* README.md */; };
 		8561EE691E26AAB70040DE70 /* Prototype1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8561EE661E26AAB70040DE70 /* Prototype1.png */; };
 		8561EE6A1E26AAB70040DE70 /* Prototype2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8561EE671E26AAB70040DE70 /* Prototype2.png */; };
 		8561EE6B1E26AAB70040DE70 /* Prototype3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8561EE681E26AAB70040DE70 /* Prototype3.png */; };
@@ -76,7 +76,6 @@
 		37F1031C9089993BD6748633 /* Pods-finalproject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-finalproject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-finalproject/Pods-finalproject.debug.xcconfig"; sourceTree = "<group>"; };
 		68957F6B4D0ED2B970309564 /* Pods-finalprojectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-finalprojectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-finalprojectTests/Pods-finalprojectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		851CA9131E250E6C00DCB9A8 /* Sketches.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Sketches.jpg; sourceTree = "<group>"; };
-		851CA9141E250E6C00DCB9A8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		851CA9181E2510B800DCB9A8 /* DESIGN.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = DESIGN.md; sourceTree = "<group>"; };
 		851CA91A1E25259600DCB9A8 /* Design1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Design1.jpg; sourceTree = "<group>"; };
 		851CA91B1E25259600DCB9A8 /* Design2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Design2.jpg; sourceTree = "<group>"; };
@@ -97,6 +96,7 @@
 		8543BF231E43672F00FB682B /* app-icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "app-icon.jpg"; sourceTree = "<group>"; };
 		8543BF271E439CC800FB682B /* report-screenshot.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "report-screenshot.PNG"; sourceTree = "<group>"; };
 		8543BF291E43B02900FB682B /* user-interface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user-interface.png"; sourceTree = "<group>"; };
+		8543BF2B1E43B67D00FB682B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8561EE661E26AAB70040DE70 /* Prototype1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Prototype1.png; sourceTree = "<group>"; };
 		8561EE671E26AAB70040DE70 /* Prototype2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Prototype2.png; sourceTree = "<group>"; };
 		8561EE681E26AAB70040DE70 /* Prototype3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Prototype3.png; sourceTree = "<group>"; };
@@ -194,8 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				851CA9121E250E6C00DCB9A8 /* Images */,
-				851CA9141E250E6C00DCB9A8 /* README.md */,
 				851CA9181E2510B800DCB9A8 /* DESIGN.md */,
+				8543BF2B1E43B67D00FB682B /* README.md */,
 				85FE3C4E1E2E577D00586A2D /* PROCESS.md */,
 				8543BF211E427B6600FB682B /* REPORT.md */,
 				85AFC6F31E3B99910025405B /* AUDIT.md */,
@@ -626,10 +626,10 @@
 				85FE3C571E2FAC6B00586A2D /* AddTipFormViewController.swift in Sources */,
 				85CAE5F91E38CCC200DE39FD /* ShowTipsViewController.swift in Sources */,
 				85AFC6F81E3B9AE30025405B /* SpecificTravelViewController.swift in Sources */,
-				851CA9161E250E6C00DCB9A8 /* README.md in Sources */,
 				8575A65A1E317BE200D36C5D /* Travel.swift in Sources */,
 				8535E9301E301D760037D871 /* User.swift in Sources */,
 				85FE3C4D1E2E2FE800586A2D /* MapViewController.swift in Sources */,
+				8543BF2C1E43B67D00FB682B /* README.md in Sources */,
 				85FE3C551E2FAAE600586A2D /* AddTravelFormViewController.swift in Sources */,
 				85AFC6F41E3B99910025405B /* AUDIT.md in Sources */,
 				85AC70401E2CCCAB008C3E0D /* MenuViewController.swift in Sources */,
