@@ -99,7 +99,7 @@ class ShowInfoViewController: UIViewController {
                     }
                     
                 } else {
-                    presentAlert(title: "Oops!", message: "Country not found.")
+                    self.presentAlert(title: "Oops!", message: "Country not found.")
                 }
             } catch {
                 print(error,"Something went wrong!")

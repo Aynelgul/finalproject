@@ -96,7 +96,10 @@
 
 ## Woensdag, 1 feb 2017
 - Begonnen aan REPORT.md. Vooral even op een rijtje gezet voor mezelf: eerst alle ViewControllers uitleggen, etc. 
+- Code beetje opgeschoond: functies die niet meer worden gebruikt weggehaald, MARKs consistent gemaakt over de views.
 
 ## Donderdag, 2 feb 2017
+- User Alerts toegevoegd waar nog nodig. 
+- Overbodige comments weggehaald.
 
 ## Vrijdag, 3 feb 2017
