@@ -16,7 +16,6 @@ class SpecificTravelViewController: UIViewController {
     
     var selectedTravelItem = Travel(startDate: 0, endDate: 0, country: "", city: "", countryCode: "", uids: [""], travelId: "")
     
-    
     // MARK: - Outlets.
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     

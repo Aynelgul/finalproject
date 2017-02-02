@@ -28,7 +28,7 @@ class AddTravelFormViewController: UIViewController {
         // Change text color of datePickers.
         startDatePicker.setValue(UIColor.white, forKeyPath: "textColor")
         startDatePicker.datePickerMode = .countDownTimer
-        startDatePicker.datePickerMode = .dateAndTime //or whatever your original mode was
+        startDatePicker.datePickerMode = .dateAndTime
         
         endDatePicker.setValue(UIColor.white, forKey: "textColor")
         endDatePicker.datePickerMode = .countDownTimer
@@ -44,6 +44,7 @@ class AddTravelFormViewController: UIViewController {
         let intervalStartDate = startDate.timeIntervalSince1970
         let intervalEndDate = endDate.timeIntervalSince1970
         
+        // Set TravelId with Date.
         let curDate = NSDate()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.S"

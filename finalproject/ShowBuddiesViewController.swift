@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 
 typealias inviteBuddyComplete = (Bool, User?) -> Void
+typealias findEmailWithUIDComplete = (Bool, String?) -> Void
 
 class ShowBuddiesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -52,7 +53,6 @@ class ShowBuddiesViewController: UIViewController, UITableViewDelegate, UITableV
                                 self.travelRef.child((item as! FIRDataSnapshot).key).updateChildValues(["uids": self.newTravelUids])
                                 
                                 self.updateAllTravelers()
-                                self.buddiesTableView.reloadData()
                             }
                         }
                     })
@@ -63,6 +63,7 @@ class ShowBuddiesViewController: UIViewController, UITableViewDelegate, UITableV
                 self.presentAlert(title: "Oops!", message: "Your buddy does not use Adventure Time yet.")
             }
         }
+        self.buddiesTableView.reloadData()
     }
     
     // MARK: - Functions.
@@ -82,6 +83,7 @@ class ShowBuddiesViewController: UIViewController, UITableViewDelegate, UITableV
                     if textField.text! == userItem.email {
                         // Buddy is found in user database.
                         print("Gevonden: \(userItem.email)")
+                        
                         completion(true, userItem)
                         return
                     }
@@ -115,7 +117,19 @@ class ShowBuddiesViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: "buddyCell", for: indexPath) as! UserBuddiesCell
 
         let item = travelBuddies[indexPath.row]
-        cell.buddyEmailLabel.text = item
+        print("ITEM 1")
+        print(item)
+        
+        findEmailWithUID(UID: item) { (succeed, emailString) in
+            
+            if succeed {
+                
+                cell.buddyEmailLabel.text = emailString
+                
+            } else {
+                print("Failed!")
+            }
+        }
 
         return cell
     }
@@ -126,6 +140,24 @@ class ShowBuddiesViewController: UIViewController, UITableViewDelegate, UITableV
                 travelBuddies.append(traveler)
             }
         }
+    }
+    
+    func findEmailWithUID(UID: String, completion: @escaping findEmailWithUIDComplete) {
+        userRef.observeSingleEvent(of: .value, with: { snapshot in
+            
+            if snapshot.hasChildren() {
+                for item in snapshot.children {
+                    
+                    let userItem = User(snapshot: item as! FIRDataSnapshot)
+                    
+                    if userItem.uid == UID {
+                        completion(true, userItem.email)
+                    }
+                }
+            } else {
+                completion(false, nil)
+            }
+        })
     }
     
     func presentAlert(title: String, message: String) -> Void {

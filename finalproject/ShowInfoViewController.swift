@@ -103,7 +103,7 @@ class ShowInfoViewController: UIViewController {
                 }
             } catch {
                 print(error,"Something went wrong!")
-                presentAlert(title: "Oops!", message: "Something went wrong.")
+                self.presentAlert(title: "Oops!", message: "Something went wrong.")
             }
         }).resume()
     }
@@ -115,7 +115,7 @@ class ShowInfoViewController: UIViewController {
             let task = session.dataTask(with: url as URL, completionHandler: {data, response, error in
                 if let err = error {
                     print("Error: \(err)")
-                    presentAlert(title: "Oops!", message: "Could not load the flag.")
+                    self.presentAlert(title: "Oops!", message: "Could not load the flag.")
                     return
                 }
                 
