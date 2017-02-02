@@ -44,7 +44,7 @@ This app aims at making things easier and organized when preparing for your trip
 | travelId      | String             |
 
 
-> **Message:**
+> **Travel:**
 > Tip object quite some information about the travel, which is being used in multiple views
 > controllers.
 >
@@ -61,7 +61,7 @@ This app aims at making things easier and organized when preparing for your trip
 | description   | String             |
 
 
-> **Message:**
+> **Tip:**
 > Tip object contains information about the tip. The tips are used to display in the matching travels 
 > of all users.
 >
