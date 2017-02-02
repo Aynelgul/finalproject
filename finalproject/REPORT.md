@@ -108,7 +108,7 @@ Three models were used in this application (user, travel and tip).
 **Room for improvement:** 
 menu voor makkelijker navigeren door app.
 
-##### UITableViewCells:
+#### UITableViewCells:
 My UITableViewCells do not do anything fancy, they just hold label outlets.
 
 - **OwnTipsCell:** UITableViewcell for table in AllTipsViewController
