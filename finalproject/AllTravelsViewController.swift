@@ -86,7 +86,7 @@ class AllTravelsViewController: UIViewController, UITableViewDataSource, UITable
             let uiAlert = UIAlertController(title: "Delete Travel", message: "Are you sure you want to delete this travel? It will be removed from all your potential buddies their travels as wel.", preferredStyle: UIAlertControllerStyle.alert)
             
             uiAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
-                //remove from data source
+                // Remove from Firebase.
                 let travelItem = self.travelItems[indexPath.row]
                 travelItem.ref?.removeValue()
                 

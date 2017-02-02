@@ -119,6 +119,34 @@ My UITableViewCells do not do anything fancy, they just hold label outlets.
 - **UserBuddiesCell:** UITableViewcell for table in ShowBuddiesViewController
 
 
+![Functions](Doc/functions.png)
+> Note: not all functions are included. (Standard) functions of tableViews etc. are not displayed.
+
+## Firebase structure
+- Users
+    - UID
+        - email
+        - UID
+
+- Travel-items
+    - travelKey
+        - city
+        - country
+        - country code
+        - endDate
+        - startDate
+        - travelId
+        - uids
+
+- Tip-items
+    - tipKey
+        - city
+        - country
+        - description
+        - name
+        - type
+        - uid
+
 ## Challenges
 - **Different names for countries/cities in different languages:** I first used the name of the country to insert into an API to get information about the country and get the flag of the country. However, this API only knows the English names of the countries and cities, which ment that whenever used in Holland (for example), 'Frankrijk' could not be found with the API. When used MapKit, the language used, is the language of the country that you're in. I managed to get the country code via geocoding, next to the country- and city name, and used this for the API, because the country code is the same in every language. The API can handle country codes as well.
 
@@ -134,4 +162,8 @@ For a more detailed discription of the challenges and solutions:
 
 ## Discussion and Conclusion
 All in all, I stumbled upon quite some challenges. In the beginning, the hardest part for me was to set up a design: how I wanted to use my views and how they would connect. I drew a lot of sketches to make up my mind about it and looked at other apps for inspiration. Also, in the beginning I have spent quite some time figuring out what objects I wanted to use. Although, it paid off because it did help me to prevent some struggles later: because I knew exactly what parameters I would be using and why/how/where. I chose to only view the app in a portrait orientation, because the landscape orientation has no added value for my app; it only makes it less organized. In an ideal world, given much more time, there are some things I would have done different. For instance, I would have made the variables in the objects private and adjust them by using functions to make the app saver. Secondly, I would have wanted that the app marks the places that you have travelled (after the travel date has been reached). Thirdly, I would have wanted the app to send someone an email when invited for a travel and only adding the travel to the travel list of the travel buddy if he or she accepts the offer instead of doing that by default. Also, I would have wanted the app to be more responsive by adjusting the constraints more properly. Lasty, there are a lot more features that I would have wanted to add to my app if I had more time: I have a lot of ideas! I would have wanted the app to be a complete travel app where you have all you need in one: travel info, tips, alerts for plane delay, pages that explain usage if you use the app for the first time, sending notifications when, for instance, someone invites you to a travel or when a new tip has been added regaring a city that you're heading to soon, local news information about the travel locations, when logging in a view that shows you how many days there are left till your next travel, a table view that is sorted by date (first one on top) and much and much more! However, I really liked working on this app and while using and testing it I got most of the ideas. I realized how important structure is when your app becomes bigger (more code, more objects and more viewcontrollers) and how important it is to think about the design before you really get to it. The sketches really helped me, especially the advanced ones. 
+
+
+- firebase structure
+
 

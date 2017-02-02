@@ -25,6 +25,7 @@
 		8543BF2A1E43B02900FB682B /* user-interface.png in Resources */ = {isa = PBXBuildFile; fileRef = 8543BF291E43B02900FB682B /* user-interface.png */; };
 		8543BF301E43B8A600FB682B /* Sketches.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8543BF2F1E43B8A600FB682B /* Sketches.jpg */; };
 		8543BF341E43BACD00FB682B /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 8543BF331E43BACD00FB682B /* README.md */; };
+		8543BF381E43EF4400FB682B /* functions.png in Resources */ = {isa = PBXBuildFile; fileRef = 8543BF371E43EF4400FB682B /* functions.png */; };
 		8561EE691E26AAB70040DE70 /* Prototype1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8561EE661E26AAB70040DE70 /* Prototype1.png */; };
 		8561EE6A1E26AAB70040DE70 /* Prototype2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8561EE671E26AAB70040DE70 /* Prototype2.png */; };
 		8561EE6B1E26AAB70040DE70 /* Prototype3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8561EE681E26AAB70040DE70 /* Prototype3.png */; };
@@ -97,6 +98,7 @@
 		8543BF291E43B02900FB682B /* user-interface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user-interface.png"; sourceTree = "<group>"; };
 		8543BF2F1E43B8A600FB682B /* Sketches.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Sketches.jpg; sourceTree = "<group>"; };
 		8543BF331E43BACD00FB682B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		8543BF371E43EF4400FB682B /* functions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = functions.png; sourceTree = "<group>"; };
 		8561EE661E26AAB70040DE70 /* Prototype1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Prototype1.png; sourceTree = "<group>"; };
 		8561EE671E26AAB70040DE70 /* Prototype2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Prototype2.png; sourceTree = "<group>"; };
 		8561EE681E26AAB70040DE70 /* Prototype3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Prototype3.png; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				85AFC6F51E3B99F60025405B /* BetterCodeHub.png */,
 				8543BF231E43672F00FB682B /* app-icon.jpg */,
 				8543BF291E43B02900FB682B /* user-interface.png */,
+				8543BF371E43EF4400FB682B /* functions.png */,
 				8543BF271E439CC800FB682B /* report-screenshot.PNG */,
 			);
 			name = Images;
@@ -453,6 +456,7 @@
 				852C09BB1E250BA5000F563F /* Main.storyboard in Resources */,
 				8561EE691E26AAB70040DE70 /* Prototype1.png in Resources */,
 				8543BF281E439CC800FB682B /* report-screenshot.PNG in Resources */,
+				8543BF381E43EF4400FB682B /* functions.png in Resources */,
 				8543BF241E43673000FB682B /* app-icon.jpg in Resources */,
 				8575A6581E312B3200D36C5D /* GoogleService-Info.plist in Resources */,
 			);

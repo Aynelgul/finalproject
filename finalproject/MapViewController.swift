@@ -12,11 +12,11 @@ import CoreLocation
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate, MKMapViewDelegate {
     
-    // MARK: - Outlets.
-    @IBOutlet weak var mapView: MKMapView!
-    
     // MARK: - Variables.
     let locationManager = CLLocationManager()
+    
+    // MARK: - Outlets.
+    @IBOutlet weak var mapView: MKMapView!
     
     var searchController: UISearchController!
     var annotation: MKAnnotation!
@@ -34,10 +34,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
     var clickedLatitude = Double()
     var clickedLongitude = Double()
     
+    // MARK: - viewDidLoad.
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Ask for Authorisation from the User.
+        // Ask for Authorisation from User.
         self.locationManager.requestAlwaysAuthorization()
         
         // For use in foreground.
@@ -102,7 +103,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
         }
     }
     
-    // When annotation/pin is clicked.
+    /// When annotation/pin is clicked.
     internal func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         
         self.locationManager.stopUpdatingLocation()

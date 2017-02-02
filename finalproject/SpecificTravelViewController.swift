@@ -13,12 +13,10 @@ class SpecificTravelViewController: UIViewController {
     // MARK: - Variables.
     var startDateReceiver = NSDate()
     var endDateReceiver = NSDate()
-    
     var selectedTravelItem = Travel(startDate: 0, endDate: 0, country: "", city: "", countryCode: "", uids: [""], travelId: "")
     
     // MARK: - Outlets.
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    
     @IBOutlet weak var firstView: UIView!
     @IBOutlet weak var secondView: UIView!
     @IBOutlet weak var thirdView: UIView!
@@ -61,7 +59,7 @@ class SpecificTravelViewController: UIViewController {
     }
     
 
-    // MARK: - Navigation
+    // MARK: - Navigation.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "gotoInfoContainer" {
             let destination = segue.destination as? ShowInfoViewController

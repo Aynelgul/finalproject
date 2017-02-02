@@ -98,7 +98,7 @@ class AddTipFormViewController: UIViewController, UIPickerViewDataSource, UIPick
         return NSAttributedString(string: str, attributes: [NSForegroundColorAttributeName:UIColor.white])
     }
     
-    // Function for when tap is recognized.
+    /// Function for when tap is recognized.
     func dismissKeyboard() {
         view.endEditing(true)
     }

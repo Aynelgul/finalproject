@@ -18,7 +18,7 @@ class ShowTipsViewController: UIViewController, UITableViewDelegate, UITableView
     let tipRef = FIRDatabase.database().reference(withPath: "tip-items")
     var tipItems: [Tip] = []
     
-    // MARK: - Outlets
+    // MARK: - Outlets.
     @IBOutlet weak var tipsTableView: UITableView!
 
     // MARK: - viewDidLoad.

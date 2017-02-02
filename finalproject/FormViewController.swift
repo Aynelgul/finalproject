@@ -75,7 +75,7 @@ class FormViewController: UIViewController {
     }
     
     // MARK: - Functions.
-    // Function when tap is recognized.
+    /// Function when tap is recognized.
     func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0{
