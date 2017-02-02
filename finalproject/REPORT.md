@@ -6,6 +6,10 @@ Student number: 10595945
 
 Date: 02-02-2017
 
+# Index
+1. Description
+2. Technical Design (Model, View, Controllers)
+
 
 ## Description
 This app aims at making things easier and organized when preparing for your trip by allowing the user to create his or her own account and adding future travel plans. It enables you to exchange travel tips with other users and make a personal list of future travels. It does so by allowing the user to search on a map for a specific location, defining its country and city. The user can then add a tip or a travel for this specified place. It also allows the user to add a new event to the Calendar for every trip that you plan and gives you information about the country that you're heading to. It also enables you to invite one or more travel buddies to your trip, registrating the same travel to their list as well. The user can see and delete his/her own tips. 
@@ -14,7 +18,60 @@ This app aims at making things easier and organized when preparing for your trip
 
 ## Technical Design
 
-### ViewControllers:
+### Model
+
+| **User**        | **Values**           |
+| ------------- |:------------------:|
+| uid           | String             |
+| email         | String             |
+
+
+> **User:**
+> The user object contains an uid and an email to getting database information from a user, by using
+> the uid as a key. 
+>
+> [User]()
+
+
+| **Travel**      | **Values**          |
+| ------------- |:------------------:|
+| startDate     | Double             |
+| endDate       | Double             |
+| country       | String             |
+| city          | String             |
+| countryCode   | String             |
+| uids          | [String]           |
+| travelId      | String             |
+
+
+> **Message:**
+> Tip object quite some information about the travel, which is being used in multiple views
+> controllers.
+>
+> [Travel]()
+
+
+| **Tip**      | **Values**          |
+| ------------- |:------------------:|
+| uid           | String             |
+| country       | String             |
+| city          | String             |
+| type          | String             |
+| name          | String             |
+| description   | String             |
+
+
+> **Message:**
+> Tip object contains information about the tip. The tips are used to display in the matching travels 
+> of all users.
+>
+> [Tip]()
+
+
+### View
+> room for improvement
+
+### Controllers:
 - LoginViewController: makes sure the user can sign up or sign in with an email address and a password. If user is already logged in, it will immediately redirect the user to the menu (MenuViewController). If the user wants to sign up an alert will pop up, asking the user for an email address and a password. If both are filled in, not already used and the password field holds has a password longer than 5 characters, the user will be registrated and logged in.
 - MenuViewController: displays a menu with two buttons: 'Travels' redirecting to 'AllTravelsViewController' and 'Map' redirecting to 'MapViewController'.
 - MapViewController: displays a map (MapKit) where the user can search for a place (country, city, address, etc.), using a search bar. After searching for an existing place, a annotation is placed where the user can click on, containing this specific place. This redirects the user to 'FormViewController'.

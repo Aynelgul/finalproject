@@ -14,7 +14,6 @@ struct User {
     let uid: String
     let email: String
     let key: String
-//    let username: String
     
     let ref: FIRDatabaseReference?
     
@@ -26,11 +25,9 @@ struct User {
     }
     
     init(uid: String, email: String, key: String = "") {
-        // evt dit er nog in: username: String
         self.uid = uid
         self.email = email
         self.key = key
-//        self.username = username
         self.ref = nil
     }
     
@@ -39,7 +36,6 @@ struct User {
         uid = snapshotValue["uid"] as! String
         email = snapshotValue["email"] as! String
         key = snapshot.key
-//        username = snapshotValue["username"] as! String
         ref = snapshot.ref
     }
     
@@ -47,7 +43,6 @@ struct User {
         return [
             "uid": uid,
             "email": email
-//            "username": username
         ]
     }
     
