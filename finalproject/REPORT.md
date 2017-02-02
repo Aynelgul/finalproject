@@ -1,12 +1,15 @@
 # Final Report
-
+<p align="center">
 Name: Aynel Gül
 
 Student number: 10595945
 
 Date: 02-02-2017
 
-![](Doc/app-icon.jpg)
+
+![Adventure Time](Doc/app-icon.jpg)
+
+</p>
 
 # Index
 1. Description
