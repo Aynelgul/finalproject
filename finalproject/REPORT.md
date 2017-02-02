@@ -6,9 +6,8 @@
 
 **Date:** 02-02-2017
 
-<br><br>
 
-<img src="https://github.com/Aynelgul/finalproject/blob/master/finalproject/Doc/app-icon.jpg" width="130">
+<img src="https://github.com/Aynelgul/finalproject/blob/master/finalproject/Doc/app-icon.jpg" width="150">
 
 <br><br>
 
