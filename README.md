@@ -7,7 +7,7 @@ by Aynel Gül
 - Signing up and signing in (having your own account).
 - Adding future travels (country, city, date).
 - Looking up travel tips from other users (or adding your own tips to the list)
-- Inviting your travel buddy/buddies (by email?) for a travel (adding the same travel details to another account, if travel buddy has an Adventure Time account too.
+- Inviting your travel buddy/buddies (by email) for a travel (adding the same travel details to another account, if travel buddy has an Adventure Time account too.
 - Looking up information of the country that you are traveling to (flag, capital, population, currency, region).
 
 
@@ -23,7 +23,7 @@ Preparing everything for a vacation can be stressful at times. This app aims at 
 
 ## Decomposing
 ### Model
-This app saves the travels that you add (personally) and also stores the tips that you and others add (publicly). These will be saved at Firebase. The same goes for user data (email, password).
+This app saves the travels that you add (personally) and also stores the tips that you and others add (publicly). These will be saved at Firebase. The same goes for user data (email, password). It contains three models: user, tip and travel.
 
 ### View
 It has a login view, a menu view (travels, tips, adding travel), a view of a list of your travels that you can click on. After clicking on a travel/country, it shows you another view with information about this particular country. In this view you can see information about the country, tips from you and other users about this specific place and the buddies that you're travelling. Here you can add travel buddies as well.
@@ -34,7 +34,7 @@ The controler manipulates the model, if a user, for example, adds or deletes a n
 
 ## External components (APIs)
 The APIs that I will be using is one for looking up data about a country, including currency, population, capital and region and another for looking up the flag of a country. 
-If I am going to add a map too (see: possible extensions) then I will have to use a Google Maps API.
+If I am going to add a map too (see: possible extensions) then I will have to use MapKit.
 
 
 ## Possible Technical Problems or Limitations
