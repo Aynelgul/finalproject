@@ -117,9 +117,7 @@ class ShowBuddiesViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: "buddyCell", for: indexPath) as! UserBuddiesCell
 
         let item = travelBuddies[indexPath.row]
-        print("ITEM 1")
-        print(item)
-        
+
         findEmailWithUID(UID: item) { (succeed, emailString) in
             
             if succeed {
@@ -128,6 +126,7 @@ class ShowBuddiesViewController: UIViewController, UITableViewDelegate, UITableV
                 
             } else {
                 print("Failed!")
+                self.presentAlert(title: "Oops!", message: "Something went wrong")
             }
         }
 

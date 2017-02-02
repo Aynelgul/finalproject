@@ -113,12 +113,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UISearchBa
         
         let newLocation = CLLocation(latitude: pointAnnotation.coordinate.latitude, longitude: pointAnnotation.coordinate.longitude)
         
-        print("SECOND PRINT NEW LOCATION: \(newLocation)")
-        
         // Convert coordinates to country/city.
         CLGeocoder().reverseGeocodeLocation(newLocation, completionHandler: {(placemarks, error) -> Void in
-            
-            print("REVERSED GEOCODING REACHED")
             
             if error != nil {
                 print("Reverse geocoder failed with error" + (error?.localizedDescription)!)

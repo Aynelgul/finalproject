@@ -16,6 +16,10 @@
 
 **3.** Challenges
 
+**4.** Discussion and Conclusion
+
+![](Doc/report-screenshot.PNG)
+
 
 ## Description
 This app aims at making things easier and organized when preparing for your trip by allowing the user to create his or her own account and adding future travel plans. It enables you to exchange travel tips with other users and make a personal list of future travels. It does so by allowing the user to search on a map for a specific location, defining its country and city. The user can then add a tip or a travel for this specified place. It also allows the user to add a new event to the Calendar for every trip that you plan and gives you information about the country that you're heading to. It also enables you to invite one or more travel buddies to your trip, registrating the same travel to their list as well. The user can see and delete his/her own tips. 
@@ -96,7 +100,7 @@ Three models were used in this application (user, travel and tip).
 - ShowInfoViewController: displays information about the specific country of the travel (capital, population, currency and region). It also contains a button that the user can click on to add the travel to his/her Calendar (with the given start date and end date). It also displays the flag of the specific country of the travel. 
 - ShowTipsViewController: displays all the tips that have been added regarding this country and city, in the form of a tableView. 
 - ShowBuddiesViewController: displays all the travel buddies that are joining the user on the travel/trip. It allows the user the invite a buddy by email (if the invited buddy uses the app too), adding the same travel to this user his/her travels too. 
-
+<br><br>
 ![](Doc/user-interface.png)
 
 **Room for improvement:** 
@@ -111,5 +115,8 @@ Three models were used in this application (user, travel and tip).
 - Verschillende landnamen per taal (land code gebruikt).
 - Veel viewControllers: segmented controllers gebruikt
 - Veel segues: hele objecten meegeven ipv losse waarden
+- reversed geocoding failing
 
 (link naar progress.md)
+
+## Discussion and Conclusion
